@@ -1,0 +1,24 @@
+{
+  "name": "ts-glm",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {},
+  "engines": {
+    "node": "^14.15.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hopeless-programmer-online/ts-glm.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Hopeless Programmer",
+    "email": "me@hopeless-programmer.online",
+    "url": "https://hopeless-programmer.online"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hopeless-programmer-online/ts-glm/issues"
+  },
+  "homepage": "https://github.com/hopeless-programmer-online/ts-glm#readme"
+}
