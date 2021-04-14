@@ -1,8 +1,7 @@
-import XY from './xy'
-import dot from './dot'
+import Vector2Abstraction from './vector2-abstraction'
 import { Vector2Components } from './vector2-components'
 
-export default class Vector2 {
+export default class Vector2 extends Vector2Abstraction {
     public static from(scalar : number) : Vector2
     public static from(xy : Vector2Components) : Vector2
     public static from(x : number, y : number) : Vector2
@@ -29,6 +28,8 @@ export default class Vector2 {
     private _y : number
 
     public constructor({ x = 0, y = 0 } : { x? : number, y? : number } = { x : 0, y : 0 }) {
+        super()
+
         this._x = x
         this._y = y
     }
@@ -44,40 +45,5 @@ export default class Vector2 {
     }
     public set y(y : number) {
         this._y = y
-    }
-
-    public get r() {
-        return this.x
-    }
-    public set r(r : number) {
-        this.x = r
-    }
-    public get g() {
-        return this.y
-    }
-    public set g(g : number) {
-        this.y = g
-    }
-
-    public get [0]() {
-        return this.x
-    }
-    public set [0](x : number) {
-        this.x = x
-    }
-    public get [1]() {
-        return this.y
-    }
-    public set [1](y : number) {
-        this.y = y
-    }
-
-    public dot(other : XY) {
-        return dot(this, other)
-    }
-    public toString() {
-        const { x, y } = this
-
-        return `Vector2 { x : ${x}, y : ${y} }`
     }
 }

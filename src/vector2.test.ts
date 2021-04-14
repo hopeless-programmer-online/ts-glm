@@ -28,6 +28,7 @@ it('should implement from({ x | r | 0, y | g | 1 } | number[])', () => {
     expect(Vector2.from({ 0 : 1, g : 2 })).toMatchObject({ x : 1, y : 2 })
     expect(Vector2.from({ 0 : 1, 1 : 2 })).toMatchObject({ x : 1, y : 2 })
     expect(Vector2.from([ 1, 2 ])).toMatchObject({ x : 1, y : 2 })
+    expect(Vector2.from(vec2(1, 2))).toMatchObject({ x : 1, y : 2 })
 })
 it('should implement from(number, number)', () => {
     expect(Vector2.from(1, 2)).toMatchObject({ x : 1, y : 2 })
