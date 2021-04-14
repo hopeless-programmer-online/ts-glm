@@ -1,4 +1,4 @@
-import { Vector2 } from './glm'
+import { vec2, Vector2 } from './glm'
 
 it('should be a class', () => {
     expect(typeof Vector2).toBe('function')
@@ -95,6 +95,9 @@ it('should implement 1 getter/setter', () => {
         r : 0, g : 5,
         0 : 0, 1 : 5,
     })
+})
+it('should implement dot()', () => {
+    expect(vec2(1, 2).dot(vec2(3, 4))).toBe(11)
 })
 it('should implement toString()', () => {
     const a = new Vector2({ x : 1, y : 2 })

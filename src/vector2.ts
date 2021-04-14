@@ -1,3 +1,6 @@
+import XY from './xy'
+import dot from './dot'
+
 export default class Vector2 {
     private _x : number
     private _y : number
@@ -46,6 +49,9 @@ export default class Vector2 {
         this.y = y
     }
 
+    public dot(other : XY) {
+        return dot(this, other)
+    }
     public toString() {
         const { x, y } = this
 

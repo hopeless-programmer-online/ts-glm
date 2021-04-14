@@ -1,9 +1,9 @@
-import { Vector2 } from './glm'
+import { Vector2, XY } from './glm'
 
 export default function dot(a : number, b : number) : number;
-export default function dot(a : Vector2, b : Vector2) : number;
+export default function dot(a : XY, b : XY) : number;
 
-export default function dot(a : number | Vector2, b : number | Vector2) {
+export default function dot(a : number | XY, b : number | XY) {
     if (typeof a === 'number') {
         if (typeof b !== 'number') throw new Error // @todo
 
