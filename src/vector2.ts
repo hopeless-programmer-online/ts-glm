@@ -1,7 +1,30 @@
 import XY from './xy'
 import dot from './dot'
+import { Vector2Components } from './vector2components'
 
 export default class Vector2 {
+    public static from(scalar : number) : Vector2
+    public static from(xy : Vector2Components) : Vector2
+    public static from(x : number, y : number) : Vector2
+    public static from(xy : number | Vector2Components, y? : number) {
+        if (typeof xy === 'number') {
+            return y === undefined
+                ? new Vector2({ x : xy, y : xy })
+                : new Vector2({ x : xy, y })
+        }
+
+        const x =
+            'x' in xy ? xy.x :
+            'r' in xy ? xy.r :
+            (xy[0] | 0)
+        y =
+            'y' in xy ? xy.y :
+            'g' in xy ? xy.g :
+            (xy[1] | 0)
+
+        return new Vector2({ x, y })
+    }
+
     private _x : number
     private _y : number
 

@@ -3,6 +3,35 @@ import { vec2, Vector2 } from './glm'
 it('should be a class', () => {
     expect(typeof Vector2).toBe('function')
 })
+it('should provide appropriate interface', () => {
+    expect(Vector2).toHaveProperty('from')
+    expect(Vector2.prototype).toHaveProperty('x')
+    expect(Vector2.prototype).toHaveProperty('r')
+    expect(Vector2.prototype).toHaveProperty('0')
+    expect(Vector2.prototype).toHaveProperty('y')
+    expect(Vector2.prototype).toHaveProperty('g')
+    expect(Vector2.prototype).toHaveProperty('1')
+    expect(Vector2.prototype).toHaveProperty('dot')
+    expect(Vector2.prototype).toHaveProperty('toString')
+})
+it('should implement from(number)', () => {
+    expect(Vector2.from(1)).toMatchObject({ x : 1, y : 1 })
+})
+it('should implement from({ x | r | 0, y | g | 1 } | number[])', () => {
+    expect(Vector2.from({ x : 1, y : 2 })).toMatchObject({ x : 1, y : 2 })
+    expect(Vector2.from({ x : 1, g : 2 })).toMatchObject({ x : 1, y : 2 })
+    expect(Vector2.from({ x : 1, 1 : 2 })).toMatchObject({ x : 1, y : 2 })
+    expect(Vector2.from({ r : 1, y : 2 })).toMatchObject({ x : 1, y : 2 })
+    expect(Vector2.from({ r : 1, g : 2 })).toMatchObject({ x : 1, y : 2 })
+    expect(Vector2.from({ r : 1, 1 : 2 })).toMatchObject({ x : 1, y : 2 })
+    expect(Vector2.from({ 0 : 1, y : 2 })).toMatchObject({ x : 1, y : 2 })
+    expect(Vector2.from({ 0 : 1, g : 2 })).toMatchObject({ x : 1, y : 2 })
+    expect(Vector2.from({ 0 : 1, 1 : 2 })).toMatchObject({ x : 1, y : 2 })
+    expect(Vector2.from([ 1, 2 ])).toMatchObject({ x : 1, y : 2 })
+})
+it('should implement from(number, number)', () => {
+    expect(Vector2.from(1, 2)).toMatchObject({ x : 1, y : 2 })
+})
 it('should implement constructor without arguments', () => {
     const a = new Vector2
 
