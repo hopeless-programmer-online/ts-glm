@@ -1,6 +1,6 @@
 import XY from './xy'
 import dot from './dot'
-import { Vector2Components } from './vector2components'
+import { Vector2Components } from './vector2-components'
 
 export default class Vector2 {
     public static from(scalar : number) : Vector2

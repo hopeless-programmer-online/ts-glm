@@ -1,6 +1,6 @@
 export { default as XY } from './xy'
 export { default as Vector2 } from './vector2'
-export { Vector2Components } from './vector2components'
+export { Vector2Components } from './vector2-components'
 export { default as vec2 } from './vec2'
 export { default as add } from './add'
 export { default as dot } from './dot'
