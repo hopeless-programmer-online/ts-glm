@@ -33,6 +33,8 @@ export default abstract class Vector2Abstraction {
         this.y = y
     }
 
+    public abstract clone() : Vector2Abstraction
+
     public dot(other : XY) {
         return dot(this, other)
     }

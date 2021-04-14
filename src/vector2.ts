@@ -46,4 +46,8 @@ export default class Vector2 extends Vector2Abstraction {
     public set y(y : number) {
         this._y = y
     }
+
+    public clone() {
+        return new Vector2(this)
+    }
 }

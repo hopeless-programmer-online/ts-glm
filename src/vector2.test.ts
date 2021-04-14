@@ -126,6 +126,15 @@ it('should implement 1 getter/setter', () => {
         0 : 0, 1 : 5,
     })
 })
+it('should implement clone()', () => {
+    const a = vec2(1, 2)
+    const b = a.clone()
+
+    b.x = 5
+    b.y = 10
+
+    expect(a).toMatchObject({ x : 1, y : 2 })
+})
 it('should implement dot()', () => {
     expect(vec2(1, 2).dot(vec2(3, 4))).toBe(11)
 })
