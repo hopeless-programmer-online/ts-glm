@@ -3,6 +3,9 @@ import { vec2 } from './glm'
 it('should be a function', () => {
     expect(typeof vec2).toBe('function')
 })
+it('should accept zero arguments', () => {
+    expect(vec2()).toMatchObject({ x : 0, y : 0 })
+})
 it('should accept single scalar', () => {
     expect(vec2(5)).toMatchObject({ x : 5, y : 5 })
 })
