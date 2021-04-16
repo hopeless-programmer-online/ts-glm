@@ -1,5 +1,5 @@
 import { Matrix2Values4 } from './matrix2-values4'
-import Matrix2Column from './matrix2-column'
+import Matrix2Vector from './matrix2-vector'
 
 export default class Matrix2 {
     public static columnMajor(values : Matrix2Values4) {
@@ -16,9 +16,9 @@ export default class Matrix2 {
     }
 
     public get [0]() {
-        return new Matrix2Column({ values : this.values, offset : 0 })
+        return new Matrix2Vector({ values : this.values, offset : 0 })
     }
     public get [1]() {
-        return new Matrix2Column({ values : this.values, offset : 2 })
+        return new Matrix2Vector({ values : this.values, offset : 2 })
     }
 }

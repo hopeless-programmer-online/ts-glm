@@ -1,7 +1,7 @@
 import Vector2 from './vector2'
 import Vector2Abstraction from './vector2-abstraction'
 
-export default class Matrix2Column extends Vector2Abstraction {
+export default class Matrix2Vector extends Vector2Abstraction {
     private values : number[]
     private offset : number
     private stride : number
