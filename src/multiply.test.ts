@@ -1,7 +1,7 @@
-import { mul, mat2 } from './glm'
+import { multiply, mat2 } from './glm'
 
 it('should multiply mat2', () => {
-    const r = mul(
+    const r = multiply(
         mat2([ 1, 3, 2, 4 ]),
         mat2([ 5, 7, 6, 8 ]),
     )

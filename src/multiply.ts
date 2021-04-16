@@ -1,7 +1,7 @@
 import Matrix2 from './matrix2'
 
-export default function mul(a : Matrix2, b : Matrix2) : Matrix2;
-export default function mul(a : Matrix2, b : Matrix2) {
+export default function multiply(a : Matrix2, b : Matrix2) : Matrix2;
+export default function multiply(a : Matrix2, b : Matrix2) {
     return new Matrix2({ values : [
         // column #0
         a[0][0] * b[0][0] + a[1][0] * b[0][1],

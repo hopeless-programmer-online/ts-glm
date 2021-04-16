@@ -9,5 +9,6 @@ it('should match expected interface', () => {
     expect(glm).toHaveProperty('mat2')
     expect(glm).toHaveProperty('add')
     expect(glm).toHaveProperty('dot')
+    expect(glm).toHaveProperty('multiply')
     expect(glm).toHaveProperty('mul')
 })
