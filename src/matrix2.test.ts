@@ -40,7 +40,7 @@ it('should support [] getters/setters', () => {
         },
     })
 })
-it('should support row clone', () => {
+it('should support column clone', () => {
     const m = Matrix2.columnMajor([ 1, 2, 3, 4 ])
     const r0 = m[0].clone()
     const r1 = m[1].clone()
@@ -60,4 +60,16 @@ it('should support row clone', () => {
             y : 4, 1 : 4, g : 4,
         },
     })
+})
+it('should support rows access', () => {
+    const m = Matrix2.columnMajor([ 1, 2, 3, 4 ])
+
+    expect(m.rows[0]).toMatchObject({ x : 1, y : 3 })
+    expect(m.rows[1]).toMatchObject({ x : 2, y : 4 })
+})
+it('should support columns access', () => {
+    const m = Matrix2.columnMajor([ 1, 2, 3, 4 ])
+
+    expect(m.columns[0]).toMatchObject({ x : 1, y : 2 })
+    expect(m.columns[1]).toMatchObject({ x : 3, y : 4 })
 })
