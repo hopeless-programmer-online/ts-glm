@@ -1,5 +1,5 @@
 import Vector2Abstraction from './vector2-abstraction'
-import { Vector2Components } from './vector2-components'
+import Vector2Components from './vector2-components'
 
 export default class Vector2 extends Vector2Abstraction {
     public static from(scalar : number) : Vector2
