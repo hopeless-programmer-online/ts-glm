@@ -1,4 +1,4 @@
-import { Vector2 } from './glm'
+import Vector2 from './vector2'
 
 export default function add(a : number, b : number) : number;
 export default function add(a : number, b : Vector2) : Vector2;

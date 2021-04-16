@@ -1,5 +1,5 @@
-import { Vector2 } from './glm'
-import { Vector2Components } from './vector2-components'
+import Vector2 from './vector2'
+import Vector2Components from './vector2-components'
 
 /**
  * Creates Vector2 with x and y equals to scalar.

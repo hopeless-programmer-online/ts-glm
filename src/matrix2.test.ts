@@ -1,4 +1,4 @@
-import Matrix2 from './matrix2'
+import { Matrix2 } from './glm'
 
 it('should implement columnMajor()', () => {
     expect(Matrix2.columnMajor([ 1, 2, 3, 4 ])).toMatchObject({

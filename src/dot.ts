@@ -1,4 +1,4 @@
-import { Vector2, XY } from './glm'
+import XY from './xy'
 
 export default function dot(a : number, b : number) : number;
 export default function dot(a : XY, b : XY) : number;

@@ -1,4 +1,4 @@
-import Matrix2Vector from './matrix2-vector'
+import { Matrix2Vector } from './glm'
 
 it('should support column proxy', () => {
     const values = [ 1, 2, 3, 4 ]
