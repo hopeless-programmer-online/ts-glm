@@ -1,6 +1,5 @@
-import Matrix2Column from "./matrix2-column"
-
-type Matrix2Values4 = [ number, number, number, number ] // @todo: move to separate file
+import { Matrix2Values4 } from './matrix2-values4'
+import Matrix2Column from './matrix2-column'
 
 export default class Matrix2 {
     public static columnMajor(values : Matrix2Values4) {
