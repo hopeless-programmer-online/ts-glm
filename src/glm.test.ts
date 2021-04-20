@@ -11,6 +11,8 @@ it('should match expected interface', () => {
     expect(glm).toHaveProperty('dot')
     expect(glm).toHaveProperty('multiply')
     expect(glm).toHaveProperty('mul')
+    expect(glm).toHaveProperty('determinant')
+    expect(glm).toHaveProperty('det')
     expect(glm).toHaveProperty('inverse')
     expect(glm).toHaveProperty('inv')
 })
