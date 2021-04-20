@@ -13,6 +13,8 @@ it('should match expected interface', () => {
     expect(glm).toHaveProperty('mul')
     expect(glm).toHaveProperty('determinant')
     expect(glm).toHaveProperty('det')
+    expect(glm).toHaveProperty('adjugate')
+    expect(glm).toHaveProperty('adj')
     expect(glm).toHaveProperty('inverse')
     expect(glm).toHaveProperty('inv')
 })
