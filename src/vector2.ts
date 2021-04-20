@@ -27,7 +27,7 @@ export default class Vector2 extends Vector2Abstraction {
     private _x : number
     private _y : number
 
-    public constructor({ x = 0, y = 0 } : { x? : number, y? : number } = { x : 0, y : 0 }) {
+    public constructor({ x = 0, y = 0 } : { x? : number, y? : number } = {}) {
         super()
 
         this._x = x
