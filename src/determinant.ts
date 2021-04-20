@@ -15,3 +15,7 @@ export default function determinant(m : Matrix2) {
 
     return a * d - b * c
 }
+
+/**
+ * @todo remove semicolons on declarations when syntax highlight will be fixed
+ */
