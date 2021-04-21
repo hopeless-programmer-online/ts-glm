@@ -5,12 +5,10 @@ export default function dot(a : XY, b : XY) : number;
 
 export default function dot(a : number | XY, b : number | XY) {
     if (typeof a === 'number') {
-        if (typeof b !== 'number') throw new Error // @todo
-
-        return a * b
+        return a * (b as number)
     }
 
-    if (typeof b === 'number') throw new Error // @todo
+    b = b as XY
 
     return a.x * b.x + a.y * b.y
 }

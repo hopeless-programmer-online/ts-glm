@@ -12,7 +12,3 @@ it('should accept vec2', () => {
 it('should accept xy', () => {
     expect(dot({ x : 1, y : 2 }, { x : 3, y : 4 })).toBe(11)
 })
-it('should throw on passing inconsistent arguments', () => {
-    expect(() => (dot as unknown as ((a : number, b : Vector2) => number))(0, vec2(0, 0))).toThrowError()
-    expect(() => (dot as unknown as ((a : Vector2, b : number) => number))(vec2(0, 0), 0)).toThrowError()
-})
