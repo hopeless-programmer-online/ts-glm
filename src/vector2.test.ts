@@ -29,6 +29,13 @@ it('should implement from({ x | r | 0, y | g | 1 } | number[])', () => {
     expect(Vector2.from({ 0 : 1, 1 : 2 })).toMatchObject({ x : 1, y : 2 })
     expect(Vector2.from([ 1, 2 ])).toMatchObject({ x : 1, y : 2 })
     expect(Vector2.from(vec2(1, 2))).toMatchObject({ x : 1, y : 2 })
+    expect(Vector2.from({ x : 1 })).toMatchObject({ x : 1, y : 0 })
+    expect(Vector2.from({ r : 1 })).toMatchObject({ x : 1, y : 0 })
+    expect(Vector2.from({ 0 : 1 })).toMatchObject({ x : 1, y : 0 })
+    expect(Vector2.from({ y : 1 })).toMatchObject({ x : 0, y : 1 })
+    expect(Vector2.from({ g : 1 })).toMatchObject({ x : 0, y : 1 })
+    expect(Vector2.from({ 1 : 1 })).toMatchObject({ x : 0, y : 1 })
+    expect(Vector2.from({})).toMatchObject({ x : 0, y : 0 })
 })
 it('should implement from(number, number)', () => {
     expect(Vector2.from(1, 2)).toMatchObject({ x : 1, y : 2 })
@@ -61,7 +68,7 @@ it('should implement constructor with y argument', () => {
     })
 })
 it('should implement x getter/setter', () => {
-    const a = new Vector2
+    const a = vec2()
 
     a.x = 5
 
@@ -72,7 +79,7 @@ it('should implement x getter/setter', () => {
     })
 })
 it('should implement r getter/setter', () => {
-    const a = new Vector2
+    const a = vec2()
 
     a.r = 5
 
@@ -83,7 +90,7 @@ it('should implement r getter/setter', () => {
     })
 })
 it('should implement 0 getter/setter', () => {
-    const a = new Vector2
+    const a = vec2()
 
     a[0] = 5
 
@@ -94,7 +101,7 @@ it('should implement 0 getter/setter', () => {
     })
 })
 it('should implement y getter/setter', () => {
-    const a = new Vector2
+    const a = vec2()
 
     a.y = 5
 
@@ -105,7 +112,7 @@ it('should implement y getter/setter', () => {
     })
 })
 it('should implement g getter/setter', () => {
-    const a = new Vector2
+    const a = vec2()
 
     a.g = 5
 
@@ -116,7 +123,7 @@ it('should implement g getter/setter', () => {
     })
 })
 it('should implement 1 getter/setter', () => {
-    const a = new Vector2
+    const a = vec2()
 
     a[1] = 5
 
@@ -139,7 +146,7 @@ it('should implement dot()', () => {
     expect(vec2(1, 2).dot(vec2(3, 4))).toBe(11)
 })
 it('should implement toString()', () => {
-    const a = new Vector2({ x : 1, y : 2 })
+    const a = vec2(1, 2)
 
     expect(`${a}`).toBe(`Vector2 { x : 1, y : 2 }`)
 })

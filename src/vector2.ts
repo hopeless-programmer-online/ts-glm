@@ -13,13 +13,15 @@ export default class Vector2 extends Vector2Abstraction {
         }
 
         const x =
-            'x' in xy ? xy.x :
-            'r' in xy ? xy.r :
-            (xy[0] | 0)
+            'x' in xy ? xy.x  :
+            'r' in xy ? xy.r  :
+            0   in xy ? xy[0] :
+            0
         y =
-            'y' in xy ? xy.y :
-            'g' in xy ? xy.g :
-            (xy[1] | 0)
+            'y' in xy ? xy.y  :
+            'g' in xy ? xy.g  :
+            1   in xy ? xy[1] :
+            0
 
         return new Vector2({ x, y })
     }
