@@ -1,3 +1,4 @@
+import deduceVector2 from './deduce-vector2'
 import Vector2Abstraction from './vector2-abstraction'
 import Vector2Components from './vector2-components'
 
@@ -12,18 +13,7 @@ export default class Vector2 extends Vector2Abstraction {
                 : new Vector2({ x : xy, y })
         }
 
-        const x =
-            'x' in xy ? xy.x  :
-            'r' in xy ? xy.r  :
-            0   in xy ? xy[0] :
-            0
-        y =
-            'y' in xy ? xy.y  :
-            'g' in xy ? xy.g  :
-            1   in xy ? xy[1] :
-            0
-
-        return new Vector2({ x, y })
+        return deduceVector2(xy)
     }
 
     private _x : number
