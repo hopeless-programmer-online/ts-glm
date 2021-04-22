@@ -8,6 +8,7 @@ it('should match expected interface', () => {
     expect(glm).toHaveProperty('Matrix2')
     expect(glm).toHaveProperty('deduceVector2')
     expect(glm).toHaveProperty('vec2')
+    expect(glm).toHaveProperty('deduceVector3')
     expect(glm).toHaveProperty('mat2')
     expect(glm).toHaveProperty('add')
     expect(glm).toHaveProperty('dot')
