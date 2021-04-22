@@ -23,4 +23,5 @@ it('should match expected interface', () => {
     expect(glm).toHaveProperty('adj')
     expect(glm).toHaveProperty('inverse')
     expect(glm).toHaveProperty('inv')
+    expect(glm).toHaveProperty('rotate2')
 })
