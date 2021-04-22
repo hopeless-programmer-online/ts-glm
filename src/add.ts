@@ -1,20 +1,28 @@
 import Vector2 from './vector2'
+import Vector2Components from './vector2-components'
+import deduceVector2 from './deduce-vector2'
 
 export default function add(a : number, b : number) : number;
-export default function add(a : number, b : Vector2) : Vector2;
-export default function add(a : Vector2, b : number) : Vector2;
-export default function add(a : Vector2, b : Vector2) : Vector2;
+export default function add(a : number, b : Vector2Components) : Vector2;
+export default function add(a : Vector2Components, b : number) : Vector2;
+export default function add(a : Vector2Components, b : Vector2Components) : Vector2;
 
-export default function add(a : number | Vector2, b : number | Vector2) {
+export default function add(a : number | Vector2Components, b : number | Vector2Components) {
     if (typeof a === 'number') {
         if (typeof b === 'number') return a + b
 
-        return new Vector2({ x : a + b.x, y : a + b.y })
+        const { x, y } = deduceVector2(b)
+
+        return new Vector2({ x : a + x, y : a + y })
     }
 
-    if (typeof b === 'number') return new Vector2({ x : a.x + b, y : a.y + b })
+    const { x, y } = deduceVector2(a)
 
-    return new Vector2({ x : a.x + b.x, y : a.y + b.y })
+    if (typeof b === 'number') return new Vector2({ x : x + b, y : y + b })
+
+    const vb = deduceVector2(b)
+
+    return new Vector2({ x : x + vb.x, y : y + vb.y })
 }
 
 /**

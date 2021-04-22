@@ -15,3 +15,6 @@ it('should accept vec2 and number', () => {
 it('should accept vec2 and vec2', () => {
     expect(add(vec2(1, 2), vec2(3, 4))).toMatchObject({ x : 4, y : 6 })
 })
+it('should accept { x, y } and [ number, number ]', () => {
+    expect(add({ x : 1, y : 2 }, [ 3, 4 ])).toMatchObject({ x : 4, y : 6 })
+})
