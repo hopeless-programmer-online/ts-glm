@@ -1,4 +1,4 @@
-import { Vector3 } from './glm'
+import { vec2, Vector3 } from './glm'
 
 it('should be a class', () => {
     expect(typeof Vector3).toBe('function')
@@ -85,6 +85,12 @@ it('should implement from({ x | r | 0, y | g | 1, z | b | 2 } | [ number, number
     expect(Vector3.from([ 1, 2, 3 ])).toMatchObject({ x : 1, y : 2, z : 3 })
     expect(Vector3.from([ 1, 2 ])).toMatchObject({ x : 1, y : 2, z : 0 })
     expect(Vector3.from([ 1 ])).toMatchObject({ x : 1, y : 0, z : 0 })
+})
+it('should implement from(vec2, number)', () => {
+    expect(Vector3.from(vec2(1, 2), 3)).toMatchObject({ x : 1, y : 2, z : 3 })
+})
+it('should implement from(number, vec2)', () => {
+    expect(Vector3.from(1, vec2(2, 3))).toMatchObject({ x : 1, y : 2, z : 3 })
 })
 it('should implement from(number, number)', () => {
     expect(Vector3.from(1, 2)).toMatchObject({ x : 1, y : 2, z : 0 })
