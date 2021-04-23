@@ -11,21 +11,15 @@ export default function add(a : number | Vector2Components | Vector3Components, 
         if (typeof b === 'number') return a + b
 
         if ('z' in b || 'b' in b || '2' in b) {
-            const { x, y, z } = deduceVector3(b)
-
-            return new Vector3({ x : a + x, y : a + y, z : a + z })
+            return addNumberVector3(a, b)
         }
 
         return addNumberVector2(a, b)
     }
     if ('z' in a || 'b' in a || '2' in a) {
-        const { x, y, z } = deduceVector3(a)
+        if (typeof b === 'number') return addVector3Number(a, b)
 
-        if (typeof b === 'number') return new Vector3({ x : x + b, y : y + b, z : z + b })
-
-        const vb = deduceVector3(b as Vector3Components)
-
-        return new Vector3({ x : x + vb.x, y : y + vb.y, z : z + vb.z })
+        return addVector3Vector3(a, b as Vector3Components)
     }
 
     if (typeof b === 'number') return addVector2Number(a, b)
@@ -37,10 +31,12 @@ import Vector2 from './vector2'
 import Vector3 from './vector3'
 import Vector2Components from './vector2-components'
 import Vector3Components from './vector3-components'
-import deduceVector3 from './deduce-vector3'
-import addVector2Vector2 from './add-vector2-vector2'
 import addNumberVector2 from './add-number-vector2'
 import addVector2Number from './add-vector2-number'
+import addVector2Vector2 from './add-vector2-vector2'
+import addNumberVector3 from './add-number-vector3'
+import addVector3Number from './add-vector3-number'
+import addVector3Vector3 from './add-vector3-vector3'
 
 /**
  * @todo remove semicolons on declarations when syntax highlight will be fixed
