@@ -1,12 +1,3 @@
-import Vector2 from './vector2'
-import Vector3 from './vector3'
-import Vector2Components from './vector2-components'
-import Vector3Components from './vector3-components'
-import deduceVector2 from './deduce-vector2'
-import deduceVector3 from './deduce-vector3'
-
-const { isArray } = Array
-
 export default function add(a : number, b : number) : number;
 export default function add(a : number, b : Vector2Components) : Vector2;
 export default function add(a : Vector2Components, b : number) : Vector2;
@@ -47,6 +38,13 @@ export default function add(a : number | Vector2Components | Vector3Components, 
 
     return new Vector2({ x : x + vb.x, y : y + vb.y })
 }
+
+import Vector2 from './vector2'
+import Vector3 from './vector3'
+import Vector2Components from './vector2-components'
+import Vector3Components from './vector3-components'
+import deduceVector2 from './deduce-vector2'
+import deduceVector3 from './deduce-vector3'
 
 /**
  * @todo remove semicolons on declarations when syntax highlight will be fixed

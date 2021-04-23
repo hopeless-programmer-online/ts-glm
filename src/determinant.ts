@@ -1,6 +1,5 @@
-import Matrix2 from './matrix2'
-
 export default function determinant(m : Matrix2) : number;
+
 export default function determinant(m : Matrix2) {
     /**
      * ┌     ┐
@@ -15,6 +14,8 @@ export default function determinant(m : Matrix2) {
 
     return a * d - b * c
 }
+
+import Matrix2 from './matrix2'
 
 /**
  * @todo remove semicolons on declarations when syntax highlight will be fixed

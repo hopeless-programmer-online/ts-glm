@@ -1,12 +1,10 @@
-import mat2 from './mat2'
-import Matrix2 from './matrix2'
-
 /**
  * Compute adjugate matrix.
  *
  * @see https://en.wikipedia.org/wiki/Adjugate_matrix
  */
 export default function adjugate(m : Matrix2) : Matrix2;
+
 export default function adjugate(m : Matrix2) : Matrix2 {
     /**
      * ┌     ┐
@@ -27,6 +25,9 @@ export default function adjugate(m : Matrix2) : Matrix2 {
      */
      return mat2([ d, -c, -b, a ])
 }
+
+import mat2 from './mat2'
+import Matrix2 from './matrix2'
 
 /**
  * @todo remove semicolons on declarations when syntax highlight will be fixed

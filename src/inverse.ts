@@ -1,9 +1,3 @@
-import adj from './adjugate'
-import det from './determinant'
-import mat2 from './mat2'
-import Matrix2 from './matrix2'
-
-
 export default function inverse(m : Matrix2) : Matrix2;
 
 export default function inverse(m : Matrix2) {
@@ -17,6 +11,11 @@ export default function inverse(m : Matrix2) {
         a[1][1] * d,
     ])
 }
+
+import adj from './adjugate'
+import det from './determinant'
+import mat2 from './mat2'
+import Matrix2 from './matrix2'
 
 /**
  * @todo remove semicolons on declarations when syntax highlight will be fixed

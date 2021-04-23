@@ -1,6 +1,3 @@
-import Matrix2Values4 from './matrix2-values4'
-import Matrix2Vector from './matrix2-vector'
-
 export default class Matrix2Rows {
     private values : Matrix2Values4
 
@@ -15,3 +12,6 @@ export default class Matrix2Rows {
         return new Matrix2Vector({ values : this.values, offset : 1, stride : 2 })
     }
 }
+
+import Matrix2Values4 from './matrix2-values4'
+import Matrix2Vector from './matrix2-vector'

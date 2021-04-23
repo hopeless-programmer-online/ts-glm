@@ -1,7 +1,3 @@
-import Matrix2Columns from './matrix2-columns'
-import Matrix2Rows from './matrix2-rows'
-import Matrix2Values4 from './matrix2-values4'
-
 export default class Matrix2 {
     public static columnMajor(values : Matrix2Values4) {
         return new Matrix2({ values })
@@ -30,3 +26,7 @@ export default class Matrix2 {
         return this.columns[1]
     }
 }
+
+import Matrix2Columns from './matrix2-columns'
+import Matrix2Rows from './matrix2-rows'
+import Matrix2Values4 from './matrix2-values4'

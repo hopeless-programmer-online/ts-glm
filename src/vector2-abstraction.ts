@@ -1,6 +1,3 @@
-import XY from './xy'
-import dot from './dot'
-
 export default abstract class Vector2Abstraction {
     public abstract get x() : number
     public abstract set x(x : number)
@@ -44,3 +41,6 @@ export default abstract class Vector2Abstraction {
         return `Vector2 { x : ${x}, y : ${y} }`
     }
 }
+
+import XY from './xy'
+import dot from './dot'

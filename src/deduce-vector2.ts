@@ -1,6 +1,3 @@
-import Vector2 from './vector2'
-import Vector2Source from './vector2-source'
-
 export default function deduceVector2(xy : Vector2Source) {
     const x =
         'x' in xy ? xy.x  :
@@ -15,3 +12,6 @@ export default function deduceVector2(xy : Vector2Source) {
 
     return new Vector2({ x, y })
 }
+
+import Vector2 from './vector2'
+import Vector2Source from './vector2-source'

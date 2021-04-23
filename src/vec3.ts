@@ -1,7 +1,3 @@
-import Vector3 from './vector3'
-import Vector2Components from './vector2-components'
-import Vector3Components from './vector3-components'
-
 /**
  * Creates Vector2 with x and y equals to scalar.
  *
@@ -29,6 +25,10 @@ export default function vec3(x? : Vector3Components | Vector2Components | number
 
     return Vector3.from(x as number, y as number, z)
 }
+
+import Vector3 from './vector3'
+import Vector2Components from './vector2-components'
+import Vector3Components from './vector3-components'
 
 /**
  * @todo remove semicolons on declarations when syntax highlight will be fixed

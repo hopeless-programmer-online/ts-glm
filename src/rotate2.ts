@@ -1,5 +1,3 @@
-import mat2 from './mat2'
-
 const { sin, cos } = Math
 
 export default function rotate2(a : number) {
@@ -11,3 +9,5 @@ export default function rotate2(a : number) {
         +s, +c,
     ])
 }
+
+import mat2 from './mat2'

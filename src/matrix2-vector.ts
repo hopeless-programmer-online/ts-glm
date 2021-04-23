@@ -1,4 +1,3 @@
-import Vector2 from './vector2'
 import Vector2Abstraction from './vector2-abstraction'
 
 export default class Matrix2Vector extends Vector2Abstraction {
@@ -39,3 +38,5 @@ export default class Matrix2Vector extends Vector2Abstraction {
         return new Vector2(this)
     }
 }
+
+import Vector2 from './vector2'

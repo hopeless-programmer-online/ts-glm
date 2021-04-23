@@ -1,6 +1,4 @@
-import deduceVector2 from './deduce-vector2'
 import Vector2Abstraction from './vector2-abstraction'
-import Vector2Source from './vector2-source'
 
 export default class Vector2 extends Vector2Abstraction {
     public static from(scalar : number) : Vector2
@@ -43,3 +41,6 @@ export default class Vector2 extends Vector2Abstraction {
         return new Vector2(this)
     }
 }
+
+import deduceVector2 from './deduce-vector2'
+import Vector2Source from './vector2-source'

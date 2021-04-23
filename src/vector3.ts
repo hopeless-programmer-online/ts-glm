@@ -1,8 +1,4 @@
-import deduceVector2 from './deduce-vector2'
-import deduceVector3 from './deduce-vector3'
-import Vector2Source from './vector2-source'
 import Vector3Abstraction from './vector3-abstraction'
-import Vector3Source from './vector3-source'
 
 export default class Vector3 extends Vector3Abstraction {
     public static from(scalar : number) : Vector3
@@ -64,3 +60,8 @@ export default class Vector3 extends Vector3Abstraction {
         this._z = z
     }
 }
+
+import deduceVector2 from './deduce-vector2'
+import deduceVector3 from './deduce-vector3'
+import Vector2Source from './vector2-source'
+import Vector3Source from './vector3-source'

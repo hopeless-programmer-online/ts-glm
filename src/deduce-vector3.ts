@@ -1,6 +1,3 @@
-import Vector3 from './vector3'
-import Vector3Source from './vector3-source'
-
 export default function deduceVector3(xyz : Vector3Source) {
     const x =
         'x' in xyz ? xyz.x  :
@@ -20,3 +17,6 @@ export default function deduceVector3(xyz : Vector3Source) {
 
     return new Vector3({ x, y, z })
 }
+
+import Vector3 from './vector3'
+import Vector3Source from './vector3-source'
