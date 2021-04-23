@@ -1,12 +1,12 @@
 import deduceVector2 from './deduce-vector2'
 import Vector2Abstraction from './vector2-abstraction'
-import Vector2Components from './vector2-components'
+import Vector2Source from './vector2-source'
 
 export default class Vector2 extends Vector2Abstraction {
     public static from(scalar : number) : Vector2
-    public static from(xy : Vector2Components) : Vector2
+    public static from(xy : Vector2Source) : Vector2
     public static from(x : number, y : number) : Vector2
-    public static from(xy : number | Vector2Components, y? : number) {
+    public static from(xy : number | Vector2Source, y? : number) {
         if (typeof xy === 'number') {
             return y === undefined
                 ? new Vector2({ x : xy, y : xy })

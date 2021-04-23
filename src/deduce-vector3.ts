@@ -1,7 +1,7 @@
 import Vector3 from './vector3'
-import Vector3Components from './vector3-components'
+import Vector3Source from './vector3-source'
 
-export default function deduceVector3(xyz : Vector3Components) {
+export default function deduceVector3(xyz : Vector3Source) {
     const x =
         'x' in xyz ? xyz.x  :
         'r' in xyz ? xyz.r  :

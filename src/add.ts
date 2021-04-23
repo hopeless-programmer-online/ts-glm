@@ -18,7 +18,8 @@ export default function add(a : Vector3Components, b : Vector3Components) : Vect
 export default function add(a : number | Vector2Components | Vector3Components, b : number | Vector2Components | Vector3Components) {
     if (typeof a === 'number') {
         if (typeof b === 'number') return a + b
-        if ('z' in b || isArray(b) && b.length >= 3) {
+
+        if ('z' in b || 'b' in b || '2' in b) {
             const { x, y, z } = deduceVector3(b)
 
             return new Vector3({ x : a + x, y : a + y, z : a + z })
@@ -28,12 +29,12 @@ export default function add(a : number | Vector2Components | Vector3Components, 
 
         return new Vector2({ x : a + x, y : a + y })
     }
-    if ('z' in a || isArray(a) && a.length >= 3) {
+    if ('z' in a || 'b' in a || '2' in a) {
         const { x, y, z } = deduceVector3(a)
 
         if (typeof b === 'number') return new Vector3({ x : x + b, y : y + b, z : z + b })
 
-        const vb = deduceVector3(b)
+        const vb = deduceVector3(b as Vector3Components)
 
         return new Vector3({ x : x + vb.x, y : y + vb.y, z : z + vb.z })
     }
@@ -49,5 +50,4 @@ export default function add(a : number | Vector2Components | Vector3Components, 
 
 /**
  * @todo remove semicolons on declarations when syntax highlight will be fixed
- * @todo add support for rgb/[0][1][2]
  */

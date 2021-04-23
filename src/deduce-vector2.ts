@@ -1,7 +1,7 @@
 import Vector2 from './vector2'
-import Vector2Components from './vector2-components'
+import Vector2Source from './vector2-source'
 
-export default function deduceVector2(xy : Vector2Components) {
+export default function deduceVector2(xy : Vector2Source) {
     const x =
         'x' in xy ? xy.x  :
         'r' in xy ? xy.r  :

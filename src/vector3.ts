@@ -1,16 +1,17 @@
+import deduceVector2 from './deduce-vector2'
 import deduceVector3 from './deduce-vector3'
-import { deduceVector2, Vector2Components } from './glm'
+import Vector2Source from './vector2-source'
 import Vector3Abstraction from './vector3-abstraction'
-import Vector3Components from './vector3-components'
+import Vector3Source from './vector3-source'
 
 export default class Vector3 extends Vector3Abstraction {
     public static from(scalar : number) : Vector3
-    public static from(xyz : Vector3Components) : Vector3
+    public static from(xyz : Vector3Source) : Vector3
     public static from(x : number, y : number) : Vector3
-    public static from(xy : Vector2Components, z : number) : Vector3
-    public static from(x : number, yz : Vector2Components) : Vector3
+    public static from(xy : Vector2Source, z : number) : Vector3
+    public static from(x : number, yz : Vector2Source) : Vector3
     public static from(x : number, y : number, z : number) : Vector3
-    public static from(x : Vector3Components | Vector2Components | number, y? : Vector2Components | number, z? : number) {
+    public static from(x : Vector3Source | Vector2Source | number, y? : Vector2Source | number, z? : number) {
         if (typeof x === 'number') {
             if (y === undefined) return new Vector3({ x, y : x, z : x })
             if (z === undefined) {
