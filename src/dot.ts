@@ -6,14 +6,11 @@ export default function dot(a : number | Vector2Components, b : number | Vector2
         return a * (b as number)
     }
 
-    const va = deduceVector2(a)
-    const vb = deduceVector2(b as Vector2Components)
-
-    return va.x * vb.x + va.y * vb.y
+    return dotVector2Vector2(a, b as Vector2Components)
 }
 
-import deduceVector2 from './deduce-vector2'
 import Vector2Components from './vector2-components'
+import dotVector2Vector2 from './dot-vector2-vector2'
 
 /**
  * @todo remove semicolons on declarations when syntax highlight will be fixed
