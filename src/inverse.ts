@@ -4,17 +4,12 @@ export default function inverse(m : Matrix2) {
     const a = adj(m)
     const d = 1 / det(m)
 
-    return mat2([
-        a[0][0] * d,
-        a[0][1] * d,
-        a[1][0] * d,
-        a[1][1] * d,
-    ])
+    return mul(d, a)
 }
 
 import adj from './adjugate'
 import det from './determinant'
-import mat2 from './mat2'
+import mul from './multiply'
 import Matrix2 from './matrix2'
 
 /**
