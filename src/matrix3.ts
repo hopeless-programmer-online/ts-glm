@@ -1,4 +1,8 @@
 export default class Matrix3 {
+    public static columnMajor(values : Matrix3Values9) {
+        return new Matrix3({ values })
+    }
+
     /**
      * Column-major order.
      */
@@ -10,6 +14,9 @@ export default class Matrix3 {
 
     get columns() {
         return new Matrix3Columns({ values : this.values })
+    }
+    get rows() {
+        return new Matrix3Rows({ values : this.values })
     }
 
     public get [0]() {
@@ -24,4 +31,5 @@ export default class Matrix3 {
 }
 
 import Matrix3Columns from './matrix3-columns'
+import Matrix3Rows from './matrix3-rows'
 import Matrix3Values9 from './matrix3-values9'
