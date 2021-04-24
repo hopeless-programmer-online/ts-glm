@@ -8,16 +8,20 @@ export default class Matrix3 {
         this.values = [ ...values ]
     }
 
+    get columns() {
+        return new Matrix3Columns({ values : this.values })
+    }
+
     public get [0]() {
-        return new Matrix3Vector({ values : this.values })
+        return this.columns[0]
     }
     public get [1]() {
-        return new Matrix3Vector({ values : this.values, offset : 3 })
+        return this.columns[1]
     }
     public get [2]() {
-        return new Matrix3Vector({ values : this.values, offset : 6 })
+        return this.columns[2]
     }
 }
 
+import Matrix3Columns from './matrix3-columns'
 import Matrix3Values9 from './matrix3-values9'
-import Matrix3Vector from './matrix3-vector'
