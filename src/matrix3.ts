@@ -2,6 +2,19 @@ export default class Matrix3 {
     public static columnMajor(values : Matrix3Values9) {
         return new Matrix3({ values })
     }
+    public static rowMajor(values : Matrix3Values9) {
+        const [
+            a, b, c,
+            d, e, f,
+            g, h, i,
+        ] = values
+
+        return new Matrix3({ values : [
+            a, d, g,
+            b, e, h,
+            c, f, i,
+        ] })
+    }
 
     /**
      * Column-major order.
