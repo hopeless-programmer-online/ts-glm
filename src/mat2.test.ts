@@ -1,5 +1,8 @@
-import { mat2 } from './glm'
+import { mat2, rotate2 } from './glm'
 
+it('should export rotate2', () => {
+    expect(mat2.rotate).toBe(rotate2)
+})
 it('should support columnMajor', () => {
     const m = mat2.columnMajor([ 1, 2, 3, 4 ])
 
