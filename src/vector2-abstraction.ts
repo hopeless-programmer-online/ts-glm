@@ -32,7 +32,7 @@ export default abstract class Vector2Abstraction {
 
     public abstract clone() : Vector2Abstraction
 
-    public dot(other : XY) {
+    public dot(other : Vector2Components) {
         return dot(this, other)
     }
     public toString() {
@@ -42,5 +42,5 @@ export default abstract class Vector2Abstraction {
     }
 }
 
-import XY from './xy'
-import dot from './dot'
+import dot from './dot-vector2-vector2'
+import Vector2Components from './vector2-components'
