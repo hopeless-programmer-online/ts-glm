@@ -12,6 +12,12 @@ it('should implement columnMajor()', () => {
         },
     })
 })
+it('should implement rowMajor()', () => {
+    expect(Matrix2.rowMajor([ 1, 2, 3, 4 ])).toMatchObject({
+        0 : { x : 1, y : 3 },
+        1 : { x : 2, y : 4 },
+    })
+})
 it('should support [] getters/setters', () => {
     const m = Matrix2.columnMajor([ 1, 2, 3, 4 ])
 

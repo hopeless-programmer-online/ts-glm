@@ -2,6 +2,14 @@ export default class Matrix2 {
     public static columnMajor(values : Matrix2Values4) {
         return new Matrix2({ values })
     }
+    public static rowMajor(values : Matrix2Values4) {
+        const [ a, b, c, d ] = values
+
+        return new Matrix2({ values : [
+            a, c,
+            b, d,
+        ] })
+    }
 
     /**
      * Column-major order.
