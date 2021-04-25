@@ -18,7 +18,7 @@ export default function vec2(xy? : Vector2Components | number, y? : number) {
 }
 
 import Vector2 from './vector2'
-import Vector2Components from './vector2-components'
+import Vector2Components from './vector2-source'
 
 /**
  * @todo remove semicolons on declarations when syntax highlight will be fixed
