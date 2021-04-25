@@ -233,6 +233,9 @@ it('should implement 2 getter/setter', () => {
         0 : 0, 1 : 0, 2 : 5,
     })
 })
+it('should implement dot()', () => {
+    expect(Vector3.from(1, 2, 3).dot(Vector3.from(4, 5, 6))).toBe(1 * 4 + 2 * 5 + 3 * 6)
+})
 it('should implement toString()', () => {
     const a = new Vector3({ x : 1, y : 2, z : 3 })
 

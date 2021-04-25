@@ -44,9 +44,15 @@ export default abstract class Vector3Abstraction {
         this.z = z
     }
 
+    public dot(other : Vector3Components) {
+        return dot(this, other)
+    }
     public toString() {
         const { x, y, z } = this
 
         return `Vector3 { x : ${x}, y : ${y}, z : ${z} }`
     }
 }
+
+import dot from './dot-vector3-vector3'
+import Vector3Components from './vector3-components'
