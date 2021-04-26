@@ -1,5 +1,8 @@
 export default class Matrix2 {
-    public static defaultValues : Matrix2Values4 = [ 1, 0, 0, 1 ]
+    public static defaultValues : Matrix2Values4 = [
+        1, 0,
+        0, 1,
+    ]
     public static columnMajor(values : Matrix2Values4) {
         return new Matrix2({ values })
     }
