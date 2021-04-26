@@ -1,4 +1,9 @@
 export default class Matrix3 {
+    public static defaultValues : Matrix3Values9 = [
+        1, 0, 0,
+        0, 1, 0,
+        0, 0, 1,
+    ]
     public static columnMajor(values : Matrix3Values9) {
         return new Matrix3({ values })
     }
@@ -21,7 +26,7 @@ export default class Matrix3 {
      */
     private values : Matrix3Values9
 
-    public constructor({ values } : { values : Matrix3Values9 }) {
+    public constructor({ values = Matrix3.defaultValues } : { values? : Matrix3Values9 } = {}) {
         this.values = [ ...values ]
     }
 
