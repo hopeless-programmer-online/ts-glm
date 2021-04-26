@@ -1,7 +1,9 @@
+export default function mat3() : Matrix3;
 export default function mat3(values : Matrix3Values9) : Matrix3;
 export default function mat3(m00 : number, m01 : number, m02 : number, m10 : number, m11 : number, m12 : number, m20 : number, m21 : number, m22 : number) : Matrix3;
 
-export default function mat3(m00 : Matrix3Values9 | number, m01? : number, m02? : number, m10? : number, m11? : number, m12? : number, m20? : number, m21? : number, m22? : number) {
+export default function mat3(m00? : Matrix3Values9 | number, m01? : number, m02? : number, m10? : number, m11? : number, m12? : number, m20? : number, m21? : number, m22? : number) {
+    if (m00 === undefined) return new Matrix3
     if (typeof m00 === 'number') return new Matrix3({ values : [
         m00, m01, m02,
         m10, m11, m12,
