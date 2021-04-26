@@ -4,12 +4,7 @@ export default class Matrix2 {
         return new Matrix2({ values })
     }
     public static rowMajor(values : Matrix2Values4) {
-        const [ a, b, c, d ] = values
-
-        return new Matrix2({ values : [
-            a, c,
-            b, d,
-        ] })
+        return transpose(mat2(values))
     }
 
     /**
@@ -39,3 +34,5 @@ export default class Matrix2 {
 import Matrix2Columns from './matrix2-columns'
 import Matrix2Rows from './matrix2-rows'
 import Matrix2Values4 from './matrix2-values4'
+import mat2 from './mat2'
+import transpose from './transpose-matrix2'
