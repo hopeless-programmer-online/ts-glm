@@ -25,6 +25,7 @@ it('should match expected interface', () => {
     expect(glm).toHaveProperty('dot')
     expect(glm).toHaveProperty('multiplyNumber2Vector2')
     expect(glm).toHaveProperty('multiplyNumber2Matrix2')
+    expect(glm).toHaveProperty('multiplyNumberMatrix3')
     expect(glm).toHaveProperty('multiplyVector2Number')
     expect(glm).toHaveProperty('multiplyVector2Vector2')
     expect(glm).toHaveProperty('multiplyMatrix2Number')
