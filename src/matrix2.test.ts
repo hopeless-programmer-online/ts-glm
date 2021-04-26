@@ -1,7 +1,10 @@
 import { Matrix2 } from './glm'
 
 it('should export defaultValues', () => {
-    expect(Matrix2.defaultValues).toMatchObject([ 1, 0, 0, 1 ])
+    expect(Matrix2.defaultValues).toMatchObject([
+        1, 0,
+        0, 1,
+    ])
 })
 it('should implement columnMajor()', () => {
     expect(Matrix2.columnMajor([ 1, 2, 3, 4 ])).toMatchObject({
