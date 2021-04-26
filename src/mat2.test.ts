@@ -1,5 +1,11 @@
 import { mat2, rotate2 } from './glm'
 
+it('should support empty arguments', () => {
+    const m = mat2()
+
+    expect(m[0]).toMatchObject({ x : 1, y : 0 })
+    expect(m[1]).toMatchObject({ x : 0, y : 1 })
+})
 it('should support 4 numbers', () => {
     const m = mat2(
         1, 2,

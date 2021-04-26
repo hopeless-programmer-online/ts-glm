@@ -1,7 +1,9 @@
+export default function mat2() : Matrix2;
 export default function mat2(values : Matrix2Values4) : Matrix2;
 export default function mat2(m00 : number, m01 : number, m10 : number, m11 : number) : Matrix2;
 
-export default function mat2(m00 : Matrix2Values4 | number, m01? : number, m10? : number, m11? : number) {
+export default function mat2(m00? : Matrix2Values4 | number, m01? : number, m10? : number, m11? : number) {
+    if (m00 === undefined) return new Matrix2
     if (typeof m00 === 'number') return new Matrix2({ values : [
         m00, m01,
         m10, m11,
