@@ -1,4 +1,5 @@
 export default class Matrix2 {
+    public static defaultValues : Matrix2Values4 = [ 1, 0, 0, 1 ]
     public static columnMajor(values : Matrix2Values4) {
         return new Matrix2({ values })
     }
@@ -16,8 +17,8 @@ export default class Matrix2 {
      */
     private values : Matrix2Values4
 
-    public constructor({ values } : { values : Matrix2Values4 }) {
-        this.values = [ ...values ]
+    public constructor({ values } : { values? : Matrix2Values4 } = {}) {
+        this.values = [ ...(values || Matrix2.defaultValues) ]
     }
 
     public get columns() {

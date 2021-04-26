@@ -1,5 +1,8 @@
 import { Matrix2 } from './glm'
 
+it('should export defaultValues', () => {
+    expect(Matrix2.defaultValues).toMatchObject([ 1, 0, 0, 1 ])
+})
 it('should implement columnMajor()', () => {
     expect(Matrix2.columnMajor([ 1, 2, 3, 4 ])).toMatchObject({
         0 : {
@@ -16,6 +19,14 @@ it('should implement rowMajor()', () => {
     expect(Matrix2.rowMajor([ 1, 2, 3, 4 ])).toMatchObject({
         0 : { x : 1, y : 3 },
         1 : { x : 2, y : 4 },
+    })
+})
+it('should implement constructor without arguments', () => {
+    const m = new Matrix2
+
+    expect(m).toMatchObject({
+        0 : { x : 1, y : 0 },
+        1 : { x : 0, y : 1 },
     })
 })
 it('should support [] getters/setters', () => {
