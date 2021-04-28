@@ -34,6 +34,7 @@ import dotVector4Vector4 from './dot-vector4-vector4'
 
 import lengthVector2 from './length-vector2'
 import lengthVector3 from './length-vector3'
+import lengthVector4 from './length-vector4'
 
 it('should be object', () => {
     expect(typeof glm).toBe('object')
@@ -115,4 +116,7 @@ it('should export lengthVector2', () => {
 })
 it('should export lengthVector3', () => {
     expect(glm).toHaveProperty('lengthVector3', lengthVector3)
+})
+it('should export lengthVector4', () => {
+    expect(glm).toHaveProperty('lengthVector4', lengthVector4)
 })
