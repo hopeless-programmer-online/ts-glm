@@ -31,3 +31,4 @@ export { default as dotVector3Vector3 } from './dot-vector3-vector3'
 export { default as dotVector4Vector4 } from './dot-vector4-vector4'
 
 export { default as lengthVector2 } from './length-vector2'
+export { default as lengthVector3 } from './length-vector3'
