@@ -5,7 +5,7 @@ export default class NumberVector3 extends Vector3 {
     private _y : number
     private _z : number
 
-    public constructor({ x, y, z } : { x : number, y : number, z : number }) {
+    public constructor({ x = Vector3.default.x, y = Vector3.default.y, z = Vector3.default.z } : { x? : number, y? : number, z? : number } = {}) {
         super()
 
         this._x = x
