@@ -4,7 +4,7 @@ export default class NumberVector2 extends Vector2 {
     private _x : number
     private _y : number
 
-    public constructor({ x, y } : { x : number, y : number }) {
+    public constructor({ x = Vector2.default.x, y = Vector2.default.y } : { x? : number, y? : number } = {}) {
         super()
 
         this._x = x
