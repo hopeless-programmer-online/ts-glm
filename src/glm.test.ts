@@ -9,6 +9,7 @@ import NumberVector3 from './number-vector3'
 import NumberVector4 from './number-vector4'
 
 import vec2 from './vec2'
+import vec3 from './vec3'
 
 import addVector2Vector2 from './add-vector2-vector2'
 import addVector3Vector3 from './add-vector3-vector3'
@@ -53,6 +54,9 @@ it('should export NumberVector4', () => {
 })
 it('should export vec2', () => {
     expect(glm).toHaveProperty('vec2', vec2)
+})
+it('should export vec3', () => {
+    expect(glm).toHaveProperty('vec3', vec3)
 })
 it('should export addVector2Vector2', () => {
     expect(glm).toHaveProperty('addVector2Vector2', addVector2Vector2)
