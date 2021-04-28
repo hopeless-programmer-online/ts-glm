@@ -6,7 +6,7 @@ export default class NumberVector4 extends Vector4 {
     private _z : number
     private _w : number
 
-    public constructor({ x, y, z, w } : { x : number, y : number, z : number, w : number }) {
+    public constructor({ x = Vector4.default.x, y = Vector4.default.y, z = Vector4.default.z, w = Vector4.default.w } : { x? : number, y? : number, z? : number, w? : number } = {}) {
         super()
 
         this._x = x
