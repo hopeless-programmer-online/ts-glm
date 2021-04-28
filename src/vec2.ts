@@ -1,4 +1,9 @@
-export default function vec2(x : number, y : number) : Vector2 {
+export default function vec2() : Vector2;
+export default function vec2(x : number, y : number) : Vector2;
+
+export default function vec2(x? : number, y? : number) : Vector2 {
+    if (x === undefined) return new NumberVector2
+
     return new NumberVector2({ x, y })
 }
 
