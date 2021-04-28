@@ -24,6 +24,8 @@ import divideVector2Vector2 from './divide-vector2-vector2'
 import divideVector3Vector3 from './divide-vector3-vector3'
 import divideVector4Vector4 from './divide-vector4-vector4'
 
+import dotVector2Vector2 from './dot-vector2-vector2'
+
 it('should be object', () => {
     expect(typeof glm).toBe('object')
 })
@@ -80,4 +82,7 @@ it('should export divideVector3Vector3', () => {
 })
 it('should export divideVector4Vector4', () => {
     expect(glm).toHaveProperty('divideVector4Vector4', divideVector4Vector4)
+})
+it('should export dotVector2Vector2', () => {
+    expect(glm).toHaveProperty('dotVector2Vector2', dotVector2Vector2)
 })
