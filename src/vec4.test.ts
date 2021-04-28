@@ -8,6 +8,14 @@ it('should accept nothing', () => {
         w : Vector4.default.w,
     })
 })
+it('should accept single scalar', () => {
+    expect(vec4(5)).toMatchObject<Vector4>({
+        x : 5,
+        y : 5,
+        z : 5,
+        w : 5,
+    })
+})
 it('should accept x, y, z, w', () => {
     expect(vec4(1, 2, 3, 4)).toMatchObject<Vector4>({
         x : 1,
