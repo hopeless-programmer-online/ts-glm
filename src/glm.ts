@@ -11,3 +11,4 @@ export { default as addVector3Vector3 } from './add-vector3-vector3'
 export { default as addVector4Vector4 } from './add-vector4-vector4'
 
 export { default as subtractVector2Vector2 } from './subtract-vector2-vector2'
+export { default as subtractVector3Vector3 } from './subtract-vector3-vector3'
