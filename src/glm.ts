@@ -17,3 +17,7 @@ export { default as subtractVector4Vector4 } from './subtract-vector4-vector4'
 export { default as multiplyVector2Vector2 } from './multiply-vector2-vector2'
 export { default as multiplyVector3Vector3 } from './multiply-vector3-vector3'
 export { default as multiplyVector4Vector4 } from './multiply-vector4-vector4'
+
+export { default as divideVector2Vector2 } from './divide-vector2-vector2'
+export { default as divideVector3Vector3 } from './divide-vector3-vector3'
+export { default as divideVector4Vector4 } from './divide-vector4-vector4'

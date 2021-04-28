@@ -20,6 +20,10 @@ import multiplyVector2Vector2 from './multiply-vector2-vector2'
 import multiplyVector3Vector3 from './multiply-vector3-vector3'
 import multiplyVector4Vector4 from './multiply-vector4-vector4'
 
+import divideVector2Vector2 from './divide-vector2-vector2'
+import divideVector3Vector3 from './divide-vector3-vector3'
+import divideVector4Vector4 from './divide-vector4-vector4'
+
 it('should be object', () => {
     expect(typeof glm).toBe('object')
 })
@@ -67,4 +71,13 @@ it('should export multiplyVector3Vector3', () => {
 })
 it('should export multiplyVector4Vector4', () => {
     expect(glm).toHaveProperty('multiplyVector4Vector4', multiplyVector4Vector4)
+})
+it('should export divideVector2Vector2', () => {
+    expect(glm).toHaveProperty('divideVector2Vector2', divideVector2Vector2)
+})
+it('should export divideVector3Vector3', () => {
+    expect(glm).toHaveProperty('divideVector3Vector3', divideVector3Vector3)
+})
+it('should export divideVector4Vector4', () => {
+    expect(glm).toHaveProperty('divideVector4Vector4', divideVector4Vector4)
 })
