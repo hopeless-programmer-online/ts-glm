@@ -16,6 +16,8 @@ import subtractVector2Vector2 from './subtract-vector2-vector2'
 import subtractVector3Vector3 from './subtract-vector3-vector3'
 import subtractVector4Vector4 from './subtract-vector4-vector4'
 
+import multiplyVector2Vector2 from './multiply-vector2-vector2'
+
 it('should be object', () => {
     expect(typeof glm).toBe('object')
 })
@@ -54,4 +56,7 @@ it('should export subtractVector3Vector3', () => {
 })
 it('should export subtractVector4Vector4', () => {
     expect(glm).toHaveProperty('subtractVector4Vector4', subtractVector4Vector4)
+})
+it('should export multiplyVector2Vector2', () => {
+    expect(glm).toHaveProperty('multiplyVector2Vector2', multiplyVector2Vector2)
 })
