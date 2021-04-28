@@ -1,10 +1,14 @@
 import * as glm from './glm'
+
 import Vector2 from './vector2'
 import Vector3 from './vector3'
 import Vector4 from './vector4'
+
 import NumberVector2 from './number-vector2'
 import NumberVector3 from './number-vector3'
 import NumberVector4 from './number-vector4'
+
+import addVector2Vector2 from './add-vector2-vector2'
 
 it('should be object', () => {
     expect(typeof glm).toBe('object')
@@ -26,4 +30,7 @@ it('should export NumberVector3', () => {
 })
 it('should export NumberVector4', () => {
     expect(glm).toHaveProperty('NumberVector4', NumberVector4)
+})
+it('should export addVector2Vector2', () => {
+    expect(glm).toHaveProperty('addVector2Vector2', addVector2Vector2)
 })
