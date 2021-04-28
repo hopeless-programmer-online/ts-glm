@@ -15,3 +15,4 @@ export { default as subtractVector3Vector3 } from './subtract-vector3-vector3'
 export { default as subtractVector4Vector4 } from './subtract-vector4-vector4'
 
 export { default as multiplyVector2Vector2 } from './multiply-vector2-vector2'
+export { default as multiplyVector3Vector3 } from './multiply-vector3-vector3'
