@@ -23,3 +23,4 @@ export { default as divideVector3Vector3 } from './divide-vector3-vector3'
 export { default as divideVector4Vector4 } from './divide-vector4-vector4'
 
 export { default as dotVector2Vector2 } from './dot-vector2-vector2'
+export { default as dotVector3Vector3 } from './dot-vector3-vector3'
