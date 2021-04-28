@@ -8,6 +8,7 @@ export { default as NumberVector4 } from './number-vector4'
 
 export { default as vec2 } from './vec2'
 export { default as vec3 } from './vec3'
+export { default as vec4 } from './vec4'
 
 export { default as addVector2Vector2 } from './add-vector2-vector2'
 export { default as addVector3Vector3 } from './add-vector3-vector3'
