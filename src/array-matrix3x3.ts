@@ -15,21 +15,11 @@ export default class ArrayMatrix3x3 extends Matrix3x3 {
         this.values = values
     }
 
-    public get [0]() {
+    public get columns() {
         const { values } = this
 
-        return new ArrayVector3({ values })
-    }
-    public get [1]() {
-        const { values } = this
-
-        return new ArrayVector3({ values, offset : 3 })
-    }
-    public get [2]() {
-        const { values } = this
-
-        return new ArrayVector3({ values, offset : 6 })
+        return new ArrayMatrix3x3Columns({ values })
     }
 }
 
-import ArrayVector3 from './array-vector3'
+import ArrayMatrix3x3Columns from './array-matrix3x3-columns'
