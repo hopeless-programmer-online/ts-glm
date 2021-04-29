@@ -55,6 +55,7 @@ export { default as multiplyVector3Vector3 } from './multiply-vector3-vector3'
 export { default as multiplyVector4Vector4 } from './multiply-vector4-vector4'
 
 export { default as multiplyMatrix2x2Vector2 } from './multiply-matrix2x2-vector2'
+export { default as multiplyMatrix3x3Vector3 } from './multiply-matrix3x3-vector3'
 
 export { default as divideVector2Vector2 } from './divide-vector2-vector2'
 export { default as divideVector3Vector3 } from './divide-vector3-vector3'

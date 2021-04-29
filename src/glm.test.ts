@@ -57,6 +57,7 @@ import multiplyVector3Vector3 from './multiply-vector3-vector3'
 import multiplyVector4Vector4 from './multiply-vector4-vector4'
 
 import multiplyMatrix2x2Vector2 from './multiply-matrix2x2-vector2'
+import multiplyMatrix3x3Vector3 from './multiply-matrix3x3-vector3'
 
 import divideVector2Vector2 from './divide-vector2-vector2'
 import divideVector3Vector3 from './divide-vector3-vector3'
@@ -201,6 +202,9 @@ it('should export multiplyVector4Vector4', () => {
 })
 it('should export multiplyMatrix2x2Vector2', () => {
     expect(glm).toHaveProperty('multiplyMatrix2x2Vector2', multiplyMatrix2x2Vector2)
+})
+it('should export multiplyMatrix3x3Vector3', () => {
+    expect(glm).toHaveProperty('multiplyMatrix3x3Vector3', multiplyMatrix3x3Vector3)
 })
 it('should export divideVector2Vector2', () => {
     expect(glm).toHaveProperty('divideVector2Vector2', divideVector2Vector2)
