@@ -60,6 +60,7 @@ export { default as multiplyMatrix4x4Vector4 } from './multiply-matrix4x4-vector
 
 export { default as multiplyMatrix2x2Matrix2x2 } from './multiply-matrix2x2-matrix2x2'
 export { default as multiplyMatrix3x3Matrix3x3 } from './multiply-matrix3x3-matrix3x3'
+export { default as multiplyMatrix4x4Matrix4x4 } from './multiply-matrix4x4-matrix4x4'
 
 export { default as divideVector2Vector2 } from './divide-vector2-vector2'
 export { default as divideVector3Vector3 } from './divide-vector3-vector3'
