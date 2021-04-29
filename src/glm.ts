@@ -6,6 +6,8 @@ export { default as NumberVector2 } from './number-vector2'
 export { default as NumberVector3 } from './number-vector3'
 export { default as NumberVector4 } from './number-vector4'
 
+export { default as ArrayVector2 } from './array-vector2'
+
 export { default as vec2 } from './vec2'
 export { default as vec3 } from './vec3'
 export { default as vec4 } from './vec4'
