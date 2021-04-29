@@ -10,6 +10,7 @@ export { default as NumberVector4 } from './number-vector4'
 
 export { default as ArrayVector2 } from './array-vector2'
 export { default as ArrayVector3 } from './array-vector3'
+export { default as ArrayVector4 } from './array-vector4'
 
 export { default as ArrayMatrix2x2 } from './array-matrix2x2'
 

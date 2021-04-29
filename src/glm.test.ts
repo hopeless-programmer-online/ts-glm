@@ -12,6 +12,7 @@ import NumberVector4 from './number-vector4'
 
 import ArrayVector2 from './array-vector2'
 import ArrayVector3 from './array-vector3'
+import ArrayVector4 from './array-vector4'
 
 import ArrayMatrix2x2 from './array-matrix2x2'
 
@@ -72,6 +73,9 @@ it('should export ArrayVector2', () => {
 })
 it('should export ArrayVector3', () => {
     expect(glm).toHaveProperty('ArrayVector3', ArrayVector3)
+})
+it('should export ArrayVector4', () => {
+    expect(glm).toHaveProperty('ArrayVector4', ArrayVector4)
 })
 it('should export ArrayMatrix2x2', () => {
     expect(glm).toHaveProperty('ArrayMatrix2x2', ArrayMatrix2x2)
