@@ -21,7 +21,12 @@ export default class ArrayMatrix4x4 extends Matrix4x4 {
 
         return new ArrayMatrix4x4Columns({ values })
     }
+    public get rows() {
+        const { values } = this
+
+        return new ArrayMatrix4x4Rows({ values })
+    }
 }
 
 import ArrayMatrix4x4Columns from './array-matrix4x4-columns'
-
+import ArrayMatrix4x4Rows from './array-matrix4x4-rows'

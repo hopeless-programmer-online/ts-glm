@@ -1,5 +1,6 @@
 export default abstract class Matrix4x4 {
     public abstract get columns() : Matrix4x4Columns
+    public abstract get rows() : Matrix4x4Rows
 
     public get [0]() {
         return this.columns[0]
@@ -16,3 +17,4 @@ export default abstract class Matrix4x4 {
 }
 
 import Matrix4x4Columns from './matrix4x4-columns'
+import Matrix4x4Rows from './matrix4x4-rows'
