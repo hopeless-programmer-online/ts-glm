@@ -1,10 +1,22 @@
-import { ArrayVector2 } from './glm'
+import { ArrayVector2, Vector2 } from './glm'
 
 it('should export default values', () => {
     expect(ArrayVector2.default).toMatchObject({
         offset : 0,
         stride : 1,
     })
+})
+it('should has constructor()', () => {
+    const v = new ArrayVector2
+
+    expect(v.x).toBe(Vector2.default.x)
+    expect(v.y).toBe(Vector2.default.y)
+})
+it('should has constructor({})', () => {
+    const v = new ArrayVector2({})
+
+    expect(v.x).toBe(Vector2.default.x)
+    expect(v.y).toBe(Vector2.default.y)
 })
 it('should has constructor({ values })', () => {
     const values = [ 1, 2 ]

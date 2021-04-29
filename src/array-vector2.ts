@@ -8,6 +8,7 @@ type Index = number
 export default class ArrayVector2 extends Vector2 {
     public static default = {
         ...Vector2.default,
+        value : [ Vector2.default.x, Vector2.default.y ],
         offset : 0,
         stride : 1,
     }
@@ -20,7 +21,7 @@ export default class ArrayVector2 extends Vector2 {
     private readonly offset : Offset
     private readonly stride : Stride
 
-    public constructor({ values, offset = ArrayVector2.default.offset, stride = ArrayVector2.default.stride } : { values : Values, offset? : Offset, stride? : Stride }) {
+    public constructor({ values = ArrayVector2.default.value, offset = ArrayVector2.default.offset, stride = ArrayVector2.default.stride } : { values? : Values, offset? : Offset, stride? : Stride } = {}) {
         super()
 
         this.values = values
