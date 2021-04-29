@@ -20,6 +20,12 @@ export default class ArrayMatrix3x3 extends Matrix3x3 {
 
         return new ArrayMatrix3x3Columns({ values })
     }
+    public get rows() {
+        const { values } = this
+
+        return new ArrayMatrix3x3Rows({ values })
+    }
 }
 
 import ArrayMatrix3x3Columns from './array-matrix3x3-columns'
+import ArrayMatrix3x3Rows from './array-matrix3x3-rows'

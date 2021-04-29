@@ -36,3 +36,14 @@ it('accessor vector3 should change matrix', () => {
         2 : { x : 17, y : 18, z : 19 },
     })
 })
+it('should provide rows', () => {
+    expect(new ArrayMatrix3x3({ values : [
+        1, 2, 3,
+        4, 5, 6,
+        7, 8, 9,
+    ] })).toMatchObject({ rows : {
+        0 : { x : 1, y : 4, z : 7 },
+        1 : { x : 2, y : 5, z : 8 },
+        2 : { x : 3, y : 6, z : 9 },
+    } })
+})
