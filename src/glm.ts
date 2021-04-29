@@ -3,6 +3,7 @@ export { default as Vector3 } from './vector3'
 export { default as Vector4 } from './vector4'
 
 export { default as Matrix2x2 } from './matrix2x2'
+export { default as Matrix3x3 } from './matrix3x3'
 
 export { default as NumberVector2 } from './number-vector2'
 export { default as NumberVector3 } from './number-vector3'
@@ -13,6 +14,7 @@ export { default as ArrayVector3 } from './array-vector3'
 export { default as ArrayVector4 } from './array-vector4'
 
 export { default as ArrayMatrix2x2 } from './array-matrix2x2'
+export { default as ArrayMatrix3x3 } from './array-matrix3x3'
 
 export { default as vec2 } from './vec2'
 export { default as vec3 } from './vec3'
