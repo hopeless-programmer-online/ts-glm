@@ -16,26 +16,12 @@ export default class ArrayMatrix4x4 extends Matrix4x4 {
         this.values = values
     }
 
-    public get [0]() {
+    public get columns() {
         const { values } = this
 
-        return new ArrayVector4({ values })
-    }
-    public get [1]() {
-        const { values } = this
-
-        return new ArrayVector4({ values, offset : 4 })
-    }
-    public get [2]() {
-        const { values } = this
-
-        return new ArrayVector4({ values, offset : 8 })
-    }
-    public get [3]() {
-        const { values } = this
-
-        return new ArrayVector4({ values, offset : 12 })
+        return new ArrayMatrix4x4Columns({ values })
     }
 }
 
-import ArrayVector4 from './array-vector4'
+import ArrayMatrix4x4Columns from './array-matrix4x4-columns'
+
