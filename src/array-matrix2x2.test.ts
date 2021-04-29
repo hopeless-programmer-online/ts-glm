@@ -27,3 +27,12 @@ it('accessor vector2 should change matrix', () => {
         1 : { x : 7, y : 8 },
     })
 })
+it('should provide rows', () => {
+    expect(new ArrayMatrix2x2({ values : [
+        1, 2,
+        3, 4,
+    ] })).toMatchObject({ rows : {
+        0 : { x : 1, y : 3 },
+        1 : { x : 2, y : 4 },
+    } })
+})

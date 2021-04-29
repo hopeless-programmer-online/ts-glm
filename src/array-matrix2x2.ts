@@ -16,7 +16,13 @@ export default class ArrayMatrix2x2 extends Matrix2x2 {
 
         return new ArrayMatrix2x2Columns({ values })
     }
+    public get rows() {
+        const { values } = this
+
+        return new ArrayMatrix2x2Rows({ values })
+    }
 }
 
 import ArrayMatrix2x2Columns from './array-matrix2x2-columns'
+import ArrayMatrix2x2Rows from './array-matrix2x2-rows'
 
