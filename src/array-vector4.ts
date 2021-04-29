@@ -1,4 +1,4 @@
-import Vector4 from './Vector4'
+import Vector4 from './vector4'
 
 type Values = number[]
 type Offset = number
