@@ -2,6 +2,7 @@ import { ArrayVector2, Vector2 } from './glm'
 
 it('should export default values', () => {
     expect(ArrayVector2.default).toMatchObject({
+        values : [ Vector2.default.x, Vector2.default.y ],
         offset : 0,
         stride : 1,
     })
@@ -63,4 +64,14 @@ it('should has y setter', () => {
 
     expect(v.y).toBe(5)
     expect(values).toMatchObject([ 1, 5 ])
+})
+it('vectors created with default constructor should refer to different values', () => {
+    const a = new ArrayVector2
+    const b = new ArrayVector2
+
+    a.x = 1
+    a.y = 2
+
+    expect(a).toMatchObject({ x : 1, y : 2 })
+    expect(b).toMatchObject({ x : 0, y : 0 })
 })
