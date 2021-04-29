@@ -8,6 +8,8 @@ import Matrix2x2 from './matrix2x2'
 import Matrix3x3 from './matrix3x3'
 import Matrix4x4 from './matrix4x4'
 
+import Matrix2x2Columns from './matrix2x2-columns'
+
 import NumberVector2 from './number-vector2'
 import NumberVector3 from './number-vector3'
 import NumberVector4 from './number-vector4'
@@ -19,6 +21,8 @@ import ArrayVector4 from './array-vector4'
 import ArrayMatrix2x2 from './array-matrix2x2'
 import ArrayMatrix3x3 from './array-matrix3x3'
 import ArrayMatrix4x4 from './array-matrix4x4'
+
+import ArrayMatrix2x2Columns from './array-matrix2x2-columns'
 
 import vec2 from './vec2'
 import vec3 from './vec3'
@@ -69,6 +73,9 @@ it('should export Matrix3x3', () => {
 it('should export Matrix4x4', () => {
     expect(glm).toHaveProperty('Matrix4x4', Matrix4x4)
 })
+it('should export Matrix2x2Columns', () => {
+    expect(glm).toHaveProperty('Matrix2x2Columns', Matrix2x2Columns)
+})
 it('should export NumberVector2', () => {
     expect(glm).toHaveProperty('NumberVector2', NumberVector2)
 })
@@ -95,6 +102,9 @@ it('should export ArrayMatrix3x3', () => {
 })
 it('should export ArrayMatrix4x4', () => {
     expect(glm).toHaveProperty('ArrayMatrix4x4', ArrayMatrix4x4)
+})
+it('should export ArrayMatrix2x2Columns', () => {
+    expect(glm).toHaveProperty('ArrayMatrix2x2Columns', ArrayMatrix2x2Columns)
 })
 it('should export vec2', () => {
     expect(glm).toHaveProperty('vec2', vec2)

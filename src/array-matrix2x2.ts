@@ -11,16 +11,12 @@ export default class ArrayMatrix2x2 extends Matrix2x2 {
         this.values = values
     }
 
-    public get [0]() {
+    public get columns() {
         const { values } = this
 
-        return new ArrayVector2({ values })
-    }
-    public get [1]() {
-        const { values } = this
-
-        return new ArrayVector2({ values, offset : 2 })
+        return new ArrayMatrix2x2Columns({ values })
     }
 }
 
-import ArrayVector2 from './array-vector2'
+import ArrayMatrix2x2Columns from './array-matrix2x2-columns'
+
