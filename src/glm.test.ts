@@ -40,6 +40,8 @@ import vec2 from './vec2'
 import vec3 from './vec3'
 import vec4 from './vec4'
 
+import mat2 from './mat2'
+
 import addVector2Vector2 from './add-vector2-vector2'
 import addVector3Vector3 from './add-vector3-vector3'
 import addVector4Vector4 from './add-vector4-vector4'
@@ -156,6 +158,9 @@ it('should export vec3', () => {
 })
 it('should export vec4', () => {
     expect(glm).toHaveProperty('vec4', vec4)
+})
+it('should export mat2', () => {
+    expect(glm).toHaveProperty('mat2', mat2)
 })
 it('should export addVector2Vector2', () => {
     expect(glm).toHaveProperty('addVector2Vector2', addVector2Vector2)
