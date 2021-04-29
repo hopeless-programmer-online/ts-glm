@@ -6,16 +6,21 @@ type Stride = number
 type Index = number
 
 export default class ArrayVector2 extends Vector2 {
+    public static default = {
+        ...Vector2.default,
+        offset : 0,
+        stride : 1,
+    }
     public static index = {
         x : 0,
         y : 1,
     }
 
-    private values : Values
-    private offset : Offset
-    private stride : Stride
+    private readonly values : Values
+    private readonly offset : Offset
+    private readonly stride : Stride
 
-    public constructor({ values, offset, stride } : { values : Values, offset : Offset, stride : Stride }) {
+    public constructor({ values, offset = ArrayVector2.default.offset, stride = ArrayVector2.default.stride } : { values : Values, offset? : Offset, stride? : Stride }) {
         super()
 
         this.values = values
