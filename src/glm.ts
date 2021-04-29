@@ -39,6 +39,7 @@ export { default as vec3 } from './vec3'
 export { default as vec4 } from './vec4'
 
 export { default as mat2 } from './mat2'
+export { default as mat3 } from './mat3'
 
 export { default as addVector2Vector2 } from './add-vector2-vector2'
 export { default as addVector3Vector3 } from './add-vector3-vector3'
