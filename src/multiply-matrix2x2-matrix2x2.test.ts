@@ -1,6 +1,6 @@
 import { mat2, multiplyMatrix2x2Matrix2x2 as mul } from './glm'
 
-it('should multiply mat2 and vec2', () => {
+it('should multiply mat2 and mat2', () => {
     expect(mul(
         mat2(
             1, 2,
