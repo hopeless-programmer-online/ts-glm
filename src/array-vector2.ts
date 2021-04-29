@@ -3,7 +3,7 @@ import Vector2 from './vector2'
 type Values = number[]
 type Offset = number
 type Stride = number
-type Index = number
+type Index = 0 | 1
 
 export default class ArrayVector2 extends Vector2 {
     public static default = {
@@ -13,8 +13,8 @@ export default class ArrayVector2 extends Vector2 {
         stride : 1,
     }
     public static index = {
-        x : 0,
-        y : 1,
+        x : 0 as Index,
+        y : 1 as Index,
     }
 
     private readonly values : Values
