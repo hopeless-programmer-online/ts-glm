@@ -1,7 +1,7 @@
 import { vec4, Vector4 } from './glm'
 
 it('should accept nothing', () => {
-    expect(vec4()).toMatchObject<Vector4>({
+    expect(vec4()).toMatchObject({
         x : Vector4.default.x,
         y : Vector4.default.y,
         z : Vector4.default.z,
@@ -9,7 +9,7 @@ it('should accept nothing', () => {
     })
 })
 it('should accept single scalar', () => {
-    expect(vec4(5)).toMatchObject<Vector4>({
+    expect(vec4(5)).toMatchObject({
         x : 5,
         y : 5,
         z : 5,
@@ -17,7 +17,7 @@ it('should accept single scalar', () => {
     })
 })
 it('should accept x, y, z, w', () => {
-    expect(vec4(1, 2, 3, 4)).toMatchObject<Vector4>({
+    expect(vec4(1, 2, 3, 4)).toMatchObject({
         x : 1,
         y : 2,
         z : 3,
