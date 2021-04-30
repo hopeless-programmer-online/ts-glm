@@ -42,7 +42,8 @@ export { default as mat2 } from './mat2'
 export { default as mat3 } from './mat3'
 export { default as mat4 } from './mat4'
 
-export { default as transposeMatrix2x2 } from './transposeMatrix2x2'
+export { default as transposeMatrix2x2 } from './transpose-matrix2x2'
+export { default as transposeMatrix3x3 } from './transpose-matrix3x3'
 
 export { default as addVector2Vector2 } from './add-vector2-vector2'
 export { default as addVector3Vector3 } from './add-vector3-vector3'

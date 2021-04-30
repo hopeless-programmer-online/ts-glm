@@ -44,7 +44,8 @@ import mat2 from './mat2'
 import mat3 from './mat3'
 import mat4 from './mat4'
 
-import transposeMatrix2x2 from './transposeMatrix2x2'
+import transposeMatrix2x2 from './transpose-matrix2x2'
+import transposeMatrix3x3 from './transpose-matrix3x3'
 
 import addVector2Vector2 from './add-vector2-vector2'
 import addVector3Vector3 from './add-vector3-vector3'
@@ -182,6 +183,9 @@ it('should export mat4', () => {
 })
 it('should export transposeMatrix2x2', () => {
     expect(glm).toHaveProperty('transposeMatrix2x2', transposeMatrix2x2)
+})
+it('should export transposeMatrix3x3', () => {
+    expect(glm).toHaveProperty('transposeMatrix3x3', transposeMatrix3x3)
 })
 it('should export addVector2Vector2', () => {
     expect(glm).toHaveProperty('addVector2Vector2', addVector2Vector2)
