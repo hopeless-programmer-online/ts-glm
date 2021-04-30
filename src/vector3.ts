@@ -7,4 +7,10 @@ export default abstract class Vector3 {
     public abstract set y(y : number)
     public abstract get z() : number
     public abstract set z(z : number)
+
+    public toString() {
+        const { x, y, z } = this
+
+        return `Vector3 { x : ${x}, y : ${y}, z : ${z} }`
+    }
 }

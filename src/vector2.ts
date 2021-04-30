@@ -5,4 +5,10 @@ export default abstract class Vector2 {
     public abstract set x(x : number)
     public abstract get y() : number
     public abstract set y(y : number)
+
+    public toString() {
+        const { x, y } = this
+
+        return `Vector2 { x : ${x}, y : ${y} }`
+    }
 }

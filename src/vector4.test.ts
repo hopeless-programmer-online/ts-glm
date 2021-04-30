@@ -1,4 +1,4 @@
-import { Vector4 } from './glm'
+import { vec4, Vector4 } from './glm'
 
 it('should export default values', () => {
     expect(Vector4.default).toMatchObject({
@@ -7,4 +7,7 @@ it('should export default values', () => {
         z : 0,
         w : 1,
     })
+})
+it('should implement toString()', () => {
+    expect(vec4(1, 2, 3, 4).toString()).toBe(`Vector4 { x : 1, y : 2, z : 3, w : 4 }`)
 })

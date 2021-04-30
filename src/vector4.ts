@@ -9,4 +9,10 @@ export default abstract class Vector4 {
     public abstract set z(z : number)
     public abstract get w() : number
     public abstract set w(w : number)
+
+    public toString() {
+        const { x, y, z, w } = this
+
+        return `Vector4 { x : ${x}, y : ${y}, z : ${z}, w : ${w} }`
+    }
 }
