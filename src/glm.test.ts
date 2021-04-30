@@ -44,8 +44,9 @@ import mat2 from './mat2'
 import mat3 from './mat3'
 import mat4 from './mat4'
 
-import matrix4x4FromMatrix3x3 from './matrix4x4-from-matrix3x3'
 import matrix3x3FromMatrix2x2 from './matrix3x3-from-matrix2x2'
+import matrix4x4FromMatrix2x2 from './matrix4x4-from-matrix2x2'
+import matrix4x4FromMatrix3x3 from './matrix4x4-from-matrix3x3'
 
 import transposeMatrix2x2 from './transpose-matrix2x2'
 import transposeMatrix3x3 from './transpose-matrix3x3'
@@ -187,11 +188,14 @@ it('should export mat3', () => {
 it('should export mat4', () => {
     expect(glm).toHaveProperty('mat4', mat4)
 })
-it('should export matrix4x4FromMatrix3x3', () => {
-    expect(glm).toHaveProperty('matrix4x4FromMatrix3x3', matrix4x4FromMatrix3x3)
-})
 it('should export matrix3x3FromMatrix2x2', () => {
     expect(glm).toHaveProperty('matrix3x3FromMatrix2x2', matrix3x3FromMatrix2x2)
+})
+it('should export matrix4x4FromMatrix2x2', () => {
+    expect(glm).toHaveProperty('matrix4x4FromMatrix2x2', matrix4x4FromMatrix2x2)
+})
+it('should export matrix4x4FromMatrix3x3', () => {
+    expect(glm).toHaveProperty('matrix4x4FromMatrix3x3', matrix4x4FromMatrix3x3)
 })
 it('should export transposeMatrix2x2', () => {
     expect(glm).toHaveProperty('transposeMatrix2x2', transposeMatrix2x2)
