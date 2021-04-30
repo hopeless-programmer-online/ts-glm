@@ -8,6 +8,18 @@ it('should export default values', () => {
         w : 1,
     })
 })
+it('should implement index accessors', () => {
+    const v = vec4(1, 2, 3, 4)
+
+    expect(v).toMatchObject({ 0 : 1, 1 : 2, 2 : 3, 3 : 4 })
+
+    v[0] = 5
+    v[1] = 6
+    v[2] = 7
+    v[3] = 8
+
+    expect(v).toMatchObject({ 0 : 5, 1 : 6, 2 : 7, 3 : 8 })
+})
 it('should implement toArray()', () => {
     expect(vec4(1, 2, 3, 4).toArray()).toMatchObject([ 1, 2, 3, 4 ])
 })
