@@ -2,7 +2,8 @@
   "name": "ts-glm",
   "version": "0.1.0",
   "description": "",
-  "main": "dist/glm",
+  "main": "./dist/glm.js",
+  "exports": "./dist/glm.js",
   "scripts": {
     "build": "tsc",
     "b": "npm run build",
