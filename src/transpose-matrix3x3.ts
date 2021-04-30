@@ -1,8 +1,8 @@
 export default function transposeMatrix3x3(m : Matrix3x3) : Matrix3x3 {
     return mat3(
-        m[0].x, m[1].x, m[2].x,
-        m[0].y, m[1].y, m[2].y,
-        m[0].z, m[1].z, m[2].z,
+        m[0][0], m[1][0], m[2][0],
+        m[0][1], m[1][1], m[2][1],
+        m[0][2], m[1][2], m[2][2],
     )
 }
 

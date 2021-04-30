@@ -1,7 +1,7 @@
 export default function transposeMatrix2x2(m : Matrix2x2) : Matrix2x2 {
     return mat2(
-        m[0].x, m[1].x,
-        m[0].y, m[1].y,
+        m[0][0], m[1][0],
+        m[0][1], m[1][1],
     )
 }
 

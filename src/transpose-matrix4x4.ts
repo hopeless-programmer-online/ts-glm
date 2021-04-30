@@ -1,9 +1,9 @@
 export default function transposeMatrix4x4(m : Matrix4x4) : Matrix4x4 {
     return mat4(
-        m[0].x, m[1].x, m[2].x, m[3].x,
-        m[0].y, m[1].y, m[2].y, m[3].y,
-        m[0].z, m[1].z, m[2].z, m[3].z,
-        m[0].w, m[1].w, m[2].w, m[3].w,
+        m[0][0], m[1][0], m[2][0], m[3][0],
+        m[0][1], m[1][1], m[2][1], m[3][1],
+        m[0][2], m[1][2], m[2][2], m[3][2],
+        m[0][3], m[1][3], m[2][3], m[3][3],
     )
 }
 
