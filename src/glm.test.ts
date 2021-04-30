@@ -80,6 +80,8 @@ import lengthVector2 from './length-vector2'
 import lengthVector3 from './length-vector3'
 import lengthVector4 from './length-vector4'
 
+import translate from './translate'
+
 it('should be object', () => {
     expect(typeof glm).toBe('object')
 })
@@ -262,4 +264,7 @@ it('should export lengthVector3', () => {
 })
 it('should export lengthVector4', () => {
     expect(glm).toHaveProperty('lengthVector4', lengthVector4)
+})
+it('should export translate', () => {
+    expect(glm).toHaveProperty('translate', translate)
 })
