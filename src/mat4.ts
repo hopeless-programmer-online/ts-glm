@@ -14,3 +14,6 @@ export default function mat4(
 
 import ArrayMatrix4x4 from './array-matrix4x4'
 import Matrix4x4 from './matrix4x4'
+import transposeMatrix4x4 from './transpose-matrix4x4'
+
+mat4.transpose = transposeMatrix4x4

@@ -12,3 +12,6 @@ export default function mat3(
 
 import ArrayMatrix3x3 from './array-matrix3x3'
 import Matrix3x3 from './matrix3x3'
+import transposeMatrix3x3 from './transpose-matrix3x3'
+
+mat3.transpose = transposeMatrix3x3

@@ -1,4 +1,4 @@
-import { mat3 } from './glm'
+import { mat3, transposeMatrix3x3 } from './glm'
 
 it('should accept 9 numbers', () => {
     expect(mat3(
@@ -10,4 +10,7 @@ it('should accept 9 numbers', () => {
         1 : { x : 4, y : 5, z : 6 },
         2 : { x : 7, y : 8, z : 9 },
     })
+})
+it('should export transpose', () => {
+    expect(mat3.transpose).toBe(transposeMatrix3x3)
 })
