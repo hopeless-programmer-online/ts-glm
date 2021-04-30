@@ -6,6 +6,9 @@ it('should export default values', () => {
         y : 0,
     })
 })
+it('should implement toArray()', () => {
+    expect(vec2(1, 2).toArray()).toMatchObject([ 1, 2 ])
+})
 it('should implement toString()', () => {
     expect(vec2(1, 2).toString()).toBe(`Vector2 { x : 1, y : 2 }`)
 })

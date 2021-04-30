@@ -6,6 +6,11 @@ export default abstract class Vector2 {
     public abstract get y() : number
     public abstract set y(y : number)
 
+    public toArray() {
+        const { x, y } = this
+
+        return [ x, y ]
+    }
     public toString() {
         const { x, y } = this
 

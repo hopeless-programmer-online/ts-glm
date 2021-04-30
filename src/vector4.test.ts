@@ -8,6 +8,9 @@ it('should export default values', () => {
         w : 1,
     })
 })
+it('should implement toArray()', () => {
+    expect(vec4(1, 2, 3, 4).toArray()).toMatchObject([ 1, 2, 3, 4 ])
+})
 it('should implement toString()', () => {
     expect(vec4(1, 2, 3, 4).toString()).toBe(`Vector4 { x : 1, y : 2, z : 3, w : 4 }`)
 })

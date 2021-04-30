@@ -8,6 +8,11 @@ export default abstract class Vector3 {
     public abstract get z() : number
     public abstract set z(z : number)
 
+    public toArray() {
+        const { x, y, z } = this
+
+        return [ x, y, z ]
+    }
     public toString() {
         const { x, y, z } = this
 

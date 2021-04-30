@@ -12,6 +12,13 @@ export default abstract class Matrix3x3 {
         return this.columns[2]
     }
 
+    public toArray() {
+        return [
+            ...this[0].toArray(),
+            ...this[1].toArray(),
+            ...this[2].toArray(),
+        ]
+    }
     public toString() {
         const { 0 : _0, 1 : _1, 2 : _2 } = this
 

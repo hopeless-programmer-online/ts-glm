@@ -1,5 +1,18 @@
 import { mat4 } from './glm'
 
+it('should implement toArray()', () => {
+    expect(mat4(
+        1,  2,  3,  4,
+        5,  6,  7,  8,
+        9,  10, 11, 12,
+        13, 14, 15, 16,
+    ).toArray()).toMatchObject([
+        1,  2,  3,  4,
+        5,  6,  7,  8,
+        9,  10, 11, 12,
+        13, 14, 15, 16,
+    ])
+})
 it('should implement toString()', () => {
     expect(mat4(
         1,  2,  3,  4,

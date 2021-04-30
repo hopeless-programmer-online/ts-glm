@@ -15,6 +15,14 @@ export default abstract class Matrix4x4 {
         return this.columns[3]
     }
 
+    public toArray() {
+        return [
+            ...this[0].toArray(),
+            ...this[1].toArray(),
+            ...this[2].toArray(),
+            ...this[3].toArray(),
+        ]
+    }
     public toString() {
         const { 0 : _0, 1 : _1, 2 : _2, 3 : _3 } = this
 

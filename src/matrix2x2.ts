@@ -9,6 +9,12 @@ export default abstract class Matrix2x2 {
         return this.columns[1]
     }
 
+    public toArray() {
+        return [
+            ...this[0].toArray(),
+            ...this[1].toArray(),
+        ]
+    }
     public toString() {
         const { 0 : _0, 1 : _1 } = this
 
