@@ -281,3 +281,147 @@ it('should export lengthVector4', () => {
 it('should export translate', () => {
     expect(glm).toHaveProperty('translate', translate)
 })
+
+import addNumberVector2 from './add-number-vector2'
+
+it('should export addNumberVector2', () => {
+    expect(glm).toHaveProperty('addNumberVector2', addNumberVector2)
+})
+
+import addVector2Number from './add-vector2-number'
+
+it('should export addVector2Number', () => {
+    expect(glm).toHaveProperty('addVector2Number', addVector2Number)
+})
+
+import addNumberVector3 from './add-number-vector3'
+
+it('should export addNumberVector3', () => {
+    expect(glm).toHaveProperty('addNumberVector3', addNumberVector3)
+})
+
+import addVector3Number from './add-vector3-number'
+
+it('should export addVector3Number', () => {
+    expect(glm).toHaveProperty('addVector3Number', addVector3Number)
+})
+
+import addNumberVector4 from './add-number-vector4'
+
+it('should export addNumberVector4', () => {
+    expect(glm).toHaveProperty('addNumberVector4', addNumberVector4)
+})
+
+import addVector4Number from './add-vector4-number'
+
+it('should export addVector4Number', () => {
+    expect(glm).toHaveProperty('addVector4Number', addVector4Number)
+})
+
+import subtractNumberVector2 from './subtract-number-vector2'
+
+it('should export subtractNumberVector2', () => {
+    expect(glm).toHaveProperty('subtractNumberVector2', subtractNumberVector2)
+})
+
+import subtractVector2Number from './subtract-vector2-number'
+
+it('should export subtractVector2Number', () => {
+    expect(glm).toHaveProperty('subtractVector2Number', subtractVector2Number)
+})
+
+import subtractNumberVector3 from './subtract-number-vector3'
+
+it('should export subtractNumberVector3', () => {
+    expect(glm).toHaveProperty('subtractNumberVector3', subtractNumberVector3)
+})
+
+import subtractVector3Number from './subtract-vector3-number'
+
+it('should export subtractVector3Number', () => {
+    expect(glm).toHaveProperty('subtractVector3Number', subtractVector3Number)
+})
+
+import subtractNumberVector4 from './subtract-number-vector4'
+
+it('should export subtractNumberVector4', () => {
+    expect(glm).toHaveProperty('subtractNumberVector4', subtractNumberVector4)
+})
+
+import subtractVector4Number from './subtract-vector4-number'
+
+it('should export subtractVector4Number', () => {
+    expect(glm).toHaveProperty('subtractVector4Number', subtractVector4Number)
+})
+
+import multiplyNumberVector2 from './multiply-number-vector2'
+
+it('should export multiplyNumberVector2', () => {
+    expect(glm).toHaveProperty('multiplyNumberVector2', multiplyNumberVector2)
+})
+
+import multiplyVector2Number from './multiply-vector2-number'
+
+it('should export multiplyVector2Number', () => {
+    expect(glm).toHaveProperty('multiplyVector2Number', multiplyVector2Number)
+})
+
+import multiplyNumberVector3 from './multiply-number-vector3'
+
+it('should export multiplyNumberVector3', () => {
+    expect(glm).toHaveProperty('multiplyNumberVector3', multiplyNumberVector3)
+})
+
+import multiplyVector3Number from './multiply-vector3-number'
+
+it('should export multiplyVector3Number', () => {
+    expect(glm).toHaveProperty('multiplyVector3Number', multiplyVector3Number)
+})
+
+import multiplyNumberVector4 from './multiply-number-vector4'
+
+it('should export multiplyNumberVector4', () => {
+    expect(glm).toHaveProperty('multiplyNumberVector4', multiplyNumberVector4)
+})
+
+import multiplyVector4Number from './multiply-vector4-number'
+
+it('should export multiplyVector4Number', () => {
+    expect(glm).toHaveProperty('multiplyVector4Number', multiplyVector4Number)
+})
+
+import divideNumberVector2 from './divide-number-vector2'
+
+it('should export divideNumberVector2', () => {
+    expect(glm).toHaveProperty('divideNumberVector2', divideNumberVector2)
+})
+
+import divideVector2Number from './divide-vector2-number'
+
+it('should export divideVector2Number', () => {
+    expect(glm).toHaveProperty('divideVector2Number', divideVector2Number)
+})
+
+import divideNumberVector3 from './divide-number-vector3'
+
+it('should export divideNumberVector3', () => {
+    expect(glm).toHaveProperty('divideNumberVector3', divideNumberVector3)
+})
+
+import divideVector3Number from './divide-vector3-number'
+
+it('should export divideVector3Number', () => {
+    expect(glm).toHaveProperty('divideVector3Number', divideVector3Number)
+})
+
+import divideNumberVector4 from './divide-number-vector4'
+
+it('should export divideNumberVector4', () => {
+    expect(glm).toHaveProperty('divideNumberVector4', divideNumberVector4)
+})
+
+import divideVector4Number from './divide-vector4-number'
+
+it('should export divideVector4Number', () => {
+    expect(glm).toHaveProperty('divideVector4Number', divideVector4Number)
+})
