@@ -5,7 +5,7 @@
   "main": "./dist/glm.js",
   "exports": "./dist/glm.js",
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "rimraf dist && rimraf src-auto",
     "c": "npm run clean",
     "generate": "ts-node scripts/generate.ts",
     "g": "npm run generate",

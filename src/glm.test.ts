@@ -425,3 +425,147 @@ import divideVector4Number from './divide-vector4-number'
 it('should export divideVector4Number', () => {
     expect(glm).toHaveProperty('divideVector4Number', divideVector4Number)
 })
+
+import addNumberMatrix2x2 from './add-number-matrix2x2'
+
+it('should export addNumberMatrix2x2', () => {
+    expect(glm).toHaveProperty('addNumberMatrix2x2', addNumberMatrix2x2)
+})
+
+import addMatrix2x2Number from './add-matrix2x2-number'
+
+it('should export addMatrix2x2Number', () => {
+    expect(glm).toHaveProperty('addMatrix2x2Number', addMatrix2x2Number)
+})
+
+import addNumberMatrix3x3 from './add-number-matrix3x3'
+
+it('should export addNumberMatrix3x3', () => {
+    expect(glm).toHaveProperty('addNumberMatrix3x3', addNumberMatrix3x3)
+})
+
+import addMatrix3x3Number from './add-matrix3x3-number'
+
+it('should export addMatrix3x3Number', () => {
+    expect(glm).toHaveProperty('addMatrix3x3Number', addMatrix3x3Number)
+})
+
+import addNumberMatrix4x4 from './add-number-matrix4x4'
+
+it('should export addNumberMatrix4x4', () => {
+    expect(glm).toHaveProperty('addNumberMatrix4x4', addNumberMatrix4x4)
+})
+
+import addMatrix4x4Number from './add-matrix4x4-number'
+
+it('should export addMatrix4x4Number', () => {
+    expect(glm).toHaveProperty('addMatrix4x4Number', addMatrix4x4Number)
+})
+
+import subtractNumberMatrix2x2 from './subtract-number-matrix2x2'
+
+it('should export subtractNumberMatrix2x2', () => {
+    expect(glm).toHaveProperty('subtractNumberMatrix2x2', subtractNumberMatrix2x2)
+})
+
+import subtractMatrix2x2Number from './subtract-matrix2x2-number'
+
+it('should export subtractMatrix2x2Number', () => {
+    expect(glm).toHaveProperty('subtractMatrix2x2Number', subtractMatrix2x2Number)
+})
+
+import subtractNumberMatrix3x3 from './subtract-number-matrix3x3'
+
+it('should export subtractNumberMatrix3x3', () => {
+    expect(glm).toHaveProperty('subtractNumberMatrix3x3', subtractNumberMatrix3x3)
+})
+
+import subtractMatrix3x3Number from './subtract-matrix3x3-number'
+
+it('should export subtractMatrix3x3Number', () => {
+    expect(glm).toHaveProperty('subtractMatrix3x3Number', subtractMatrix3x3Number)
+})
+
+import subtractNumberMatrix4x4 from './subtract-number-matrix4x4'
+
+it('should export subtractNumberMatrix4x4', () => {
+    expect(glm).toHaveProperty('subtractNumberMatrix4x4', subtractNumberMatrix4x4)
+})
+
+import subtractMatrix4x4Number from './subtract-matrix4x4-number'
+
+it('should export subtractMatrix4x4Number', () => {
+    expect(glm).toHaveProperty('subtractMatrix4x4Number', subtractMatrix4x4Number)
+})
+
+import multiplyNumberMatrix2x2 from './multiply-number-matrix2x2'
+
+it('should export multiplyNumberMatrix2x2', () => {
+    expect(glm).toHaveProperty('multiplyNumberMatrix2x2', multiplyNumberMatrix2x2)
+})
+
+import multiplyMatrix2x2Number from './multiply-matrix2x2-number'
+
+it('should export multiplyMatrix2x2Number', () => {
+    expect(glm).toHaveProperty('multiplyMatrix2x2Number', multiplyMatrix2x2Number)
+})
+
+import multiplyNumberMatrix3x3 from './multiply-number-matrix3x3'
+
+it('should export multiplyNumberMatrix3x3', () => {
+    expect(glm).toHaveProperty('multiplyNumberMatrix3x3', multiplyNumberMatrix3x3)
+})
+
+import multiplyMatrix3x3Number from './multiply-matrix3x3-number'
+
+it('should export multiplyMatrix3x3Number', () => {
+    expect(glm).toHaveProperty('multiplyMatrix3x3Number', multiplyMatrix3x3Number)
+})
+
+import multiplyNumberMatrix4x4 from './multiply-number-matrix4x4'
+
+it('should export multiplyNumberMatrix4x4', () => {
+    expect(glm).toHaveProperty('multiplyNumberMatrix4x4', multiplyNumberMatrix4x4)
+})
+
+import multiplyMatrix4x4Number from './multiply-matrix4x4-number'
+
+it('should export multiplyMatrix4x4Number', () => {
+    expect(glm).toHaveProperty('multiplyMatrix4x4Number', multiplyMatrix4x4Number)
+})
+
+import divideNumberMatrix2x2 from './divide-number-matrix2x2'
+
+it('should export divideNumberMatrix2x2', () => {
+    expect(glm).toHaveProperty('divideNumberMatrix2x2', divideNumberMatrix2x2)
+})
+
+import divideMatrix2x2Number from './divide-matrix2x2-number'
+
+it('should export divideMatrix2x2Number', () => {
+    expect(glm).toHaveProperty('divideMatrix2x2Number', divideMatrix2x2Number)
+})
+
+import divideNumberMatrix3x3 from './divide-number-matrix3x3'
+
+it('should export divideNumberMatrix3x3', () => {
+    expect(glm).toHaveProperty('divideNumberMatrix3x3', divideNumberMatrix3x3)
+})
+
+import divideMatrix3x3Number from './divide-matrix3x3-number'
+
+it('should export divideMatrix3x3Number', () => {
+    expect(glm).toHaveProperty('divideMatrix3x3Number', divideMatrix3x3Number)
+})
+
+import divideNumberMatrix4x4 from './divide-number-matrix4x4'
+
+it('should export divideNumberMatrix4x4', () => {
+    expect(glm).toHaveProperty('divideNumberMatrix4x4', divideNumberMatrix4x4)
+})
+
+import divideMatrix4x4Number from './divide-matrix4x4-number'
+
+it('should export divideMatrix4x4Number', () => {
+    expect(glm).toHaveProperty('divideMatrix4x4Number', divideMatrix4x4Number)
+})

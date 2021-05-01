@@ -6,3 +6,4 @@ src
 .npmignore
 jest.config.js
 tsconfig.json
+scripts
