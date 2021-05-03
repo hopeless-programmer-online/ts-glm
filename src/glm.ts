@@ -50,6 +50,8 @@ export { default as transposeMatrix2x2 } from './transpose-matrix2x2'
 export { default as transposeMatrix3x3 } from './transpose-matrix3x3'
 export { default as transposeMatrix4x4 } from './transpose-matrix4x4'
 
+export { default as add } from './add'
+
 export { default as addNumberVector2 } from './add-number-vector2'
 export { default as addNumberVector3 } from './add-number-vector3'
 export { default as addNumberVector4 } from './add-number-vector4'
