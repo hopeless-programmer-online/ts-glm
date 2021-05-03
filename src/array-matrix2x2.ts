@@ -3,9 +3,18 @@ import Matrix2x2 from './matrix2x2'
 type Values = [ number, number, number, number ]
 
 export default class ArrayMatrix2x2 extends Matrix2x2 {
+    public static default = {
+        values : [
+            1, 0,
+            0, 1,
+        ] as Values,
+    }
+
     private values : Values
 
-    public constructor({ values } : { values : Values }) {
+    public constructor({ values = undefined } : { values? : Values } = {}) {
+        if (values === undefined) values = [ ...ArrayMatrix2x2.default.values ]
+
         super()
 
         this.values = values

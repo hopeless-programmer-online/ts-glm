@@ -1,5 +1,11 @@
 import { mat2, transposeMatrix2x2 } from './glm'
 
+it('should accept nothing', () => {
+    expect(mat2()).toMatchObject({
+        0 : { x : 1, y : 0 },
+        1 : { x : 0, y : 1 },
+    })
+})
 it('should accept 4 numbers', () => {
     expect(mat2(
         1, 2,

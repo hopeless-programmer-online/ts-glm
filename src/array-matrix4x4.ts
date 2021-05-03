@@ -8,9 +8,20 @@ type Values = [
 ]
 
 export default class ArrayMatrix4x4 extends Matrix4x4 {
+    public static default = {
+        values : [
+            1, 0, 0, 0,
+            0, 1, 0, 0,
+            0, 0, 1, 0,
+            0, 0, 0, 1,
+        ] as Values,
+    }
+
     private values : Values
 
-    public constructor({ values } : { values : Values }) {
+    public constructor({ values = undefined } : { values? : Values } = {}) {
+        if (values === undefined) values = [ ...ArrayMatrix4x4.default.values ]
+
         super()
 
         this.values = values

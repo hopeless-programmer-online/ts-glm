@@ -7,9 +7,19 @@ type Values = [
 ]
 
 export default class ArrayMatrix3x3 extends Matrix3x3 {
+    public static default = {
+        values : [
+            1, 0, 0,
+            0, 1, 0,
+            0, 0, 1,
+        ] as Values,
+    }
+
     private values : Values
 
-    public constructor({ values } : { values : Values }) {
+    public constructor({ values = undefined } : { values? : Values } = {}) {
+        if (values === undefined) values = [ ...ArrayMatrix3x3.default.values ]
+
         super()
 
         this.values = values

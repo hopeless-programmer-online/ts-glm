@@ -1,5 +1,12 @@
 import { mat3, transposeMatrix3x3 } from './glm'
 
+it('should accept nothing', () => {
+    expect(mat3()).toMatchObject({
+        0 : { x : 1, y : 0, z : 0 },
+        1 : { x : 0, y : 1, z : 0 },
+        2 : { x : 0, y : 0, z : 1 },
+    })
+})
 it('should accept 9 numbers', () => {
     expect(mat3(
         1, 2, 3,
