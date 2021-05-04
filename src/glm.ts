@@ -52,6 +52,7 @@ export { default as transposeMatrix4x4 } from './transpose-matrix4x4'
 
 export { default as add } from './add'
 export { default as subtract } from './subtract'
+export { default as multiply } from './multiply'
 
 export { default as addNumberVector2 } from './add-number-vector2'
 export { default as addNumberVector3 } from './add-number-vector3'
