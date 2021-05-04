@@ -51,6 +51,7 @@ export { default as transposeMatrix3x3 } from './transpose-matrix3x3'
 export { default as transposeMatrix4x4 } from './transpose-matrix4x4'
 
 export { default as inverseMatrix2x2 } from './inverse-matrix2x2'
+export { default as inverseMatrix3x3 } from './inverse-matrix3x3'
 
 export { default as add } from './add'
 export { default as subtract } from './subtract'
