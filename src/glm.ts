@@ -59,6 +59,8 @@ export { default as subtract } from './subtract'
 export { default as sub } from './subtract'
 export { default as multiply } from './multiply'
 export { default as mul } from './multiply'
+export { default as inverse } from './inverse'
+export { default as inv } from './inverse'
 
 export { default as addNumberVector2 } from './add-number-vector2'
 export { default as addNumberVector3 } from './add-number-vector3'
