@@ -1,19 +1,19 @@
-import { multiply, vec2, vec3, vec4, mat2, mat3, mat4 } from './glm'
+import { multiply as mul, vec2, vec3, vec4, mat2, mat3, mat4 } from './glm'
 
 it('should multiply number and number', () => {
-    expect(multiply(1, 2)).toBe(1 * 2)
+    expect(mul(1, 2)).toBe(1 * 2)
 })
 it('should multiply number and vec2', () => {
-    expect(multiply(5, vec2(1, 2))).toMatchObject({ x : 5 * 1, y : 2 * 5 })
+    expect(mul(5, vec2(1, 2))).toMatchObject({ x : 5 * 1, y : 2 * 5 })
 })
 it('should multiply number and vec3', () => {
-    expect(multiply(5, vec3(1, 2, 3))).toMatchObject({ x : 5 * 1, y : 5 * 2, z : 5 * 3 })
+    expect(mul(5, vec3(1, 2, 3))).toMatchObject({ x : 5 * 1, y : 5 * 2, z : 5 * 3 })
 })
 it('should multiply number and vec4', () => {
-    expect(multiply(5, vec4(1, 2, 3, 4))).toMatchObject({ x : 5 * 1, y : 5 * 2, z : 5 * 3, w : 5 * 4 })
+    expect(mul(5, vec4(1, 2, 3, 4))).toMatchObject({ x : 5 * 1, y : 5 * 2, z : 5 * 3, w : 5 * 4 })
 })
 it('should multiply number and mat2', () => {
-    expect(multiply(
+    expect(mul(
         20,
         mat2(
             1, 2,
@@ -25,7 +25,7 @@ it('should multiply number and mat2', () => {
     })
 })
 it('should multiply number and mat3', () => {
-    expect(multiply(
+    expect(mul(
         20,
         mat3(
             1, 2, 3,
@@ -39,7 +39,7 @@ it('should multiply number and mat3', () => {
     })
 })
 it('should multiply number and mat4', () => {
-    expect(multiply(
+    expect(mul(
         20,
         mat4(
             1,  2,  3,  4,
@@ -56,19 +56,19 @@ it('should multiply number and mat4', () => {
 })
 
 it('should multiply vec2 and number', () => {
-    expect(multiply(vec2(1, 2), 5)).toMatchObject({ x : 1 * 5, y : 2 * 5 })
+    expect(mul(vec2(1, 2), 5)).toMatchObject({ x : 1 * 5, y : 2 * 5 })
 })
 it('should multiply vec2 and vec2', () => {
-    expect(multiply(vec2(1, 2), vec2(3, 4))).toMatchObject({ x : 1 * 3, y : 2 * 4 })
+    expect(mul(vec2(1, 2), vec2(3, 4))).toMatchObject({ x : 1 * 3, y : 2 * 4 })
 })
 it('should multiply vec2 and vec3 as vec2', () => {
-    const r = multiply(vec2(1, 2), vec3(3, 4, 100))
+    const r = mul(vec2(1, 2), vec3(3, 4, 100))
 
     expect(r).toMatchObject({ x : 1 * 3, y : 2 * 4 })
     expect(r).not.toHaveProperty('z')
 })
 it('should multiply vec2 and vec4 as vec2', () => {
-    const r = multiply(vec2(1, 2), vec4(3, 4, 100, 200))
+    const r = mul(vec2(1, 2), vec4(3, 4, 100, 200))
 
     expect(r).toMatchObject({ x : 1 * 3, y : 2 * 4 })
     expect(r).not.toHaveProperty('z')
@@ -76,47 +76,47 @@ it('should multiply vec2 and vec4 as vec2', () => {
 })
 
 it('should multiply vec2 and number', () => {
-    expect(multiply(vec3(1, 2, 3), 5)).toMatchObject({ x : 1 * 5, y : 2 * 5, z : 3 * 5 })
+    expect(mul(vec3(1, 2, 3), 5)).toMatchObject({ x : 1 * 5, y : 2 * 5, z : 3 * 5 })
 })
 it('should multiply vec3 and vec2 as vec2', () => {
-    const r = multiply(vec3(1, 2, 3), vec2(4, 5))
+    const r = mul(vec3(1, 2, 3), vec2(4, 5))
 
     expect(r).toMatchObject({ x : 1 * 4, y : 2 * 5 })
     expect(r).not.toHaveProperty('z')
 })
 it('should multiply vec3 and vec3', () => {
-    expect(multiply(vec3(1, 2, 3), vec3(4, 5, 6))).toMatchObject({ x : 1 * 4, y : 2 * 5, z : 3 * 6 })
+    expect(mul(vec3(1, 2, 3), vec3(4, 5, 6))).toMatchObject({ x : 1 * 4, y : 2 * 5, z : 3 * 6 })
 })
 it('should multiply vec3 and vec4 as vec3', () => {
-    const r = multiply(vec3(1, 2, 3), vec4(4, 5, 6, 7))
+    const r = mul(vec3(1, 2, 3), vec4(4, 5, 6, 7))
 
     expect(r).toMatchObject({ x : 1 * 4, y : 2 * 5, z : 3 * 6 })
     expect(r).not.toHaveProperty('w')
 })
 
 it('should multiply vec4 and number', () => {
-    expect(multiply(vec4(1, 2, 3, 4), 5)).toMatchObject({ x : 1 * 5, y : 2 * 5, z : 3 * 5, w : 4 * 5 })
+    expect(mul(vec4(1, 2, 3, 4), 5)).toMatchObject({ x : 1 * 5, y : 2 * 5, z : 3 * 5, w : 4 * 5 })
 })
 it('should multiply vec4 and vec2 as vec2', () => {
-    const r = multiply(vec4(1, 2, 3, 4), vec2(5, 6))
+    const r = mul(vec4(1, 2, 3, 4), vec2(5, 6))
 
     expect(r).toMatchObject({ x : 1 * 5, y : 2 * 6 })
     expect(r).not.toHaveProperty('z')
     expect(r).not.toHaveProperty('w')
 })
 it('should multiply vec4 and vec3 as vec3', () => {
-    const r = multiply(vec4(1, 2, 3, 4), vec3(5, 6, 7))
+    const r = mul(vec4(1, 2, 3, 4), vec3(5, 6, 7))
 
     expect(r).toMatchObject({ x : 1 * 5, y : 2 * 6, z : 3 * 7 })
     expect(r).not.toHaveProperty('w')
 })
 it('should multiply vec4 and vec4', () => {
-    expect(multiply(vec4(1, 2, 3, 4), vec4(5, 6, 7, 8))).toMatchObject({ x : 1 * 5, y : 2 * 6, z : 3 * 7, w : 4 * 8 })
+    expect(mul(vec4(1, 2, 3, 4), vec4(5, 6, 7, 8))).toMatchObject({ x : 1 * 5, y : 2 * 6, z : 3 * 7, w : 4 * 8 })
 })
 
 
 it('should multiply mat2 and number', () => {
-    expect(multiply(
+    expect(mul(
         mat2(
             1, 2,
             3, 4,
@@ -128,7 +128,7 @@ it('should multiply mat2 and number', () => {
     })
 })
 it('should multiply mat2 and vec2', () => {
-    expect(multiply(
+    expect(mul(
         mat2(
             1, 2,
             3, 4,
@@ -139,9 +139,30 @@ it('should multiply mat2 and vec2', () => {
         y : 2 * 5 + 4 * 6,
     })
 })
+it('should multiply mat2 and mat2', () => {
+    expect(mul(
+        mat2(
+            1, 2,
+            3, 4,
+        ),
+        mat2(
+            5, 6,
+            7, 8,
+        )
+    )).toMatchObject({
+        0 : {
+            x : 1 * 5 + 3 * 6,
+            y : 2 * 5 + 4 * 6,
+        },
+        1 : {
+            x : 1 * 7 + 3 * 8,
+            y : 2 * 7 + 4 * 8,
+        },
+    })
+})
 
 it('should multiply mat3 and number', () => {
-    expect(multiply(
+    expect(mul(
         mat3(
             1, 2, 3,
             4, 5, 6,
@@ -155,7 +176,7 @@ it('should multiply mat3 and number', () => {
     })
 })
 it('should multiply mat3 and vec3', () => {
-    expect(multiply(
+    expect(mul(
         mat3(
             1, 2, 3,
             4, 5, 6,
@@ -168,9 +189,39 @@ it('should multiply mat3 and vec3', () => {
         z : 3 * 10 + 6 * 11 + 9 * 12,
     })
 })
+it('should multiply mat3 and mat3', () => {
+    expect(mul(
+        mat3(
+            1, 2, 3,
+            4, 5, 6,
+            7, 8, 9,
+        ),
+        mat3(
+            11, 12, 13,
+            14, 15, 16,
+            17, 18, 19,
+        )
+    )).toMatchObject({
+        0 : {
+            x : 1 * 11 + 4 * 12 + 7 * 13,
+            y : 1 * 14 + 4 * 15 + 7 * 16,
+            z : 1 * 17 + 4 * 18 + 7 * 19,
+        },
+        1 : {
+            x : 2 * 11 + 5 * 12 + 8 * 13,
+            y : 2 * 14 + 5 * 15 + 8 * 16,
+            z : 2 * 17 + 5 * 18 + 8 * 19,
+        },
+        2 : {
+            x : 3 * 11 + 6 * 12 + 9 * 13,
+            y : 3 * 14 + 6 * 15 + 9 * 16,
+            z : 3 * 17 + 6 * 18 + 9 * 19,
+        },
+    })
+})
 
 it('should multiply mat4 and number', () => {
-    expect(multiply(
+    expect(mul(
         mat4(
             1,  2,  3,  4,
             5,  6,  7,  8,
@@ -186,7 +237,7 @@ it('should multiply mat4 and number', () => {
     })
 })
 it('should multiply mat4 and vec4', () => {
-    expect(multiply(
+    expect(mul(
         mat4(
             1,  2,  3,  4,
             5,  6,  7,  8,
@@ -199,5 +250,46 @@ it('should multiply mat4 and vec4', () => {
         y : 2 * 17 + 6 * 18 + 10 * 19 + 14 * 20,
         z : 3 * 17 + 7 * 18 + 11 * 19 + 15 * 20,
         w : 4 * 17 + 8 * 18 + 12 * 19 + 16 * 20,
+    })
+})
+it('should multiply mat4 and mat4', () => {
+    expect(mul(
+        mat4(
+            1,  2,  3,  4,
+            5,  6,  7,  8,
+            9,  10, 11, 12,
+            13, 14, 15, 16,
+        ),
+        mat4(
+            17, 18, 19, 20,
+            21, 22, 23, 24,
+            25, 26, 27, 28,
+            29, 30, 31, 32,
+        )
+    )).toMatchObject({
+        0 : {
+            x : 1 * 17 + 5 * 18 + 9  * 19 + 13 * 20,
+            y : 2 * 17 + 6 * 18 + 10 * 19 + 14 * 20,
+            z : 3 * 17 + 7 * 18 + 11 * 19 + 15 * 20,
+            w : 4 * 17 + 8 * 18 + 12 * 19 + 16 * 20,
+        },
+        1 : {
+            x : 1 * 21 + 5 * 22 + 9  * 23 + 13 * 24,
+            y : 2 * 21 + 6 * 22 + 10 * 23 + 14 * 24,
+            z : 3 * 21 + 7 * 22 + 11 * 23 + 15 * 24,
+            w : 4 * 21 + 8 * 22 + 12 * 23 + 16 * 24,
+        },
+        2 : {
+            x : 1 * 25 + 5 * 26 + 9  * 27 + 13 * 28,
+            y : 2 * 25 + 6 * 26 + 10 * 27 + 14 * 28,
+            z : 3 * 25 + 7 * 26 + 11 * 27 + 15 * 28,
+            w : 4 * 25 + 8 * 26 + 12 * 27 + 16 * 28,
+        },
+        3 : {
+            x : 1 * 29 + 5 * 30 + 9  * 31 + 13 * 32,
+            y : 2 * 29 + 6 * 30 + 10 * 31 + 14 * 32,
+            z : 3 * 29 + 7 * 30 + 11 * 31 + 15 * 32,
+            w : 4 * 29 + 8 * 30 + 12 * 31 + 16 * 32,
+        },
     })
 })
