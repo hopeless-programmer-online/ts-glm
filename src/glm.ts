@@ -61,6 +61,7 @@ export { default as multiply } from './multiply'
 export { default as mul } from './multiply'
 export { default as divide } from './divide'
 export { default as div } from './divide'
+export { default as dot } from './dot'
 export { default as inverse } from './inverse'
 export { default as inv } from './inverse'
 
