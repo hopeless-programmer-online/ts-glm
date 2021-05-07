@@ -1,31 +1,31 @@
-export default function multiply(a : number, b : number) : number;
-export default function multiply(a : number, b : Vector2) : Vector2;
-export default function multiply(a : number, b : Vector2) : Vector2;
-export default function multiply(a : number, b : Vector3) : Vector3;
-export default function multiply(a : number, b : Matrix2x2) : Matrix2x2;
-export default function multiply(a : number, b : Matrix3x3) : Matrix3x3;
-export default function multiply(a : number, b : Matrix4x4) : Matrix4x4;
-
-export default function multiply(a : Vector2, b : number) : Vector2;
-export default function multiply(a : Vector2, b : Vector2) : Vector2;
-
-export default function multiply(a : Vector3, b : number) : Vector3;
-export default function multiply(a : Vector3, b : Vector3) : Vector3;
-
-export default function multiply(a : Vector4, b : number) : Vector4;
-export default function multiply(a : Vector4, b : Vector4) : Vector4;
-
-export default function multiply(a : Matrix2x2, b : number) : Matrix2x2;
-export default function multiply(a : Matrix2x2, b : Vector2) : Vector2;
-export default function multiply(a : Matrix2x2, b : Matrix2x2) : Matrix2x2;
-
-export default function multiply(a : Matrix3x3, b : number) : Matrix3x3;
-export default function multiply(a : Matrix3x3, b : Vector3) : Vector3;
-export default function multiply(a : Matrix3x3, b : Matrix3x3) : Matrix3x3;
-
-export default function multiply(a : Matrix4x4, b : number) : Matrix4x4;
-export default function multiply(a : Matrix4x4, b : Vector4) : Vector4;
 export default function multiply(a : Matrix4x4, b : Matrix4x4) : Matrix4x4;
+export default function multiply(a : Matrix4x4, b : Vector4) : Vector4;
+export default function multiply(a : Matrix4x4, b : number) : Matrix4x4;
+
+export default function multiply(a : Matrix3x3, b : Matrix3x3) : Matrix3x3;
+export default function multiply(a : Matrix3x3, b : Vector3) : Vector3;
+export default function multiply(a : Matrix3x3, b : number) : Matrix3x3;
+
+export default function multiply(a : Matrix2x2, b : Matrix2x2) : Matrix2x2;
+export default function multiply(a : Matrix2x2, b : Vector2) : Vector2;
+export default function multiply(a : Matrix2x2, b : number) : Matrix2x2;
+
+export default function multiply(a : Vector4, b : Vector4) : Vector4;
+export default function multiply(a : Vector4, b : number) : Vector4;
+
+export default function multiply(a : Vector3, b : Vector3) : Vector3;
+export default function multiply(a : Vector3, b : number) : Vector3;
+
+export default function multiply(a : Vector2, b : Vector2) : Vector2;
+export default function multiply(a : Vector2, b : number) : Vector2;
+
+export default function multiply(a : number, b : Matrix4x4) : Matrix4x4;
+export default function multiply(a : number, b : Matrix3x3) : Matrix3x3;
+export default function multiply(a : number, b : Matrix2x2) : Matrix2x2;
+export default function multiply(a : number, b : Vector4) : Vector4;
+export default function multiply(a : number, b : Vector3) : Vector3;
+export default function multiply(a : number, b : Vector2) : Vector2;
+export default function multiply(a : number, b : number) : number;
 
 export default function multiply(a : Matrix4x4 | Matrix3x3 | Matrix2x2 | Vector4 | Vector3 | Vector2 | number, b : Matrix4x4 | Matrix3x3 | Matrix2x2 | Vector4 | Vector3 | Vector2 | number) {
     if (typeof a === 'number') {

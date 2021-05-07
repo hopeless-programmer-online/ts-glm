@@ -1,45 +1,57 @@
-import { multiply as mul, vec2, vec3, vec4, mat2, mat3, mat4 } from './glm'
+import { Vector2, Vector3, Vector4, Matrix2x2, Matrix3x3, Matrix4x4, vec2, vec3, vec4, mat2, mat3, mat4, mul } from './glm'
 
-it('should multiply number and number', () => {
-    expect(mul(1, 2)).toBe(1 * 2)
+it('should mul number and number', () => {
+    const r : number = mul(1, 2)
+
+    expect(r).toBe(1 * 2)
 })
-it('should multiply number and vec2', () => {
-    expect(mul(5, vec2(1, 2))).toMatchObject({ x : 5 * 1, y : 2 * 5 })
+it('should mul number and vec2', () => {
+    const r : Vector2 = mul(5, vec2(1, 2))
+
+    expect(r).toMatchObject({ x : 5 * 1, y : 5 * 2 })
 })
-it('should multiply number and vec3', () => {
-    expect(mul(5, vec3(1, 2, 3))).toMatchObject({ x : 5 * 1, y : 5 * 2, z : 5 * 3 })
+it('should mul number and vec3', () => {
+    const r : Vector3 = mul(5, vec3(1, 2, 3))
+
+    expect(r).toMatchObject({ x : 5 * 1, y : 5 * 2, z : 5 * 3 })
 })
-it('should multiply number and vec4', () => {
-    expect(mul(5, vec4(1, 2, 3, 4))).toMatchObject({ x : 5 * 1, y : 5 * 2, z : 5 * 3, w : 5 * 4 })
+it('should mul number and vec4', () => {
+    const r : Vector4 = mul(5, vec4(1, 2, 3, 4))
+
+    expect(r).toMatchObject({ x : 5 * 1, y : 5 * 2, z : 5 * 3, w : 5 * 4 })
 })
-it('should multiply number and mat2', () => {
-    expect(mul(
+it('should mul number and mat2', () => {
+    const r : Matrix2x2 = mul(
         20,
         mat2(
             1, 2,
             3, 4,
         ),
-    )).toMatchObject({
+    )
+
+    expect(r).toMatchObject({
         0 : { x : 20 * 1, y : 20 * 2 },
         1 : { x : 20 * 3, y : 20 * 4 },
     })
 })
-it('should multiply number and mat3', () => {
-    expect(mul(
+it('should mul number and mat3', () => {
+    const r : Matrix3x3 = mul(
         20,
         mat3(
             1, 2, 3,
             4, 5, 6,
             7, 8, 9,
         ),
-    )).toMatchObject({
+    )
+
+    expect(r).toMatchObject({
         0 : { x : 20 * 1, y : 20 * 2, z : 20 * 3 },
         1 : { x : 20 * 4, y : 20 * 5, z : 20 * 6 },
         2 : { x : 20 * 7, y : 20 * 8, z : 20 * 9 },
     })
 })
-it('should multiply number and mat4', () => {
-    expect(mul(
+it('should mul number and mat4', () => {
+    const r : Matrix4x4 = mul(
         20,
         mat4(
             1,  2,  3,  4,
@@ -47,7 +59,9 @@ it('should multiply number and mat4', () => {
             9,  10, 11, 12,
             13, 14, 15, 16,
         ),
-    )).toMatchObject({
+    )
+
+    expect(r).toMatchObject({
         0 : { x : 20 * 1,  y : 20 * 2,  z : 20 * 3,  w : 20 * 4 },
         1 : { x : 20 * 5,  y : 20 * 6,  z : 20 * 7,  w : 20 * 8 },
         2 : { x : 20 * 9,  y : 20 * 10, z : 20 * 11, w : 20 * 12 },
@@ -55,92 +69,108 @@ it('should multiply number and mat4', () => {
     })
 })
 
-it('should multiply vec2 and number', () => {
-    expect(mul(vec2(1, 2), 5)).toMatchObject({ x : 1 * 5, y : 2 * 5 })
+it('should mul vec2 and number', () => {
+    const r : Vector2 = mul(vec2(1, 2), 5)
+
+    expect(r).toMatchObject({ x : 1 * 5, y : 2 * 5 })
 })
-it('should multiply vec2 and vec2', () => {
-    expect(mul(vec2(1, 2), vec2(3, 4))).toMatchObject({ x : 1 * 3, y : 2 * 4 })
+it('should mul vec2 and vec2', () => {
+    const r : Vector2 = mul(vec2(1, 2), vec2(3, 4))
+
+    expect(r).toMatchObject({ x : 1 * 3, y : 2 * 4 })
 })
-it('should multiply vec2 and vec3 as vec2', () => {
-    const r = mul(vec2(1, 2), vec3(3, 4, 100))
+it('should mul vec2 and vec3 as vec2', () => {
+    const r : Vector2 = mul(vec2(1, 2), vec3(3, 4, 100))
 
     expect(r).toMatchObject({ x : 1 * 3, y : 2 * 4 })
     expect(r).not.toHaveProperty('z')
 })
-it('should multiply vec2 and vec4 as vec2', () => {
-    const r = mul(vec2(1, 2), vec4(3, 4, 100, 200))
+it('should mul vec2 and vec4 as vec2', () => {
+    const r : Vector2 = mul(vec2(1, 2), vec4(3, 4, 100, 200))
 
     expect(r).toMatchObject({ x : 1 * 3, y : 2 * 4 })
     expect(r).not.toHaveProperty('z')
     expect(r).not.toHaveProperty('w')
 })
 
-it('should multiply vec2 and number', () => {
-    expect(mul(vec3(1, 2, 3), 5)).toMatchObject({ x : 1 * 5, y : 2 * 5, z : 3 * 5 })
+it('should mul vec2 and number', () => {
+    const r : Vector2 = mul(vec3(1, 2, 3), 5)
+
+    expect(r).toMatchObject({ x : 1 * 5, y : 2 * 5, z : 3 * 5 })
 })
-it('should multiply vec3 and vec2 as vec2', () => {
-    const r = mul(vec3(1, 2, 3), vec2(4, 5))
+it('should mul vec3 and vec2 as vec2', () => {
+    const r : Vector2 = mul(vec3(1, 2, 3), vec2(4, 5))
 
     expect(r).toMatchObject({ x : 1 * 4, y : 2 * 5 })
     expect(r).not.toHaveProperty('z')
 })
-it('should multiply vec3 and vec3', () => {
-    expect(mul(vec3(1, 2, 3), vec3(4, 5, 6))).toMatchObject({ x : 1 * 4, y : 2 * 5, z : 3 * 6 })
+it('should mul vec3 and vec3', () => {
+    const r : Vector3 = mul(vec3(1, 2, 3), vec3(4, 5, 6))
+
+    expect(r).toMatchObject({ x : 1 * 4, y : 2 * 5, z : 3 * 6 })
 })
-it('should multiply vec3 and vec4 as vec3', () => {
+it('should mul vec3 and vec4 as vec3', () => {
     const r = mul(vec3(1, 2, 3), vec4(4, 5, 6, 7))
 
     expect(r).toMatchObject({ x : 1 * 4, y : 2 * 5, z : 3 * 6 })
     expect(r).not.toHaveProperty('w')
 })
 
-it('should multiply vec4 and number', () => {
-    expect(mul(vec4(1, 2, 3, 4), 5)).toMatchObject({ x : 1 * 5, y : 2 * 5, z : 3 * 5, w : 4 * 5 })
+it('should mul vec4 and number', () => {
+    const r : Vector4 = mul(vec4(1, 2, 3, 4), 5)
+
+    expect(r).toMatchObject({ x : 1 * 5, y : 2 * 5, z : 3 * 5, w : 4 * 5 })
 })
-it('should multiply vec4 and vec2 as vec2', () => {
-    const r = mul(vec4(1, 2, 3, 4), vec2(5, 6))
+it('should mul vec4 and vec2 as vec2', () => {
+    const r : Vector2 = mul(vec4(1, 2, 3, 4), vec2(5, 6))
 
     expect(r).toMatchObject({ x : 1 * 5, y : 2 * 6 })
     expect(r).not.toHaveProperty('z')
     expect(r).not.toHaveProperty('w')
 })
-it('should multiply vec4 and vec3 as vec3', () => {
-    const r = mul(vec4(1, 2, 3, 4), vec3(5, 6, 7))
+it('should mul vec4 and vec3 as vec3', () => {
+    const r : Vector3 = mul(vec4(1, 2, 3, 4), vec3(5, 6, 7))
 
     expect(r).toMatchObject({ x : 1 * 5, y : 2 * 6, z : 3 * 7 })
     expect(r).not.toHaveProperty('w')
 })
-it('should multiply vec4 and vec4', () => {
-    expect(mul(vec4(1, 2, 3, 4), vec4(5, 6, 7, 8))).toMatchObject({ x : 1 * 5, y : 2 * 6, z : 3 * 7, w : 4 * 8 })
+it('should mul vec4 and vec4', () => {
+    const r : Vector4 = mul(vec4(1, 2, 3, 4), vec4(5, 6, 7, 8))
+
+    expect(r).toMatchObject({ x : 1 * 5, y : 2 * 6, z : 3 * 7, w : 4 * 8 })
 })
 
 
-it('should multiply mat2 and number', () => {
-    expect(mul(
+it('should mul mat2 and number', () => {
+    const r : Matrix2x2 = mul(
         mat2(
             1, 2,
             3, 4,
         ),
         20,
-    )).toMatchObject({
+    )
+
+    expect(r).toMatchObject({
         0 : { x : 1 * 20, y : 2 * 20 },
         1 : { x : 3 * 20, y : 4 * 20 },
     })
 })
 it('should multiply mat2 and vec2', () => {
-    expect(mul(
+    const r : Vector2 = mul(
         mat2(
             1, 2,
             3, 4,
         ),
         vec2(5, 6),
-    )).toMatchObject({
+    )
+
+    expect(r).toMatchObject({
         x : 1 * 5 + 3 * 6,
         y : 2 * 5 + 4 * 6,
     })
 })
 it('should multiply mat2 and mat2', () => {
-    expect(mul(
+    const r : Matrix2x2 = mul(
         mat2(
             1, 2,
             3, 4,
@@ -149,7 +179,9 @@ it('should multiply mat2 and mat2', () => {
             5, 6,
             7, 8,
         )
-    )).toMatchObject({
+    )
+
+    expect(r).toMatchObject({
         0 : {
             x : 1 * 5 + 3 * 6,
             y : 2 * 5 + 4 * 6,
@@ -161,36 +193,40 @@ it('should multiply mat2 and mat2', () => {
     })
 })
 
-it('should multiply mat3 and number', () => {
-    expect(mul(
+it('should mul mat3 and number', () => {
+    const r : Matrix3x3 = mul(
         mat3(
             1, 2, 3,
             4, 5, 6,
             7, 8, 9,
         ),
         20,
-    )).toMatchObject({
+    )
+
+    expect(r).toMatchObject({
         0 : { x : 1 * 20, y : 2 * 20, z : 3 * 20 },
         1 : { x : 4 * 20, y : 5 * 20, z : 6 * 20 },
         2 : { x : 7 * 20, y : 8 * 20, z : 9 * 20 },
     })
 })
 it('should multiply mat3 and vec3', () => {
-    expect(mul(
+    const r : Vector3 = mul(
         mat3(
             1, 2, 3,
             4, 5, 6,
             7, 8, 9,
         ),
         vec3(10, 11, 12),
-    )).toMatchObject({
+    )
+
+    expect(r).toMatchObject({
         x : 1 * 10 + 4 * 11 + 7 * 12,
         y : 2 * 10 + 5 * 11 + 8 * 12,
         z : 3 * 10 + 6 * 11 + 9 * 12,
     })
 })
 it('should multiply mat3 and mat3', () => {
-    expect(mul(
+    const r : Matrix3x3 = mul(
         mat3(
             1, 2, 3,
             4, 5, 6,
@@ -201,7 +237,9 @@ it('should multiply mat3 and mat3', () => {
             14, 15, 16,
             17, 18, 19,
         )
-    )).toMatchObject({
+    )
+
+    expect(r).toMatchObject({
         0 : {
             x : 1 * 11 + 4 * 12 + 7 * 13,
             y : 1 * 14 + 4 * 15 + 7 * 16,
@@ -220,8 +258,8 @@ it('should multiply mat3 and mat3', () => {
     })
 })
 
-it('should multiply mat4 and number', () => {
-    expect(mul(
+it('should mul mat4 and number', () => {
+    const r : Matrix4x4 = mul(
         mat4(
             1,  2,  3,  4,
             5,  6,  7,  8,
@@ -229,7 +267,9 @@ it('should multiply mat4 and number', () => {
             13, 14, 15, 16,
         ),
         20,
-    )).toMatchObject({
+    )
+
+    expect(r).toMatchObject({
         0 : { x : 1 * 20,  y : 2 * 20,  z : 3 * 20,  w : 4 * 20 },
         1 : { x : 5 * 20,  y : 6 * 20,  z : 7 * 20,  w : 8 * 20 },
         2 : { x : 9 * 20,  y : 10 * 20, z : 11 * 20, w : 12 * 20 },
@@ -237,7 +277,7 @@ it('should multiply mat4 and number', () => {
     })
 })
 it('should multiply mat4 and vec4', () => {
-    expect(mul(
+    const r : Vector4 = mul(
         mat4(
             1,  2,  3,  4,
             5,  6,  7,  8,
@@ -245,7 +285,9 @@ it('should multiply mat4 and vec4', () => {
             13, 14, 15, 16,
         ),
         vec4(17, 18, 19, 20),
-    )).toMatchObject({
+    )
+
+    expect(r).toMatchObject({
         x : 1 * 17 + 5 * 18 + 9  * 19 + 13 * 20,
         y : 2 * 17 + 6 * 18 + 10 * 19 + 14 * 20,
         z : 3 * 17 + 7 * 18 + 11 * 19 + 15 * 20,
@@ -253,7 +295,7 @@ it('should multiply mat4 and vec4', () => {
     })
 })
 it('should multiply mat4 and mat4', () => {
-    expect(mul(
+    const r : Matrix4x4 = mul(
         mat4(
             1,  2,  3,  4,
             5,  6,  7,  8,
@@ -266,7 +308,9 @@ it('should multiply mat4 and mat4', () => {
             25, 26, 27, 28,
             29, 30, 31, 32,
         )
-    )).toMatchObject({
+    )
+
+    expect(r).toMatchObject({
         0 : {
             x : 1 * 17 + 5 * 18 + 9  * 19 + 13 * 20,
             y : 2 * 17 + 6 * 18 + 10 * 19 + 14 * 20,
