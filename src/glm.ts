@@ -42,6 +42,8 @@ export { default as mat2 } from './mat2'
 export { default as mat3 } from './mat3'
 export { default as mat4 } from './mat4'
 
+export { default as matrix2x2FromMatrix4x4 } from './matrix2x2-from-matrix4x4'
+
 export { default as matrix3x3FromMatrix2x2 } from './matrix3x3-from-matrix2x2'
 export { default as matrix3x3FromMatrix4x4 } from './matrix3x3-from-matrix4x4'
 
