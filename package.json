@@ -11,6 +11,7 @@
     "g": "npm run generate",
     "build": "tsc",
     "b": "npm run build",
+    "bundle": "rollup -c",
     "test": "jest"
   },
   "engines": {
