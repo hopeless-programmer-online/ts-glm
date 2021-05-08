@@ -9,9 +9,10 @@
     "c": "npm run clean",
     "generate": "ts-node scripts/generate.ts",
     "g": "npm run generate",
-    "build": "tsc",
-    "b": "npm run build",
+    "transpile": "tsc",
     "bundle": "rollup -c",
+    "build": "npm run transpile && npm run bundle",
+    "b": "npm run build",
     "test": "jest"
   },
   "engines": {
