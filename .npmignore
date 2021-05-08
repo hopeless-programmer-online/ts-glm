@@ -1,9 +1,11 @@
 .github
+.ts
 node_modules
+scripts
 src
 .editorconfig
 .gitignore
 .npmignore
 jest.config.js
+rollup.config.js
 tsconfig.json
-scripts
