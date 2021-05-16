@@ -19,10 +19,7 @@ export default function mat2(
     if ('3' in m) return matrix2x2FromMatrix4x4(m)
     if ('2' in m) return matrix2x2FromMatrix3x3(m)
 
-    return mat2(
-        m[0][0], m[0][1],
-        m[1][0], m[1][1],
-    )
+    return m.clone()
 }
 
 import Matrix2x2 from './matrix2x2'
