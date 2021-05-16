@@ -35,6 +35,11 @@ export default abstract class Vector4 {
         this.w = w
     }
 
+    public clone() {
+        const { x, y, z, w } = this
+
+        return vec4(x, y, z, w)
+    }
     public toArray() {
         const { x, y, z, w } = this
 
@@ -46,3 +51,5 @@ export default abstract class Vector4 {
         return `Vector4 { x : ${x}, y : ${y}, z : ${z}, w : ${w} }`
     }
 }
+
+import vec4 from './vec4'
