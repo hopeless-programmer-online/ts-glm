@@ -40,7 +40,7 @@ export default abstract class Vector4 {
 
         return vec4(x, y, z, w)
     }
-    public toArray() {
+    public toArray() : Vector4Array {
         const { x, y, z, w } = this
 
         return [ x, y, z, w ]
@@ -52,4 +52,6 @@ export default abstract class Vector4 {
     }
 }
 
+import Vector4Array from './vector4-array'
 import vec4 from './vec4'
+
