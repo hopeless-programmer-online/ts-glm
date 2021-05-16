@@ -1,5 +1,14 @@
 import { mat2 } from './glm'
 
+it('should implement clone()', () => {
+    expect(mat2(
+        1, 2,
+        3, 4,
+    ).clone()).toMatchObject({
+        0 : { x : 1, y : 2 },
+        1 : { x : 3, y : 4 },
+    })
+})
 it('should implement toArray()', () => {
     expect(mat2(
         1, 2,
