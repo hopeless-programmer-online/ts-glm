@@ -19,6 +19,11 @@ export default abstract class Vector2 {
         this.y = y
     }
 
+    public clone() {
+        const { x, y } = this
+
+        return vec2(x, y)
+    }
     public toArray() {
         const { x, y } = this
 
@@ -30,3 +35,5 @@ export default abstract class Vector2 {
         return `Vector2 { x : ${x}, y : ${y} }`
     }
 }
+
+import vec2 from './vec2'

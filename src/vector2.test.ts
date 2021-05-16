@@ -16,6 +16,12 @@ it('should implement index accessors', () => {
 
     expect(v).toMatchObject({ 0 : 3, 1 : 4 })
 })
+it('should implement clone()', () => {
+    expect(vec2(1, 2).clone()).toMatchObject({
+        x : 1,
+        y : 2,
+    })
+})
 it('should implement toArray()', () => {
     expect(vec2(1, 2).toArray()).toMatchObject([ 1, 2 ])
 })
