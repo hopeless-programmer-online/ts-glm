@@ -27,6 +27,11 @@ export default abstract class Vector3 {
         this.z = z
     }
 
+    public set(x : number, y : number, z : number) {
+        this.x = x
+        this.y = y
+        this.z = z
+    }
     public clone() {
         const { x, y, z } = this
 
