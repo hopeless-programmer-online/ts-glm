@@ -32,7 +32,7 @@ export default abstract class Vector3 {
 
         return vec3(x, y, z)
     }
-    public toArray() {
+    public toArray() : Array {
         const { x, y, z } = this
 
         return [ x, y, z ]
@@ -44,4 +44,6 @@ export default abstract class Vector3 {
     }
 }
 
+import Array from './vector3-array'
 import vec3 from './vec3'
+

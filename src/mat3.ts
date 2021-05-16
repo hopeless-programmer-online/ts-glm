@@ -20,11 +20,7 @@ export default function mat3(
         m20, m21, m22,
     ] })
     if ('3' in m) return matrix3x3FromMatrix4x4(m)
-    if ('2' in m) return mat3(
-        m[0][0], m[0][1], m[0][2],
-        m[1][0], m[1][1], m[1][2],
-        m[2][0], m[2][1], m[2][2],
-    )
+    if ('2' in m) return m.clone()
 
     return matrix3x3FromMatrix2x2(m)
 }

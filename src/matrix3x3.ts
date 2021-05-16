@@ -1,6 +1,6 @@
 export default abstract class Matrix3x3 {
-    public abstract get columns() : Matrix3x3Columns
-    public abstract get rows() : Matrix3x3Rows
+    public abstract get columns() : Columns
+    public abstract get rows() : Rows
 
     public get [0]() {
         return this.columns[0]
@@ -12,7 +12,10 @@ export default abstract class Matrix3x3 {
         return this.columns[2]
     }
 
-    public toArray() {
+    public clone() {
+        return mat3(...this.toArray())
+    }
+    public toArray() : Array {
         return [
             ...this[0].toArray(),
             ...this[1].toArray(),
@@ -32,5 +35,7 @@ export default abstract class Matrix3x3 {
     }
 }
 
-import Matrix3x3Columns from './matrix3x3-columns'
-import Matrix3x3Rows from './matrix3x3-rows'
+import Array from './matrix3x3-array'
+import Columns from './matrix3x3-columns'
+import Rows from './matrix3x3-rows'
+import mat3 from './mat3'
