@@ -24,7 +24,7 @@ export default abstract class Vector2 {
 
         return vec2(x, y)
     }
-    public toArray() {
+    public toArray() : Array {
         const { x, y } = this
 
         return [ x, y ]
@@ -36,4 +36,6 @@ export default abstract class Vector2 {
     }
 }
 
+import Array from './vector2-array'
 import vec2 from './vec2'
+
