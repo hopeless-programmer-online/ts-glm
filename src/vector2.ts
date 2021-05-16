@@ -19,6 +19,10 @@ export default abstract class Vector2 {
         this.y = y
     }
 
+    public set(x : number, y : number) {
+        this.x = x
+        this.y = y
+    }
     public clone() {
         const { x, y } = this
 
