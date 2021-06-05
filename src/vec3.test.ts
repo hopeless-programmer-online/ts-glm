@@ -1,5 +1,8 @@
 import { vec3, Vector3 } from './glm'
 
+it('should export default', () => {
+    expect(vec3.default).toMatchObject(Vector3.default)
+})
 it('should accept nothing', () => {
     expect(vec3()).toMatchObject({
         x : Vector3.default.x,

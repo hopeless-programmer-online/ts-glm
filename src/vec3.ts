@@ -11,3 +11,5 @@ export default function vec3(x? : number, y? : number, z? : number) : Vector3 {
 
 import NumberVector3 from './number-vector3'
 import Vector3 from './vector3'
+
+vec3.default = Vector3.default
