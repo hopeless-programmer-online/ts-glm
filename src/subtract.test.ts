@@ -93,8 +93,25 @@ it('should sub vec2 and vec4 as vec2', () => {
     expect(r).not.toHaveProperty('w')
 })
 
-it('should sub vec2 and number', () => {
-    const r : Vector2 = sub(vec3(1, 2, 3), 5)
+it('should sub { x, y } and number', () => {
+    const r : Vector2 = sub({ x : 1, y : 2 }, 5)
+
+    expect(r).toMatchObject({ x : 1 - 5, y : 2 - 5 })
+})
+it('should sub { x, y } and { x, y }', () => {
+    const r : Vector2 = sub({ x : 1, y : 2 }, { x : 3, y : 4 })
+
+    expect(r).toMatchObject({ x : 1 - 3, y : 2 - 4 })
+})
+it('should sub [ number, number ] and [ number, number ]', () => {
+    const r : Vector2 = sub([ 1, 2 ], [ 3, 4 ])
+
+    expect(r).toMatchObject({ x : 1 - 3, y : 2 - 4 })
+})
+
+
+it('should sub vec3 and number', () => {
+    const r : Vector3 = sub(vec3(1, 2, 3), 5)
 
     expect(r).toMatchObject({ x : 1 - 5, y : 2 - 5, z : 3 - 5 })
 })
@@ -114,6 +131,22 @@ it('should sub vec3 and vec4 as vec3', () => {
 
     expect(r).toMatchObject({ x : 1 - 4, y : 2 - 5, z : 3 - 6 })
     expect(r).not.toHaveProperty('w')
+})
+
+it('should sub { x, y, z } and number', () => {
+    const r : Vector3 = sub({ x : 1, y : 2, z : 3 }, 5)
+
+    expect(r).toMatchObject({ x : 1 - 5, y : 2 - 5, z : 3 - 5 })
+})
+it('should sub vec3 and vec3', () => {
+    const r : Vector3 = sub({ x : 1, y : 2, z : 3 }, { x : 4, y : 5, z : 6 })
+
+    expect(r).toMatchObject({ x : 1 - 4, y : 2 - 5, z : 3 - 6 })
+})
+it('should sub vec3 and vec3', () => {
+    const r : Vector3 = sub([ 1, 2, 3 ], [ 4, 5, 6 ])
+
+    expect(r).toMatchObject({ x : 1 - 4, y : 2 - 5, z : 3 - 6 })
 })
 
 it('should sub vec4 and number', () => {
@@ -136,6 +169,22 @@ it('should sub vec4 and vec3 as vec3', () => {
 })
 it('should sub vec4 and vec4', () => {
     const r : Vector4 = sub(vec4(1, 2, 3, 4), vec4(5, 6, 7, 8))
+
+    expect(r).toMatchObject({ x : 1 - 5, y : 2 - 6, z : 3 - 7, w : 4 - 8 })
+})
+
+it('should sub vec4 and number', () => {
+    const r : Vector4 = sub({ x : 1, y : 2, z : 3, w : 4 }, 5)
+
+    expect(r).toMatchObject({ x : 1 - 5, y : 2 - 5, z : 3 - 5, w : 4 - 5 })
+})
+it('should sub vec4 and vec4', () => {
+    const r : Vector4 = sub({ x : 1, y : 2, z : 3, w : 4 }, { x : 5, y : 6, z : 7, w : 8 })
+
+    expect(r).toMatchObject({ x : 1 - 5, y : 2 - 6, z : 3 - 7, w : 4 - 8 })
+})
+it('should sub vec4 and vec4', () => {
+    const r : Vector4 = sub([ 1, 2, 3, 4 ], [ 5, 6, 7, 8 ])
 
     expect(r).toMatchObject({ x : 1 - 5, y : 2 - 6, z : 3 - 7, w : 4 - 8 })
 })

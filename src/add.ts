@@ -29,7 +29,7 @@ export default function add(
     b :
     | Matrix4x4Like | Matrix3x3Like | Matrix2x2Like
     | Vector4Like | Vector3Like | Vector2Like
-    | number
+    | number,
 ) {
     return deduce(a,
         /* Matrix4x4 */
