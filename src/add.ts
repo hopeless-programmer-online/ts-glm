@@ -1,46 +1,3 @@
-type Vector2Like =
-    | (
-        & ({ x : number } | { 0 : number })
-        & ({ y : number } | { 1 : number })
-    )
-    | [ number, number ]
-type Vector3Like =
-    | (
-        & ({ x : number } | { 0 : number })
-        & ({ y : number } | { 1 : number })
-        & ({ z : number } | { 2 : number })
-    )
-    | [ number, number, number ]
-type Vector4Like =
-    | (
-        & ({ x : number } | { 0 : number })
-        & ({ y : number } | { 1 : number })
-        & ({ z : number } | { 2 : number })
-        & ({ w : number } | { 3 : number })
-    )
-    | [ number, number, number, number ]
-type Matrix2x2Like =
-    | (
-        & ({ x : Vector2Like } | { 0 : Vector2Like })
-        & ({ y : Vector2Like } | { 1 : Vector2Like })
-    )
-    | [ Vector2Like, Vector2Like ]
-type Matrix3x3Like =
-    | (
-        & ({ x : Vector3Like } | { 0 : Vector3Like })
-        & ({ y : Vector3Like } | { 1 : Vector3Like })
-        & ({ z : Vector3Like } | { 2 : Vector3Like })
-    )
-    | [ Vector3Like, Vector3Like, Vector3Like ]
-type Matrix4x4Like =
-    | (
-        & ({ x : Vector4Like } | { 0 : Vector4Like })
-        & ({ y : Vector4Like } | { 1 : Vector4Like })
-        & ({ z : Vector4Like } | { 2 : Vector4Like })
-        & ({ w : Vector4Like } | { 3 : Vector4Like })
-    )
-    | [ Vector4Like, Vector4Like, Vector4Like, Vector4Like ]
-
 export default function add(a : Matrix4x4Like, b : number) : Matrix4x4;
 
 export default function add(a : Matrix3x3Like, b : number) : Matrix3x3;
@@ -154,6 +111,12 @@ import Vector4 from './vector4'
 import Matrix2x2 from './matrix2x2'
 import Matrix3x3 from './matrix3x3'
 import Matrix4x4 from './matrix4x4'
+import Vector2Like from './vector2-like'
+import Vector3Like from './vector3-like'
+import Vector4Like from './vector4-like'
+import Matrix2x2Like from './matrix2x2-like'
+import Matrix3x3Like from './matrix3x3-like'
+import Matrix4x4Like from './matrix4x4-like'
 import addNumberVector2 from './add-number-vector2'
 import addNumberVector3 from './add-number-vector3'
 import addNumberVector4 from './add-number-vector4'
