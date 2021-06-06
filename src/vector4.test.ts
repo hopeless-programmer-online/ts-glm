@@ -35,6 +35,14 @@ it('should implement clone()', () => {
         w : 4,
     })
 })
+it('should implement add()', () => {
+    expect(vec4(1, 2, 3, 4).add([ 5, 6, 7, 8 ])).toMatchObject({
+        x : 1 + 5,
+        y : 2 + 6,
+        z : 3 + 7,
+        w : 4 + 8,
+    })
+})
 it('should implement toArray()', () => {
     expect(vec4(1, 2, 3, 4).toArray()).toMatchObject([ 1, 2, 3, 4 ])
 })

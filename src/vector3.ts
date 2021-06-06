@@ -37,6 +37,10 @@ export default abstract class Vector3 {
 
         return vec3(x, y, z)
     }
+    public add(other : Like | number) {
+        // casting to number is a hack to overcome overloading ambiguity
+        return add(this, other as number)
+    }
     public toArray() : Array {
         const { x, y, z } = this
 
@@ -49,6 +53,7 @@ export default abstract class Vector3 {
     }
 }
 
+import Like from './vector2-like'
 import Array from './vector3-array'
 import vec3 from './vec3'
-
+import add from './add'
