@@ -149,6 +149,7 @@ it('should sub vec3 and vec3', () => {
     expect(r).toMatchObject({ x : 1 - 4, y : 2 - 5, z : 3 - 6 })
 })
 
+
 it('should sub vec4 and number', () => {
     const r : Vector4 = sub(vec4(1, 2, 3, 4), 5)
 
