@@ -39,6 +39,13 @@ export default abstract class Vector2 {
     public sub(other : Like | number) {
         return this.subtract(other)
     }
+    public multiply(other : Like | number) {
+        // casting to number is a hack to overcome overloading ambiguity
+        return mul(this, other as number)
+    }
+    public mul(other : Like | number) {
+        return this.multiply(other)
+    }
     public toArray() : Array {
         const { x, y } = this
 
@@ -56,3 +63,4 @@ import Array from './vector2-array'
 import vec2 from './vec2'
 import add from './add'
 import sub from './subtract'
+import mul from './multiply'

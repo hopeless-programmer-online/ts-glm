@@ -47,6 +47,18 @@ it('should implement sub()', () => {
         y : 2 - 4,
     })
 })
+it('should implement multiply()', () => {
+    expect(vec2(1, 2).multiply([ 3, 4 ])).toMatchObject({
+        x : 1 * 3,
+        y : 2 * 4,
+    })
+})
+it('should implement mul()', () => {
+    expect(vec2(1, 2).mul([ 3, 4 ])).toMatchObject({
+        x : 1 * 3,
+        y : 2 * 4,
+    })
+})
 it('should implement toArray()', () => {
     expect(vec2(1, 2).toArray()).toMatchObject([ 1, 2 ])
 })
