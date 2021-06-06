@@ -55,6 +55,13 @@ export default abstract class Vector3 {
     public mul(other : Like | number) {
         return this.multiply(other)
     }
+    public divide(other : Like | number) {
+        // casting to number is a hack to overcome overloading ambiguity
+        return div(this, other as number)
+    }
+    public div(other : Like | number) {
+        return this.divide(other)
+    }
     public toArray() : Array {
         const { x, y, z } = this
 
@@ -73,3 +80,4 @@ import vec3 from './vec3'
 import add from './add'
 import sub from './subtract'
 import mul from './multiply'
+import div from './divide'

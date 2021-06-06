@@ -59,6 +59,18 @@ it('should implement mul()', () => {
         y : 2 * 4,
     })
 })
+it('should implement divide()', () => {
+    expect(vec2(1, 2).divide([ 3, 4 ])).toMatchObject({
+        x : 1 / 3,
+        y : 2 / 4,
+    })
+})
+it('should implement div()', () => {
+    expect(vec2(1, 2).div([ 3, 4 ])).toMatchObject({
+        x : 1 / 3,
+        y : 2 / 4,
+    })
+})
 it('should implement toArray()', () => {
     expect(vec2(1, 2).toArray()).toMatchObject([ 1, 2 ])
 })
