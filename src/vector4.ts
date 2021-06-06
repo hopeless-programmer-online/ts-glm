@@ -34,6 +34,21 @@ export default abstract class Vector4 {
     public set [3](w : number) {
         this.w = w
     }
+    public get length() {
+        return len(this)
+    }
+    public get len() {
+        return len(this)
+    }
+    public get magnitude() {
+        return len(this)
+    }
+    public get mag() {
+        return len(this)
+    }
+    public get norm() {
+        return len(this)
+    }
 
     public set(x : number, y : number, z : number, w : number) {
         this.x = x
@@ -90,3 +105,4 @@ import add from './add'
 import sub from './subtract'
 import mul from './multiply'
 import div from './divide'
+import len from './length'

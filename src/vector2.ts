@@ -18,6 +18,21 @@ export default abstract class Vector2 {
     public set [1](y : number) {
         this.y = y
     }
+    public get length() {
+        return len(this)
+    }
+    public get len() {
+        return len(this)
+    }
+    public get magnitude() {
+        return len(this)
+    }
+    public get mag() {
+        return len(this)
+    }
+    public get norm() {
+        return len(this)
+    }
 
     public set(x : number, y : number) {
         this.x = x
@@ -72,3 +87,5 @@ import add from './add'
 import sub from './subtract'
 import mul from './multiply'
 import div from './divide'
+import len from './length'
+

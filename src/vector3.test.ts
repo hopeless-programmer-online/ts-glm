@@ -18,6 +18,15 @@ it('should implement index accessors', () => {
 
     expect(v).toMatchObject({ 0 : 4, 1 : 5, 2 : 6 })
 })
+it('should implement length accessor', () => {
+    expect(vec3(2, 3, 6)).toMatchObject({
+        length : 7,
+        len : 7,
+        magnitude : 7,
+        mag : 7,
+        norm : 7,
+    })
+})
 it('should implement set()', () => {
     const v = vec3(1, 2, 3)
 
