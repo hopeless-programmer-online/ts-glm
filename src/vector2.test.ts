@@ -35,6 +35,18 @@ it('should implement add()', () => {
         y : 2 + 4,
     })
 })
+it('should implement subtract()', () => {
+    expect(vec2(1, 2).subtract([ 3, 4 ])).toMatchObject({
+        x : 1 - 3,
+        y : 2 - 4,
+    })
+})
+it('should implement sub()', () => {
+    expect(vec2(1, 2).sub([ 3, 4 ])).toMatchObject({
+        x : 1 - 3,
+        y : 2 - 4,
+    })
+})
 it('should implement toArray()', () => {
     expect(vec2(1, 2).toArray()).toMatchObject([ 1, 2 ])
 })

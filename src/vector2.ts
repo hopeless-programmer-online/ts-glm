@@ -32,6 +32,13 @@ export default abstract class Vector2 {
         // casting to number is a hack to overcome overloading ambiguity
         return add(this, other as number)
     }
+    public subtract(other : Like | number) {
+        // casting to number is a hack to overcome overloading ambiguity
+        return sub(this, other as number)
+    }
+    public sub(other : Like | number) {
+        return this.subtract(other)
+    }
     public toArray() : Array {
         const { x, y } = this
 
@@ -48,3 +55,4 @@ import Like from './vector2-like'
 import Array from './vector2-array'
 import vec2 from './vec2'
 import add from './add'
+import sub from './subtract'
