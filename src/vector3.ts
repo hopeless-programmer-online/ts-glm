@@ -41,6 +41,12 @@ export default abstract class Vector3 {
     public get norm() {
         return len(this)
     }
+    public get square() {
+        return sqr(this)
+    }
+    public get sqr() {
+        return this.square
+    }
 
     public set(x : number, y : number, z : number) {
         this.x = x
@@ -97,3 +103,4 @@ import sub from './subtract'
 import mul from './multiply'
 import div from './divide'
 import len from './length'
+import sqr from './square'

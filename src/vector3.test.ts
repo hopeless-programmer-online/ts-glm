@@ -27,6 +27,12 @@ it('should implement length accessor', () => {
         norm : 7,
     })
 })
+it('should implement square accessor', () => {
+    expect(vec3(1, 2, 3)).toMatchObject({
+        square : 1**2 + 2**2 + 3**2,
+        sqr    : 1**2 + 2**2 + 3**2,
+    })
+})
 it('should implement set()', () => {
     const v = vec3(1, 2, 3)
 
