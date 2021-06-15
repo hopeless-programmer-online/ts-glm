@@ -39,6 +39,12 @@ export default abstract class Vector2 {
     public get sqr() {
         return this.square
     }
+    public get negate() {
+        return neg(this)
+    }
+    public get neg() {
+        return this.negate
+    }
 
     public set(x : number, y : number) {
         this.x = x
@@ -89,6 +95,7 @@ export default abstract class Vector2 {
 import Like from './vector2-like'
 import Array from './vector2-array'
 import vec2 from './vec2'
+import neg from './negate'
 import add from './add'
 import sub from './subtract'
 import mul from './multiply'

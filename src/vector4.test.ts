@@ -35,6 +35,12 @@ it('should implement square accessor', () => {
         sqr    : 1**2 + 2**2 + 3**2 + 4**2,
     })
 })
+it('should implement neg accessor', () => {
+    expect(vec4(1, 2, 3, 4)).toMatchObject({
+        negate : { x : -1, y : -2, z : -3, w : -4 },
+        neg    : { x : -1, y : -2, z : -3, w : -4 },
+    })
+})
 it('should implement set()', () => {
     const v = vec4(1, 2, 3, 4)
 
