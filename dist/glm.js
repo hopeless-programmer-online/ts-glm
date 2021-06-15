@@ -2,141 +2,6 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var Vector2 = /** @class */ (function () {
-    function Vector2() {
-    }
-    Object.defineProperty(Vector2.prototype, 0, {
-        get: function () {
-            return this.x;
-        },
-        set: function (x) {
-            this.x = x;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Vector2.prototype, 1, {
-        get: function () {
-            return this.y;
-        },
-        set: function (y) {
-            this.y = y;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Vector2.prototype.toArray = function () {
-        var _a = this, x = _a.x, y = _a.y;
-        return [x, y];
-    };
-    Vector2.prototype.toString = function () {
-        var _a = this, x = _a.x, y = _a.y;
-        return "Vector2 { x : " + x + ", y : " + y + " }";
-    };
-    Vector2.default = { x: 0, y: 0 };
-    return Vector2;
-}());
-
-var Vector3 = /** @class */ (function () {
-    function Vector3() {
-    }
-    Object.defineProperty(Vector3.prototype, 0, {
-        get: function () {
-            return this.x;
-        },
-        set: function (x) {
-            this.x = x;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Vector3.prototype, 1, {
-        get: function () {
-            return this.y;
-        },
-        set: function (y) {
-            this.y = y;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Vector3.prototype, 2, {
-        get: function () {
-            return this.z;
-        },
-        set: function (z) {
-            this.z = z;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Vector3.prototype.toArray = function () {
-        var _a = this, x = _a.x, y = _a.y, z = _a.z;
-        return [x, y, z];
-    };
-    Vector3.prototype.toString = function () {
-        var _a = this, x = _a.x, y = _a.y, z = _a.z;
-        return "Vector3 { x : " + x + ", y : " + y + ", z : " + z + " }";
-    };
-    Vector3.default = { x: 0, y: 0, z: 0 };
-    return Vector3;
-}());
-
-var Vector4 = /** @class */ (function () {
-    function Vector4() {
-    }
-    Object.defineProperty(Vector4.prototype, 0, {
-        get: function () {
-            return this.x;
-        },
-        set: function (x) {
-            this.x = x;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Vector4.prototype, 1, {
-        get: function () {
-            return this.y;
-        },
-        set: function (y) {
-            this.y = y;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Vector4.prototype, 2, {
-        get: function () {
-            return this.z;
-        },
-        set: function (z) {
-            this.z = z;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Vector4.prototype, 3, {
-        get: function () {
-            return this.w;
-        },
-        set: function (w) {
-            this.w = w;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Vector4.prototype.toArray = function () {
-        var _a = this, x = _a.x, y = _a.y, z = _a.z, w = _a.w;
-        return [x, y, z, w];
-    };
-    Vector4.prototype.toString = function () {
-        var _a = this, x = _a.x, y = _a.y, z = _a.z, w = _a.w;
-        return "Vector4 { x : " + x + ", y : " + y + ", z : " + z + ", w : " + w + " }";
-    };
-    Vector4.default = { x: 0, y: 0, z: 0, w: 1 };
-    return Vector4;
-}());
-
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
 
@@ -202,156 +67,6 @@ function __spreadArray(to, from) {
     return to;
 }
 
-var Matrix2x2 = /** @class */ (function () {
-    function Matrix2x2() {
-    }
-    Object.defineProperty(Matrix2x2.prototype, 0, {
-        get: function () {
-            return this.columns[0];
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Matrix2x2.prototype, 1, {
-        get: function () {
-            return this.columns[1];
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Matrix2x2.prototype.toArray = function () {
-        return __spreadArray(__spreadArray([], __read(this[0].toArray())), __read(this[1].toArray()));
-    };
-    Matrix2x2.prototype.toString = function () {
-        var _a = this, _0 = _a[0], _1 = _a[1];
-        return ("Matrix2x2 {\n" +
-            ("    0 : { x : " + _0.x + ", y : " + _0.y + " }\n") +
-            ("    1 : { x : " + _1.x + ", y : " + _1.y + " }\n") +
-            "}");
-    };
-    return Matrix2x2;
-}());
-
-var Matrix3x3 = /** @class */ (function () {
-    function Matrix3x3() {
-    }
-    Object.defineProperty(Matrix3x3.prototype, 0, {
-        get: function () {
-            return this.columns[0];
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Matrix3x3.prototype, 1, {
-        get: function () {
-            return this.columns[1];
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Matrix3x3.prototype, 2, {
-        get: function () {
-            return this.columns[2];
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Matrix3x3.prototype.toArray = function () {
-        return __spreadArray(__spreadArray(__spreadArray([], __read(this[0].toArray())), __read(this[1].toArray())), __read(this[2].toArray()));
-    };
-    Matrix3x3.prototype.toString = function () {
-        var _a = this, _0 = _a[0], _1 = _a[1], _2 = _a[2];
-        return ("Matrix3x3 {\n" +
-            ("    0 : { x : " + _0.x + ", y : " + _0.y + ", z : " + _0.z + " }\n") +
-            ("    1 : { x : " + _1.x + ", y : " + _1.y + ", z : " + _1.z + " }\n") +
-            ("    2 : { x : " + _2.x + ", y : " + _2.y + ", z : " + _2.z + " }\n") +
-            "}");
-    };
-    return Matrix3x3;
-}());
-
-var Matrix4x4 = /** @class */ (function () {
-    function Matrix4x4() {
-    }
-    Object.defineProperty(Matrix4x4.prototype, 0, {
-        get: function () {
-            return this.columns[0];
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Matrix4x4.prototype, 1, {
-        get: function () {
-            return this.columns[1];
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Matrix4x4.prototype, 2, {
-        get: function () {
-            return this.columns[2];
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Matrix4x4.prototype, 3, {
-        get: function () {
-            return this.columns[3];
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Matrix4x4.prototype.toArray = function () {
-        return __spreadArray(__spreadArray(__spreadArray(__spreadArray([], __read(this[0].toArray())), __read(this[1].toArray())), __read(this[2].toArray())), __read(this[3].toArray()));
-    };
-    Matrix4x4.prototype.toString = function () {
-        var _a = this, _0 = _a[0], _1 = _a[1], _2 = _a[2], _3 = _a[3];
-        return ("Matrix4x4 {\n" +
-            ("    0 : { x : " + _0.x + ", y : " + _0.y + ", z : " + _0.z + ", w : " + _0.w + " }\n") +
-            ("    1 : { x : " + _1.x + ", y : " + _1.y + ", z : " + _1.z + ", w : " + _1.w + " }\n") +
-            ("    2 : { x : " + _2.x + ", y : " + _2.y + ", z : " + _2.z + ", w : " + _2.w + " }\n") +
-            ("    3 : { x : " + _3.x + ", y : " + _3.y + ", z : " + _3.z + ", w : " + _3.w + " }\n") +
-            "}");
-    };
-    return Matrix4x4;
-}());
-
-var Matrix2x2Columns = /** @class */ (function () {
-    function Matrix2x2Columns() {
-    }
-    return Matrix2x2Columns;
-}());
-
-var Matrix3x3Columns = /** @class */ (function () {
-    function Matrix3x3Columns() {
-    }
-    return Matrix3x3Columns;
-}());
-
-var Matrix4x4Columns = /** @class */ (function () {
-    function Matrix4x4Columns() {
-    }
-    return Matrix4x4Columns;
-}());
-
-var Matrix2x2Rows = /** @class */ (function () {
-    function Matrix2x2Rows() {
-    }
-    return Matrix2x2Rows;
-}());
-
-var Matrix3x3Rows = /** @class */ (function () {
-    function Matrix3x3Rows() {
-    }
-    return Matrix3x3Rows;
-}());
-
-var Matrix4x4Rows = /** @class */ (function () {
-    function Matrix4x4Rows() {
-    }
-    return Matrix4x4Rows;
-}());
-
 var NumberVector2 = /** @class */ (function (_super) {
     __extends(NumberVector2, _super);
     function NumberVector2(_a) {
@@ -384,211 +99,125 @@ var NumberVector2 = /** @class */ (function (_super) {
     return NumberVector2;
 }(Vector2));
 
-var NumberVector3 = /** @class */ (function (_super) {
-    __extends(NumberVector3, _super);
-    function NumberVector3(_a) {
-        var _b = _a === void 0 ? {} : _a, _c = _b.x, x = _c === void 0 ? Vector3.default.x : _c, _d = _b.y, y = _d === void 0 ? Vector3.default.y : _d, _e = _b.z, z = _e === void 0 ? Vector3.default.z : _e;
-        var _this = _super.call(this) || this;
-        _this._x = x;
-        _this._y = y;
-        _this._z = z;
-        return _this;
-    }
-    Object.defineProperty(NumberVector3.prototype, "x", {
-        get: function () {
-            return this._x;
-        },
-        set: function (x) {
-            this._x = x;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(NumberVector3.prototype, "y", {
-        get: function () {
-            return this._y;
-        },
-        set: function (y) {
-            this._y = y;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(NumberVector3.prototype, "z", {
-        get: function () {
-            return this._z;
-        },
-        set: function (z) {
-            this._z = z;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    return NumberVector3;
-}(Vector3));
+function vec2(x, y) {
+    if (x === undefined)
+        return new NumberVector2;
+    if (y === undefined)
+        return new NumberVector2({ x: x, y: x });
+    return new NumberVector2({ x: x, y: y });
+}
+vec2.default = Vector2.default;
 
-var NumberVector4 = /** @class */ (function (_super) {
-    __extends(NumberVector4, _super);
-    function NumberVector4(_a) {
-        var _b = _a === void 0 ? {} : _a, _c = _b.x, x = _c === void 0 ? Vector4.default.x : _c, _d = _b.y, y = _d === void 0 ? Vector4.default.y : _d, _e = _b.z, z = _e === void 0 ? Vector4.default.z : _e, _f = _b.w, w = _f === void 0 ? Vector4.default.w : _f;
-        var _this = _super.call(this) || this;
-        _this._x = x;
-        _this._y = y;
-        _this._z = z;
-        _this._w = w;
-        return _this;
-    }
-    Object.defineProperty(NumberVector4.prototype, "x", {
-        get: function () {
-            return this._x;
-        },
-        set: function (x) {
-            this._x = x;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(NumberVector4.prototype, "y", {
-        get: function () {
-            return this._y;
-        },
-        set: function (y) {
-            this._y = y;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(NumberVector4.prototype, "z", {
-        get: function () {
-            return this._z;
-        },
-        set: function (z) {
-            this._z = z;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(NumberVector4.prototype, "w", {
-        get: function () {
-            return this._w;
-        },
-        set: function (w) {
-            this._w = w;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    return NumberVector4;
-}(Vector4));
+function subtractVector2Vector2(a, b) {
+    return vec2(a.x - b.x, a.y - b.y);
+}
 
-var ArrayVector2 = /** @class */ (function (_super) {
-    __extends(ArrayVector2, _super);
-    function ArrayVector2(_a) {
-        var _b = _a === void 0 ? {} : _a, values = _b.values, _c = _b.offset, offset = _c === void 0 ? ArrayVector2.default.offset : _c, _d = _b.stride, stride = _d === void 0 ? ArrayVector2.default.stride : _d;
-        var _this = this;
-        if (!values)
-            values = ArrayVector2.default.values.slice();
-        _this = _super.call(this) || this;
-        _this.values = values;
-        _this.offset = offset;
-        _this.stride = stride;
-        return _this;
-    }
-    Object.defineProperty(ArrayVector2.prototype, "x", {
-        get: function () {
-            return this.getByIndex(ArrayVector2.index.x);
-        },
-        set: function (x) {
-            this.setByIndex(ArrayVector2.index.x, x);
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(ArrayVector2.prototype, "y", {
-        get: function () {
-            return this.getByIndex(ArrayVector2.index.y);
-        },
-        set: function (y) {
-            this.setByIndex(ArrayVector2.index.y, y);
-        },
-        enumerable: false,
-        configurable: true
-    });
-    ArrayVector2.prototype.getByIndex = function (index) {
-        var _a = this, values = _a.values, offset = _a.offset, stride = _a.stride;
-        return values[offset + stride * index];
-    };
-    ArrayVector2.prototype.setByIndex = function (index, value) {
-        var _a = this, values = _a.values, offset = _a.offset, stride = _a.stride;
-        values[offset + stride * index] = value;
-    };
-    ArrayVector2.default = __assign(__assign({}, Vector2.default), { values: [Vector2.default.x, Vector2.default.y], offset: 0, stride: 1 });
-    ArrayVector2.index = {
-        x: 0,
-        y: 1,
-    };
-    return ArrayVector2;
-}(Vector2));
+function negateVector2(a) {
+    return subtractVector2Vector2(vec2(0), a);
+}
 
-var ArrayVector3 = /** @class */ (function (_super) {
-    __extends(ArrayVector3, _super);
-    function ArrayVector3(_a) {
-        var _b = _a === void 0 ? {} : _a, values = _b.values, _c = _b.offset, offset = _c === void 0 ? ArrayVector3.default.offset : _c, _d = _b.stride, stride = _d === void 0 ? ArrayVector3.default.stride : _d;
-        var _this = this;
-        if (!values)
-            values = ArrayVector3.default.values.slice();
-        _this = _super.call(this) || this;
-        _this.values = values;
-        _this.offset = offset;
-        _this.stride = stride;
-        return _this;
+function addVector2Vector2(a, b) {
+    return vec2(a.x + b.x, a.y + b.y);
+}
+
+function addNumberVector2(a, b) {
+    return addVector2Vector2(vec2(a), b);
+}
+
+function addVector3Vector3(a, b) {
+    return vec3(a.x + b.x, a.y + b.y, a.z + b.z);
+}
+
+function addNumberVector3(a, b) {
+    return addVector3Vector3(vec3(a), b);
+}
+
+function subtractNumberVector2(a, b) {
+    return subtractVector2Vector2(vec2(a), b);
+}
+
+function subtractVector3Vector3(a, b) {
+    return vec3(a.x - b.x, a.y - b.y, a.z - b.z);
+}
+
+function subtractNumberVector3(a, b) {
+    return subtractVector3Vector3(vec3(a), b);
+}
+
+function subtractVector4Vector4(a, b) {
+    return vec4(a.x - b.x, a.y - b.y, a.z - b.z, a.w - b.w);
+}
+
+function subtractNumberVector4(a, b) {
+    return subtractVector4Vector4(vec4(a), b);
+}
+
+function subtractVector2Number(a, b) {
+    return subtractVector2Vector2(a, vec2(b));
+}
+
+function subtractVector3Number(a, b) {
+    return subtractVector3Vector3(a, vec3(b));
+}
+
+function subtractVector4Number(a, b) {
+    return subtractVector4Vector4(a, vec4(b));
+}
+
+var Matrix4x4 = /** @class */ (function () {
+    function Matrix4x4() {
     }
-    Object.defineProperty(ArrayVector3.prototype, "x", {
+    Object.defineProperty(Matrix4x4.prototype, 0, {
         get: function () {
-            return this.getByIndex(ArrayVector3.index.x);
-        },
-        set: function (x) {
-            this.setByIndex(ArrayVector3.index.x, x);
+            return this.columns[0];
         },
         enumerable: false,
         configurable: true
     });
-    Object.defineProperty(ArrayVector3.prototype, "y", {
+    Object.defineProperty(Matrix4x4.prototype, 1, {
         get: function () {
-            return this.getByIndex(ArrayVector3.index.y);
-        },
-        set: function (y) {
-            this.setByIndex(ArrayVector3.index.y, y);
+            return this.columns[1];
         },
         enumerable: false,
         configurable: true
     });
-    Object.defineProperty(ArrayVector3.prototype, "z", {
+    Object.defineProperty(Matrix4x4.prototype, 2, {
         get: function () {
-            return this.getByIndex(ArrayVector3.index.z);
-        },
-        set: function (z) {
-            this.setByIndex(ArrayVector3.index.z, z);
+            return this.columns[2];
         },
         enumerable: false,
         configurable: true
     });
-    ArrayVector3.prototype.getByIndex = function (index) {
-        var _a = this, values = _a.values, offset = _a.offset, stride = _a.stride;
-        return values[offset + stride * index];
+    Object.defineProperty(Matrix4x4.prototype, 3, {
+        get: function () {
+            return this.columns[3];
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Matrix4x4.prototype.clone = function () {
+        return mat4.apply(void 0, __spreadArray([], __read(this.toArray())));
     };
-    ArrayVector3.prototype.setByIndex = function (index, value) {
-        var _a = this, values = _a.values, offset = _a.offset, stride = _a.stride;
-        values[offset + stride * index] = value;
+    Matrix4x4.prototype.toArray = function () {
+        return __spreadArray(__spreadArray(__spreadArray(__spreadArray([], __read(this[0].toArray())), __read(this[1].toArray())), __read(this[2].toArray())), __read(this[3].toArray()));
     };
-    ArrayVector3.default = __assign(__assign({}, Vector3.default), { values: [Vector3.default.x, Vector3.default.y, Vector3.default.z], offset: 0, stride: 1 });
-    ArrayVector3.index = {
-        x: 0,
-        y: 1,
-        z: 2,
+    Matrix4x4.prototype.toString = function () {
+        var _a = this, _0 = _a[0], _1 = _a[1], _2 = _a[2], _3 = _a[3];
+        return ("Matrix4x4 {\n" +
+            ("    0 : { x : " + _0.x + ", y : " + _0.y + ", z : " + _0.z + ", w : " + _0.w + " }\n") +
+            ("    1 : { x : " + _1.x + ", y : " + _1.y + ", z : " + _1.z + ", w : " + _1.w + " }\n") +
+            ("    2 : { x : " + _2.x + ", y : " + _2.y + ", z : " + _2.z + ", w : " + _2.w + " }\n") +
+            ("    3 : { x : " + _3.x + ", y : " + _3.y + ", z : " + _3.z + ", w : " + _3.w + " }\n") +
+            "}");
     };
-    return ArrayVector3;
-}(Vector3));
+    return Matrix4x4;
+}());
+
+var Matrix4x4Columns = /** @class */ (function () {
+    function Matrix4x4Columns() {
+    }
+    return Matrix4x4Columns;
+}());
 
 var ArrayVector4 = /** @class */ (function (_super) {
     __extends(ArrayVector4, _super);
@@ -661,209 +290,6 @@ var ArrayVector4 = /** @class */ (function (_super) {
     return ArrayVector4;
 }(Vector4));
 
-var ArrayMatrix2x2Columns = /** @class */ (function (_super) {
-    __extends(ArrayMatrix2x2Columns, _super);
-    function ArrayMatrix2x2Columns(_a) {
-        var values = _a.values;
-        var _this = _super.call(this) || this;
-        _this.values = values;
-        return _this;
-    }
-    Object.defineProperty(ArrayMatrix2x2Columns.prototype, 0, {
-        get: function () {
-            return this.getByIndex(0);
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(ArrayMatrix2x2Columns.prototype, 1, {
-        get: function () {
-            return this.getByIndex(1);
-        },
-        enumerable: false,
-        configurable: true
-    });
-    ArrayMatrix2x2Columns.prototype.getByIndex = function (index) {
-        var values = this.values;
-        return new ArrayVector2({ values: values, offset: index * 2 });
-    };
-    return ArrayMatrix2x2Columns;
-}(Matrix2x2Columns));
-
-var ArrayMatrix2x2Rows = /** @class */ (function (_super) {
-    __extends(ArrayMatrix2x2Rows, _super);
-    function ArrayMatrix2x2Rows(_a) {
-        var values = _a.values;
-        var _this = _super.call(this) || this;
-        _this.values = values;
-        return _this;
-    }
-    Object.defineProperty(ArrayMatrix2x2Rows.prototype, 0, {
-        get: function () {
-            return this.getByIndex(0);
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(ArrayMatrix2x2Rows.prototype, 1, {
-        get: function () {
-            return this.getByIndex(1);
-        },
-        enumerable: false,
-        configurable: true
-    });
-    ArrayMatrix2x2Rows.prototype.getByIndex = function (index) {
-        var values = this.values;
-        return new ArrayVector2({ values: values, offset: index, stride: 2 });
-    };
-    return ArrayMatrix2x2Rows;
-}(Matrix2x2Rows));
-
-var ArrayMatrix2x2 = /** @class */ (function (_super) {
-    __extends(ArrayMatrix2x2, _super);
-    function ArrayMatrix2x2(_a) {
-        var _b = _a === void 0 ? {} : _a, _c = _b.values, values = _c === void 0 ? undefined : _c;
-        var _this = this;
-        if (values === undefined)
-            values = __spreadArray([], __read(ArrayMatrix2x2.default.values));
-        _this = _super.call(this) || this;
-        _this.values = values;
-        return _this;
-    }
-    Object.defineProperty(ArrayMatrix2x2.prototype, "columns", {
-        get: function () {
-            var values = this.values;
-            return new ArrayMatrix2x2Columns({ values: values });
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(ArrayMatrix2x2.prototype, "rows", {
-        get: function () {
-            var values = this.values;
-            return new ArrayMatrix2x2Rows({ values: values });
-        },
-        enumerable: false,
-        configurable: true
-    });
-    ArrayMatrix2x2.default = {
-        values: [
-            1, 0,
-            0, 1,
-        ],
-    };
-    return ArrayMatrix2x2;
-}(Matrix2x2));
-
-var ArrayMatrix3x3Columns = /** @class */ (function (_super) {
-    __extends(ArrayMatrix3x3Columns, _super);
-    function ArrayMatrix3x3Columns(_a) {
-        var values = _a.values;
-        var _this = _super.call(this) || this;
-        _this.values = values;
-        return _this;
-    }
-    Object.defineProperty(ArrayMatrix3x3Columns.prototype, 0, {
-        get: function () {
-            return this.getByIndex(0);
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(ArrayMatrix3x3Columns.prototype, 1, {
-        get: function () {
-            return this.getByIndex(1);
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(ArrayMatrix3x3Columns.prototype, 2, {
-        get: function () {
-            return this.getByIndex(2);
-        },
-        enumerable: false,
-        configurable: true
-    });
-    ArrayMatrix3x3Columns.prototype.getByIndex = function (index) {
-        var values = this.values;
-        return new ArrayVector3({ values: values, offset: index * 3 });
-    };
-    return ArrayMatrix3x3Columns;
-}(Matrix3x3Columns));
-
-var ArrayMatrix3x3Rows = /** @class */ (function (_super) {
-    __extends(ArrayMatrix3x3Rows, _super);
-    function ArrayMatrix3x3Rows(_a) {
-        var values = _a.values;
-        var _this = _super.call(this) || this;
-        _this.values = values;
-        return _this;
-    }
-    Object.defineProperty(ArrayMatrix3x3Rows.prototype, 0, {
-        get: function () {
-            return this.getByIndex(0);
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(ArrayMatrix3x3Rows.prototype, 1, {
-        get: function () {
-            return this.getByIndex(1);
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(ArrayMatrix3x3Rows.prototype, 2, {
-        get: function () {
-            return this.getByIndex(2);
-        },
-        enumerable: false,
-        configurable: true
-    });
-    ArrayMatrix3x3Rows.prototype.getByIndex = function (index) {
-        var values = this.values;
-        return new ArrayVector3({ values: values, offset: index, stride: 3 });
-    };
-    return ArrayMatrix3x3Rows;
-}(Matrix3x3Rows));
-
-var ArrayMatrix3x3 = /** @class */ (function (_super) {
-    __extends(ArrayMatrix3x3, _super);
-    function ArrayMatrix3x3(_a) {
-        var _b = _a === void 0 ? {} : _a, _c = _b.values, values = _c === void 0 ? undefined : _c;
-        var _this = this;
-        if (values === undefined)
-            values = __spreadArray([], __read(ArrayMatrix3x3.default.values));
-        _this = _super.call(this) || this;
-        _this.values = values;
-        return _this;
-    }
-    Object.defineProperty(ArrayMatrix3x3.prototype, "columns", {
-        get: function () {
-            var values = this.values;
-            return new ArrayMatrix3x3Columns({ values: values });
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(ArrayMatrix3x3.prototype, "rows", {
-        get: function () {
-            var values = this.values;
-            return new ArrayMatrix3x3Rows({ values: values });
-        },
-        enumerable: false,
-        configurable: true
-    });
-    ArrayMatrix3x3.default = {
-        values: [
-            1, 0, 0,
-            0, 1, 0,
-            0, 0, 1,
-        ],
-    };
-    return ArrayMatrix3x3;
-}(Matrix3x3));
-
 var ArrayMatrix4x4Columns = /** @class */ (function (_super) {
     __extends(ArrayMatrix4x4Columns, _super);
     function ArrayMatrix4x4Columns(_a) {
@@ -906,6 +332,12 @@ var ArrayMatrix4x4Columns = /** @class */ (function (_super) {
     };
     return ArrayMatrix4x4Columns;
 }(Matrix4x4Columns));
+
+var Matrix4x4Rows = /** @class */ (function () {
+    function Matrix4x4Rows() {
+    }
+    return Matrix4x4Rows;
+}());
 
 var ArrayMatrix4x4Rows = /** @class */ (function (_super) {
     __extends(ArrayMatrix4x4Rows, _super);
@@ -988,57 +420,262 @@ var ArrayMatrix4x4 = /** @class */ (function (_super) {
     return ArrayMatrix4x4;
 }(Matrix4x4));
 
-function vec2(x, y) {
-    if (x === undefined)
-        return new NumberVector2;
-    if (y === undefined)
-        return new NumberVector2({ x: x, y: x });
-    return new NumberVector2({ x: x, y: y });
+function transposeMatrix4x4(m) {
+    return mat4(m[0][0], m[1][0], m[2][0], m[3][0], m[0][1], m[1][1], m[2][1], m[3][1], m[0][2], m[1][2], m[2][2], m[3][2], m[0][3], m[1][3], m[2][3], m[3][3]);
 }
 
-function vec3(x, y, z) {
-    if (x === undefined)
-        return new NumberVector3;
-    if (y === undefined)
-        return new NumberVector3({ x: x, y: x, z: x });
-    return new NumberVector3({ x: x, y: y, z: z });
+function matrix4x4FromMatrix3x3(m) {
+    return mat4(m[0][0], m[0][1], m[0][2], 0, m[1][0], m[1][1], m[1][2], 0, m[2][0], m[2][1], m[2][2], 0, 0, 0, 0, 1);
 }
 
-function vec4(x, y, z, w) {
-    if (x === undefined)
-        return new NumberVector4;
-    if (y === undefined)
-        return new NumberVector4({ x: x, y: x, z: x, w: x });
-    return new NumberVector4({ x: x, y: y, z: z, w: w });
+function matrix4x4FromMatrix2x2(m) {
+    return mat4(m[0][0], m[0][1], 0, 0, m[1][0], m[1][1], 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 }
 
-function matrix2x2FromMatrix4x4$1(m) {
-    return mat2(m[0][0], m[0][1], m[1][0], m[1][1]);
-}
-
-function matrix2x2FromMatrix4x4(m) {
-    return mat2(m[0][0], m[0][1], m[1][0], m[1][1]);
-}
-
-function transposeMatrix2x2(m) {
-    return mat2(m[0][0], m[1][0], m[0][1], m[1][1]);
-}
-
-function mat2(m, m01, m10, m11) {
+function mat4(m, m01, m02, m03, m10, m11, m12, m13, m20, m21, m22, m23, m30, m31, m32, m33) {
     if (m === undefined)
-        return new ArrayMatrix2x2;
+        return new ArrayMatrix4x4;
     if (typeof m === 'number')
-        return new ArrayMatrix2x2({ values: [
-                m, m01,
-                m10, m11,
+        return new ArrayMatrix4x4({ values: [
+                m, m01, m02, m03,
+                m10, m11, m12, m13,
+                m20, m21, m22, m23,
+                m30, m31, m32, m33,
             ] });
+    // @todo: replace with clone()
     if ('3' in m)
-        return matrix2x2FromMatrix4x4(m);
+        return m.clone();
     if ('2' in m)
-        return matrix2x2FromMatrix4x4$1(m);
-    return mat2(m[0][0], m[0][1], m[1][0], m[1][1]);
+        return matrix4x4FromMatrix3x3(m);
+    return matrix4x4FromMatrix2x2(m);
 }
-mat2.transpose = transposeMatrix2x2;
+mat4.transpose = transposeMatrix4x4;
+
+function subtractNumberMatrix4x4(a, b) {
+    return mat4(a - b[0][0], a - b[0][1], a - b[0][2], a - b[0][3], a - b[1][0], a - b[1][1], a - b[1][2], a - b[1][3], a - b[2][0], a - b[2][1], a - b[2][2], a - b[2][3], a - b[3][0], a - b[3][1], a - b[3][2], a - b[3][3]);
+}
+
+var Matrix3x3 = /** @class */ (function () {
+    function Matrix3x3() {
+    }
+    Object.defineProperty(Matrix3x3.prototype, 0, {
+        get: function () {
+            return this.columns[0];
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Matrix3x3.prototype, 1, {
+        get: function () {
+            return this.columns[1];
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Matrix3x3.prototype, 2, {
+        get: function () {
+            return this.columns[2];
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Matrix3x3.prototype.clone = function () {
+        return mat3.apply(void 0, __spreadArray([], __read(this.toArray())));
+    };
+    Matrix3x3.prototype.toArray = function () {
+        return __spreadArray(__spreadArray(__spreadArray([], __read(this[0].toArray())), __read(this[1].toArray())), __read(this[2].toArray()));
+    };
+    Matrix3x3.prototype.toString = function () {
+        var _a = this, _0 = _a[0], _1 = _a[1], _2 = _a[2];
+        return ("Matrix3x3 {\n" +
+            ("    0 : { x : " + _0.x + ", y : " + _0.y + ", z : " + _0.z + " }\n") +
+            ("    1 : { x : " + _1.x + ", y : " + _1.y + ", z : " + _1.z + " }\n") +
+            ("    2 : { x : " + _2.x + ", y : " + _2.y + ", z : " + _2.z + " }\n") +
+            "}");
+    };
+    return Matrix3x3;
+}());
+
+var Matrix3x3Columns = /** @class */ (function () {
+    function Matrix3x3Columns() {
+    }
+    return Matrix3x3Columns;
+}());
+
+var ArrayVector3 = /** @class */ (function (_super) {
+    __extends(ArrayVector3, _super);
+    function ArrayVector3(_a) {
+        var _b = _a === void 0 ? {} : _a, values = _b.values, _c = _b.offset, offset = _c === void 0 ? ArrayVector3.default.offset : _c, _d = _b.stride, stride = _d === void 0 ? ArrayVector3.default.stride : _d;
+        var _this = this;
+        if (!values)
+            values = ArrayVector3.default.values.slice();
+        _this = _super.call(this) || this;
+        _this.values = values;
+        _this.offset = offset;
+        _this.stride = stride;
+        return _this;
+    }
+    Object.defineProperty(ArrayVector3.prototype, "x", {
+        get: function () {
+            return this.getByIndex(ArrayVector3.index.x);
+        },
+        set: function (x) {
+            this.setByIndex(ArrayVector3.index.x, x);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(ArrayVector3.prototype, "y", {
+        get: function () {
+            return this.getByIndex(ArrayVector3.index.y);
+        },
+        set: function (y) {
+            this.setByIndex(ArrayVector3.index.y, y);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(ArrayVector3.prototype, "z", {
+        get: function () {
+            return this.getByIndex(ArrayVector3.index.z);
+        },
+        set: function (z) {
+            this.setByIndex(ArrayVector3.index.z, z);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    ArrayVector3.prototype.getByIndex = function (index) {
+        var _a = this, values = _a.values, offset = _a.offset, stride = _a.stride;
+        return values[offset + stride * index];
+    };
+    ArrayVector3.prototype.setByIndex = function (index, value) {
+        var _a = this, values = _a.values, offset = _a.offset, stride = _a.stride;
+        values[offset + stride * index] = value;
+    };
+    ArrayVector3.default = __assign(__assign({}, Vector3.default), { values: [Vector3.default.x, Vector3.default.y, Vector3.default.z], offset: 0, stride: 1 });
+    ArrayVector3.index = {
+        x: 0,
+        y: 1,
+        z: 2,
+    };
+    return ArrayVector3;
+}(Vector3));
+
+var ArrayMatrix3x3Columns = /** @class */ (function (_super) {
+    __extends(ArrayMatrix3x3Columns, _super);
+    function ArrayMatrix3x3Columns(_a) {
+        var values = _a.values;
+        var _this = _super.call(this) || this;
+        _this.values = values;
+        return _this;
+    }
+    Object.defineProperty(ArrayMatrix3x3Columns.prototype, 0, {
+        get: function () {
+            return this.getByIndex(0);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(ArrayMatrix3x3Columns.prototype, 1, {
+        get: function () {
+            return this.getByIndex(1);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(ArrayMatrix3x3Columns.prototype, 2, {
+        get: function () {
+            return this.getByIndex(2);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    ArrayMatrix3x3Columns.prototype.getByIndex = function (index) {
+        var values = this.values;
+        return new ArrayVector3({ values: values, offset: index * 3 });
+    };
+    return ArrayMatrix3x3Columns;
+}(Matrix3x3Columns));
+
+var Matrix3x3Rows = /** @class */ (function () {
+    function Matrix3x3Rows() {
+    }
+    return Matrix3x3Rows;
+}());
+
+var ArrayMatrix3x3Rows = /** @class */ (function (_super) {
+    __extends(ArrayMatrix3x3Rows, _super);
+    function ArrayMatrix3x3Rows(_a) {
+        var values = _a.values;
+        var _this = _super.call(this) || this;
+        _this.values = values;
+        return _this;
+    }
+    Object.defineProperty(ArrayMatrix3x3Rows.prototype, 0, {
+        get: function () {
+            return this.getByIndex(0);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(ArrayMatrix3x3Rows.prototype, 1, {
+        get: function () {
+            return this.getByIndex(1);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(ArrayMatrix3x3Rows.prototype, 2, {
+        get: function () {
+            return this.getByIndex(2);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    ArrayMatrix3x3Rows.prototype.getByIndex = function (index) {
+        var values = this.values;
+        return new ArrayVector3({ values: values, offset: index, stride: 3 });
+    };
+    return ArrayMatrix3x3Rows;
+}(Matrix3x3Rows));
+
+var ArrayMatrix3x3 = /** @class */ (function (_super) {
+    __extends(ArrayMatrix3x3, _super);
+    function ArrayMatrix3x3(_a) {
+        var _b = _a === void 0 ? {} : _a, _c = _b.values, values = _c === void 0 ? undefined : _c;
+        var _this = this;
+        if (values === undefined)
+            values = __spreadArray([], __read(ArrayMatrix3x3.default.values));
+        _this = _super.call(this) || this;
+        _this.values = values;
+        return _this;
+    }
+    Object.defineProperty(ArrayMatrix3x3.prototype, "columns", {
+        get: function () {
+            var values = this.values;
+            return new ArrayMatrix3x3Columns({ values: values });
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(ArrayMatrix3x3.prototype, "rows", {
+        get: function () {
+            var values = this.values;
+            return new ArrayMatrix3x3Rows({ values: values });
+        },
+        enumerable: false,
+        configurable: true
+    });
+    ArrayMatrix3x3.default = {
+        values: [
+            1, 0, 0,
+            0, 1, 0,
+            0, 0, 1,
+        ],
+    };
+    return ArrayMatrix3x3;
+}(Matrix3x3));
 
 function transposeMatrix3x3(m) {
     return mat3(m[0][0], m[1][0], m[2][0], m[0][1], m[1][1], m[2][1], m[0][2], m[1][2], m[2][2]);
@@ -1064,289 +701,230 @@ function mat3(m, m01, m02, m10, m11, m12, m20, m21, m22) {
     if ('3' in m)
         return matrix3x3FromMatrix4x4(m);
     if ('2' in m)
-        return mat3(m[0][0], m[0][1], m[0][2], m[1][0], m[1][1], m[1][2], m[2][0], m[2][1], m[2][2]);
+        return m.clone();
     return matrix3x3FromMatrix2x2(m);
 }
 mat3.transpose = transposeMatrix3x3;
 
-function transposeMatrix4x4(m) {
-    return mat4(m[0][0], m[1][0], m[2][0], m[3][0], m[0][1], m[1][1], m[2][1], m[3][1], m[0][2], m[1][2], m[2][2], m[3][2], m[0][3], m[1][3], m[2][3], m[3][3]);
-}
-
-function matrix4x4FromMatrix3x3(m) {
-    return mat4(m[0][0], m[0][1], m[0][2], 0, m[1][0], m[1][1], m[1][2], 0, m[2][0], m[2][1], m[2][2], 0, 0, 0, 0, 1);
-}
-
-function matrix4x4FromMatrix2x2(m) {
-    return mat4(m[0][0], m[0][1], 0, 0, m[1][0], m[1][1], 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-}
-
-function mat4(m, m01, m02, m03, m10, m11, m12, m13, m20, m21, m22, m23, m30, m31, m32, m33) {
-    if (m === undefined)
-        return new ArrayMatrix4x4;
-    if (typeof m === 'number')
-        return new ArrayMatrix4x4({ values: [
-                m, m01, m02, m03,
-                m10, m11, m12, m13,
-                m20, m21, m22, m23,
-                m30, m31, m32, m33,
-            ] });
-    // @todo: replace with clone()
-    if ('3' in m)
-        return mat4(m[0][0], m[0][1], m[0][2], m[0][3], m[1][0], m[1][1], m[1][2], m[1][3], m[2][0], m[2][1], m[2][2], m[2][3], m[3][0], m[3][1], m[3][2], m[3][3]);
-    if ('2' in m)
-        return matrix4x4FromMatrix3x3(m);
-    return matrix4x4FromMatrix2x2(m);
-}
-mat4.transpose = transposeMatrix4x4;
-
-function multiplyNumberMatrix2x2(a, b) {
-    return mat2(a * b[0][0], a * b[0][1], a * b[1][0], a * b[1][1]);
-}
-
-function inverseMatrix2x2(m) {
-    var d = m[0][0] * m[1][1] - m[0][1] * m[1][0];
-    return multiplyNumberMatrix2x2(1 / d, mat2(+m[1][1], -m[0][1], -m[1][0], +m[0][0]));
-}
-
-function multiplyNumberMatrix3x3(a, b) {
-    return mat3(a * b[0][0], a * b[0][1], a * b[0][2], a * b[1][0], a * b[1][1], a * b[1][2], a * b[2][0], a * b[2][1], a * b[2][2]);
-}
-
-function inverseMatrix3x3(m) {
-    var a = m[0][0];
-    var b = m[1][0];
-    var c = m[2][0];
-    var d = m[0][1];
-    var e = m[1][1];
-    var f = m[2][1];
-    var g = m[0][2];
-    var h = m[1][2];
-    var i = m[2][2];
-    var A = e * i - f * h;
-    var B = f * g - d * i;
-    var C = d * h - e * g;
-    var D = c * h - b * i;
-    var E = a * i - c * g;
-    var F = b * g - a * h;
-    var G = b * f - c * e;
-    var H = c * d - a * f;
-    var I = a * e - b * d;
-    var det = a * A + b * B + c * C;
-    return multiplyNumberMatrix3x3(1 / det, mat3(A, B, C, D, E, F, G, H, I));
-}
-
-function multiplyNumberMatrix4x4(a, b) {
-    return mat4(a * b[0][0], a * b[0][1], a * b[0][2], a * b[0][3], a * b[1][0], a * b[1][1], a * b[1][2], a * b[1][3], a * b[2][0], a * b[2][1], a * b[2][2], a * b[2][3], a * b[3][0], a * b[3][1], a * b[3][2], a * b[3][3]);
-}
-
-function inverseMatrix4x4(m) {
-    var a11 = m[0][0];
-    var a12 = m[1][0];
-    var a13 = m[2][0];
-    var a14 = m[3][0];
-    var a21 = m[0][1];
-    var a22 = m[1][1];
-    var a23 = m[2][1];
-    var a24 = m[3][1];
-    var a31 = m[0][2];
-    var a32 = m[1][2];
-    var a33 = m[2][2];
-    var a34 = m[3][2];
-    var a41 = m[0][3];
-    var a42 = m[1][3];
-    var a43 = m[2][3];
-    var a44 = m[3][3];
-    var det = +a11 * (a22 * a33 * a44 + a23 * a34 * a42 + a24 * a32 * a43 - a24 * a33 * a42 - a23 * a32 * a44 - a22 * a34 * a43)
-        - a21 * (a12 * a33 * a44 + a13 * a34 * a42 + a14 * a32 * a43 - a14 * a33 * a42 - a13 * a32 * a44 - a12 * a34 * a43)
-        + a31 * (a12 * a23 * a44 + a13 * a24 * a42 + a14 * a22 * a43 - a14 * a23 * a42 - a13 * a22 * a44 - a12 * a24 * a43)
-        - a41 * (a12 * a23 * a34 + a13 * a24 * a32 + a14 * a22 * a33 - a14 * a23 * a32 - a13 * a22 * a34 - a12 * a24 * a33);
-    var M11 = a22 * a33 * a44 + a23 * a34 * a42 + a24 * a32 * a43 - a24 * a33 * a42 - a23 * a32 * a44 - a22 * a34 * a43;
-    var M21 = a12 * a33 * a44 + a13 * a34 * a42 + a14 * a32 * a43 - a14 * a33 * a42 - a13 * a32 * a44 - a12 * a34 * a43;
-    var M31 = a12 * a23 * a44 + a13 * a24 * a42 + a14 * a22 * a43 - a14 * a23 * a42 - a13 * a22 * a44 - a12 * a24 * a43;
-    var M41 = a12 * a23 * a34 + a13 * a24 * a32 + a14 * a22 * a33 - a14 * a23 * a32 - a13 * a22 * a34 - a12 * a24 * a33;
-    var M12 = a21 * a33 * a44 + a23 * a34 * a41 + a24 * a31 * a43 - a24 * a33 * a41 - a23 * a31 * a44 - a21 * a34 * a43;
-    var M22 = a11 * a33 * a44 + a13 * a34 * a41 + a14 * a31 * a43 - a14 * a33 * a41 - a13 * a31 * a44 - a11 * a34 * a43;
-    var M32 = a11 * a23 * a44 + a13 * a24 * a41 + a14 * a21 * a43 - a14 * a23 * a41 - a13 * a21 * a44 - a11 * a24 * a43;
-    var M42 = a11 * a23 * a34 + a13 * a24 * a31 + a14 * a21 * a33 - a14 * a23 * a31 - a13 * a21 * a34 - a11 * a24 * a33;
-    var M13 = a21 * a32 * a44 + a22 * a34 * a41 + a24 * a31 * a42 - a24 * a32 * a41 - a22 * a31 * a44 - a21 * a34 * a42;
-    var M23 = a11 * a32 * a44 + a12 * a34 * a41 + a14 * a31 * a42 - a14 * a32 * a41 - a12 * a31 * a44 - a11 * a34 * a42;
-    var M33 = a11 * a22 * a44 + a12 * a24 * a41 + a14 * a21 * a42 - a14 * a22 * a41 - a12 * a21 * a44 - a11 * a24 * a42;
-    var M43 = a11 * a22 * a34 + a12 * a24 * a31 + a14 * a21 * a32 - a14 * a22 * a31 - a12 * a21 * a34 - a11 * a24 * a32;
-    var M14 = a21 * a32 * a43 + a22 * a33 * a41 + a23 * a31 * a42 - a23 * a32 * a41 - a22 * a31 * a43 - a21 * a33 * a42;
-    var M24 = a11 * a32 * a43 + a12 * a33 * a41 + a13 * a31 * a42 - a13 * a32 * a41 - a12 * a31 * a43 - a11 * a33 * a42;
-    var M34 = a11 * a22 * a43 + a12 * a23 * a41 + a13 * a21 * a42 - a13 * a22 * a41 - a12 * a21 * a43 - a11 * a23 * a42;
-    var M44 = a11 * a22 * a33 + a12 * a23 * a31 + a13 * a21 * a32 - a13 * a22 * a31 - a12 * a21 * a33 - a11 * a23 * a32;
-    var A11 = Math.pow((-1), (1 + 1)) * M11;
-    var A21 = Math.pow((-1), (2 + 1)) * M12;
-    var A31 = Math.pow((-1), (3 + 1)) * M13;
-    var A41 = Math.pow((-1), (4 + 1)) * M14;
-    var A12 = Math.pow((-1), (1 + 2)) * M21;
-    var A22 = Math.pow((-1), (2 + 2)) * M22;
-    var A32 = Math.pow((-1), (3 + 2)) * M23;
-    var A42 = Math.pow((-1), (4 + 2)) * M24;
-    var A13 = Math.pow((-1), (1 + 3)) * M31;
-    var A23 = Math.pow((-1), (2 + 3)) * M32;
-    var A33 = Math.pow((-1), (3 + 3)) * M33;
-    var A43 = Math.pow((-1), (4 + 3)) * M34;
-    var A14 = Math.pow((-1), (1 + 4)) * M41;
-    var A24 = Math.pow((-1), (2 + 4)) * M42;
-    var A34 = Math.pow((-1), (3 + 4)) * M43;
-    var A44 = Math.pow((-1), (4 + 4)) * M44;
-    return multiplyNumberMatrix4x4(1 / det, mat4(A11, A21, A31, A41, A12, A22, A32, A42, A13, A23, A33, A43, A14, A24, A34, A44));
-}
-
-function addVector2Vector2(a, b) {
-    return vec2(a.x + b.x, a.y + b.y);
-}
-
-function addNumberVector2(a, b) {
-    return addVector2Vector2(vec2(a), b);
-}
-
-function addVector3Vector3(a, b) {
-    return vec3(a.x + b.x, a.y + b.y, a.z + b.z);
-}
-
-function addNumberVector3(a, b) {
-    return addVector3Vector3(vec3(a), b);
-}
-
-function addVector4Vector4(a, b) {
-    return vec4(a.x + b.x, a.y + b.y, a.z + b.z, a.w + b.w);
-}
-
-function addNumberVector4(a, b) {
-    return addVector4Vector4(vec4(a), b);
-}
-
-function addVector2Number(a, b) {
-    return addVector2Vector2(a, vec2(b));
-}
-
-function addVector3Number(a, b) {
-    return addVector3Vector3(a, vec3(b));
-}
-
-function addVector4Number(a, b) {
-    return addVector4Vector4(a, vec4(b));
-}
-
-function addNumberMatrix4x4(a, b) {
-    return mat4(a + b[0][0], a + b[0][1], a + b[0][2], a + b[0][3], a + b[1][0], a + b[1][1], a + b[1][2], a + b[1][3], a + b[2][0], a + b[2][1], a + b[2][2], a + b[2][3], a + b[3][0], a + b[3][1], a + b[3][2], a + b[3][3]);
-}
-
-function addNumberMatrix3x3(a, b) {
-    return mat3(a + b[0][0], a + b[0][1], a + b[0][2], a + b[1][0], a + b[1][1], a + b[1][2], a + b[2][0], a + b[2][1], a + b[2][2]);
-}
-
-function addNumberMatrix2x2(a, b) {
-    return mat2(a + b[0][0], a + b[0][1], a + b[1][0], a + b[1][1]);
-}
-
-function addMatrix4x4Number(a, b) {
-    return mat4(a[0][0] + b, a[0][1] + b, a[0][2] + b, a[0][3] + b, a[1][0] + b, a[1][1] + b, a[1][2] + b, a[1][3] + b, a[2][0] + b, a[2][1] + b, a[2][2] + b, a[2][3] + b, a[3][0] + b, a[3][1] + b, a[3][2] + b, a[3][3] + b);
-}
-
-function addMatrix3x3Number(a, b) {
-    return mat3(a[0][0] + b, a[0][1] + b, a[0][2] + b, a[1][0] + b, a[1][1] + b, a[1][2] + b, a[2][0] + b, a[2][1] + b, a[2][2] + b);
-}
-
-function addMatrix2x2Number(a, b) {
-    return mat2(a[0][0] + b, a[0][1] + b, a[1][0] + b, a[1][1] + b);
-}
-
-function add(a, b) {
-    if (typeof a === 'number') {
-        if (typeof b === 'number')
-            return a + b;
-        if ('3' in b) {
-            if (typeof b[3] === 'number')
-                return addNumberVector4(a, b);
-            return addNumberMatrix4x4(a, b);
-        }
-        if ('2' in b) {
-            if (typeof b[2] === 'number')
-                return addNumberVector3(a, b);
-            return addNumberMatrix3x3(a, b);
-        }
-        if (typeof b[1] === 'number')
-            return addNumberVector2(a, b);
-        return addNumberMatrix2x2(a, b);
-    }
-    if ('3' in a) {
-        if (typeof a[3] === 'number') {
-            if (typeof b === 'number')
-                return addVector4Number(a, b);
-            if ('3' in b)
-                return addVector4Vector4(a, b);
-            if ('2' in b)
-                return addVector3Vector3(a, b);
-            return addVector2Vector2(a, b);
-        }
-        return addMatrix4x4Number(a, b);
-    }
-    if ('2' in a) {
-        if (typeof a[2] === 'number') {
-            if (typeof b === 'number')
-                return addVector3Number(a, b);
-            if ('2' in b)
-                return addVector3Vector3(a, b);
-            return addVector2Vector2(a, b);
-        }
-        return addMatrix3x3Number(a, b);
-    }
-    if (typeof a[1] === 'number') {
-        if (typeof b === 'number')
-            return addVector2Number(a, b);
-        return addVector2Vector2(a, b);
-    }
-    return addMatrix2x2Number(a, b);
-}
-
-function subtractVector2Vector2(a, b) {
-    return vec2(a.x - b.x, a.y - b.y);
-}
-
-function subtractNumberVector2(a, b) {
-    return subtractVector2Vector2(vec2(a), b);
-}
-
-function subtractVector3Vector3(a, b) {
-    return vec3(a.x - b.x, a.y - b.y, a.z - b.z);
-}
-
-function subtractNumberVector3(a, b) {
-    return subtractVector3Vector3(vec3(a), b);
-}
-
-function subtractVector4Vector4(a, b) {
-    return vec4(a.x - b.x, a.y - b.y, a.z - b.z, a.w - b.w);
-}
-
-function subtractNumberVector4(a, b) {
-    return subtractVector4Vector4(vec4(a), b);
-}
-
-function subtractVector2Number(a, b) {
-    return subtractVector2Vector2(a, vec2(b));
-}
-
-function subtractVector3Number(a, b) {
-    return subtractVector3Vector3(a, vec3(b));
-}
-
-function subtractVector4Number(a, b) {
-    return subtractVector4Vector4(a, vec4(b));
-}
-
-function subtractNumberMatrix4x4(a, b) {
-    return mat4(a - b[0][0], a - b[0][1], a - b[0][2], a - b[0][3], a - b[1][0], a - b[1][1], a - b[1][2], a - b[1][3], a - b[2][0], a - b[2][1], a - b[2][2], a - b[2][3], a - b[3][0], a - b[3][1], a - b[3][2], a - b[3][3]);
-}
-
 function subtractNumberMatrix3x3(a, b) {
     return mat3(a - b[0][0], a - b[0][1], a - b[0][2], a - b[1][0], a - b[1][1], a - b[1][2], a - b[2][0], a - b[2][1], a - b[2][2]);
 }
+
+var Matrix2x2 = /** @class */ (function () {
+    function Matrix2x2() {
+    }
+    Object.defineProperty(Matrix2x2.prototype, 0, {
+        get: function () {
+            return this.columns[0];
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Matrix2x2.prototype, 1, {
+        get: function () {
+            return this.columns[1];
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Matrix2x2.prototype.clone = function () {
+        return mat2.apply(void 0, __spreadArray([], __read(this.toArray())));
+    };
+    Matrix2x2.prototype.toArray = function () {
+        return __spreadArray(__spreadArray([], __read(this[0].toArray())), __read(this[1].toArray()));
+    };
+    Matrix2x2.prototype.toString = function () {
+        var _a = this, _0 = _a[0], _1 = _a[1];
+        return ("Matrix2x2 {\n" +
+            ("    0 : { x : " + _0.x + ", y : " + _0.y + " }\n") +
+            ("    1 : { x : " + _1.x + ", y : " + _1.y + " }\n") +
+            "}");
+    };
+    return Matrix2x2;
+}());
+
+var Matrix2x2Columns = /** @class */ (function () {
+    function Matrix2x2Columns() {
+    }
+    return Matrix2x2Columns;
+}());
+
+var ArrayVector2 = /** @class */ (function (_super) {
+    __extends(ArrayVector2, _super);
+    function ArrayVector2(_a) {
+        var _b = _a === void 0 ? {} : _a, values = _b.values, _c = _b.offset, offset = _c === void 0 ? ArrayVector2.default.offset : _c, _d = _b.stride, stride = _d === void 0 ? ArrayVector2.default.stride : _d;
+        var _this = this;
+        if (!values)
+            values = ArrayVector2.default.values.slice();
+        _this = _super.call(this) || this;
+        _this.values = values;
+        _this.offset = offset;
+        _this.stride = stride;
+        return _this;
+    }
+    Object.defineProperty(ArrayVector2.prototype, "x", {
+        get: function () {
+            return this.getByIndex(ArrayVector2.index.x);
+        },
+        set: function (x) {
+            this.setByIndex(ArrayVector2.index.x, x);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(ArrayVector2.prototype, "y", {
+        get: function () {
+            return this.getByIndex(ArrayVector2.index.y);
+        },
+        set: function (y) {
+            this.setByIndex(ArrayVector2.index.y, y);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    ArrayVector2.prototype.getByIndex = function (index) {
+        var _a = this, values = _a.values, offset = _a.offset, stride = _a.stride;
+        return values[offset + stride * index];
+    };
+    ArrayVector2.prototype.setByIndex = function (index, value) {
+        var _a = this, values = _a.values, offset = _a.offset, stride = _a.stride;
+        values[offset + stride * index] = value;
+    };
+    ArrayVector2.default = __assign(__assign({}, Vector2.default), { values: [Vector2.default.x, Vector2.default.y], offset: 0, stride: 1 });
+    ArrayVector2.index = {
+        x: 0,
+        y: 1,
+    };
+    return ArrayVector2;
+}(Vector2));
+
+var ArrayMatrix2x2Columns = /** @class */ (function (_super) {
+    __extends(ArrayMatrix2x2Columns, _super);
+    function ArrayMatrix2x2Columns(_a) {
+        var values = _a.values;
+        var _this = _super.call(this) || this;
+        _this.values = values;
+        return _this;
+    }
+    Object.defineProperty(ArrayMatrix2x2Columns.prototype, 0, {
+        get: function () {
+            return this.getByIndex(0);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(ArrayMatrix2x2Columns.prototype, 1, {
+        get: function () {
+            return this.getByIndex(1);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    ArrayMatrix2x2Columns.prototype.getByIndex = function (index) {
+        var values = this.values;
+        return new ArrayVector2({ values: values, offset: index * 2 });
+    };
+    return ArrayMatrix2x2Columns;
+}(Matrix2x2Columns));
+
+var Matrix2x2Rows = /** @class */ (function () {
+    function Matrix2x2Rows() {
+    }
+    return Matrix2x2Rows;
+}());
+
+var ArrayMatrix2x2Rows = /** @class */ (function (_super) {
+    __extends(ArrayMatrix2x2Rows, _super);
+    function ArrayMatrix2x2Rows(_a) {
+        var values = _a.values;
+        var _this = _super.call(this) || this;
+        _this.values = values;
+        return _this;
+    }
+    Object.defineProperty(ArrayMatrix2x2Rows.prototype, 0, {
+        get: function () {
+            return this.getByIndex(0);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(ArrayMatrix2x2Rows.prototype, 1, {
+        get: function () {
+            return this.getByIndex(1);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    ArrayMatrix2x2Rows.prototype.getByIndex = function (index) {
+        var values = this.values;
+        return new ArrayVector2({ values: values, offset: index, stride: 2 });
+    };
+    return ArrayMatrix2x2Rows;
+}(Matrix2x2Rows));
+
+var ArrayMatrix2x2 = /** @class */ (function (_super) {
+    __extends(ArrayMatrix2x2, _super);
+    function ArrayMatrix2x2(_a) {
+        var _b = _a === void 0 ? {} : _a, _c = _b.values, values = _c === void 0 ? undefined : _c;
+        var _this = this;
+        if (values === undefined)
+            values = __spreadArray([], __read(ArrayMatrix2x2.default.values));
+        _this = _super.call(this) || this;
+        _this.values = values;
+        return _this;
+    }
+    Object.defineProperty(ArrayMatrix2x2.prototype, "columns", {
+        get: function () {
+            var values = this.values;
+            return new ArrayMatrix2x2Columns({ values: values });
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(ArrayMatrix2x2.prototype, "rows", {
+        get: function () {
+            var values = this.values;
+            return new ArrayMatrix2x2Rows({ values: values });
+        },
+        enumerable: false,
+        configurable: true
+    });
+    ArrayMatrix2x2.default = {
+        values: [
+            1, 0,
+            0, 1,
+        ],
+    };
+    return ArrayMatrix2x2;
+}(Matrix2x2));
+
+function matrix2x2FromMatrix4x4$1(m) {
+    return mat2(m[0][0], m[0][1], m[1][0], m[1][1]);
+}
+
+function matrix2x2FromMatrix4x4(m) {
+    return mat2(m[0][0], m[0][1], m[1][0], m[1][1]);
+}
+
+function transposeMatrix2x2(m) {
+    return mat2(m[0][0], m[1][0], m[0][1], m[1][1]);
+}
+
+function mat2(m, m01, m10, m11) {
+    if (m === undefined)
+        return new ArrayMatrix2x2;
+    if (typeof m === 'number')
+        return new ArrayMatrix2x2({ values: [
+                m, m01,
+                m10, m11,
+            ] });
+    if ('3' in m)
+        return matrix2x2FromMatrix4x4(m);
+    if ('2' in m)
+        return matrix2x2FromMatrix4x4$1(m);
+    return m.clone();
+}
+mat2.transpose = transposeMatrix2x2;
 
 function subtractNumberMatrix2x2(a, b) {
     return mat2(a - b[0][0], a - b[0][1], a - b[1][0], a - b[1][1]);
@@ -1364,52 +942,119 @@ function subtractMatrix2x2Number(a, b) {
     return mat2(a[0][0] - b, a[0][1] - b, a[1][0] - b, a[1][1] - b);
 }
 
+function deduce(s, matrix4x4Handler, matrix3x3Handler, matrix2x2Handler, vector4Handler, vector3Handler, vector2Handler, numberHandler) {
+    if (typeof s === 'number')
+        return numberHandler(s);
+    var x = ('x' in s && s.x) || (0 in s && s[0]);
+    if (typeof x === 'number') {
+        var y_1 = ('y' in s && s.y) || (1 in s && s[1]);
+        var z_1 = ('z' in s && s.z) || (2 in s && s[2]);
+        if (typeof z_1 !== 'number')
+            return vector2Handler(vec2(x, y_1));
+        var w_1 = ('w' in s && s.w) || (3 in s && s[3]);
+        if (typeof w_1 === 'number')
+            return vector4Handler(vec4(x, y_1, z_1, w_1));
+        return vector3Handler(vec3(x, y_1, z_1));
+    }
+    var xx = ('x' in x && x.x) || (0 in x && x[0]);
+    var xy = ('y' in x && x.y) || (1 in x && x[1]);
+    var y = ('y' in s && s.y) || (1 in s && s[1]);
+    var yx = ('x' in y && y.x) || (0 in y && y[0]);
+    var yy = ('y' in y && y.y) || (1 in y && y[1]);
+    var z = ('z' in s && s.z) || (2 in s && s[2]);
+    if (z === false) {
+        return matrix2x2Handler(mat2(xx, xy, yx, yy));
+    }
+    var xz = ('z' in x && x.z) || (2 in x && x[2]);
+    var yz = ('z' in y && y.z) || (2 in y && y[2]);
+    var zx = ('x' in z && z.x) || (0 in z && z[0]);
+    var zy = ('y' in z && z.y) || (1 in z && z[1]);
+    var zz = ('z' in z && z.z) || (2 in z && z[2]);
+    var w = ('w' in s && s.w) || (3 in s && s[3]);
+    if (w === false) {
+        return matrix3x3Handler(mat3(xx, xy, xz, yx, yy, yz, zx, zy, zz));
+    }
+    var yw = ('w' in y && y.w) || (3 in y && y[3]);
+    var xw = ('w' in x && x.w) || (3 in x && x[3]);
+    var zw = ('w' in z && z.w) || (3 in z && z[3]);
+    var wx = ('x' in w && w.x) || (0 in w && w[0]);
+    var wy = ('y' in w && w.y) || (1 in w && w[1]);
+    var wz = ('z' in w && w.z) || (2 in w && w[2]);
+    var ww = ('w' in w && w.w) || (3 in w && w[3]);
+    return matrix4x4Handler(mat4(xx, xy, xz, xw, yx, yy, yz, yw, zx, zy, zz, zw, wx, wy, wz, ww));
+}
+
 function subtract(a, b) {
-    if (typeof a === 'number') {
-        if (typeof b === 'number')
-            return a - b;
-        if ('3' in b) {
-            if (typeof b[3] === 'number')
-                return subtractNumberVector4(a, b);
-            return subtractNumberMatrix4x4(a, b);
-        }
-        if ('2' in b) {
-            if (typeof b[2] === 'number')
-                return subtractNumberVector3(a, b);
-            return subtractNumberMatrix3x3(a, b);
-        }
-        if (typeof b[1] === 'number')
-            return subtractNumberVector2(a, b);
-        return subtractNumberMatrix2x2(a, b);
-    }
-    if ('3' in a) {
-        if (typeof a[3] === 'number') {
-            if (typeof b === 'number')
-                return subtractVector4Number(a, b);
-            if ('3' in b)
-                return subtractVector4Vector4(a, b);
-            if ('2' in b)
-                return subtractVector3Vector3(a, b);
-            return subtractVector2Vector2(a, b);
-        }
-        return subtractMatrix4x4Number(a, b);
-    }
-    if ('2' in a) {
-        if (typeof a[2] === 'number') {
-            if (typeof b === 'number')
-                return subtractVector3Number(a, b);
-            if ('2' in b)
-                return subtractVector3Vector3(a, b);
-            return subtractVector2Vector2(a, b);
-        }
-        return subtractMatrix3x3Number(a, b);
-    }
-    if (typeof a[1] === 'number') {
-        if (typeof b === 'number')
-            return subtractVector2Number(a, b);
-        return subtractVector2Vector2(a, b);
-    }
-    return subtractMatrix2x2Number(a, b);
+    return deduce(a, 
+    /* Matrix4x4 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ null, 
+    /* Matrix3x3 */ null, 
+    /* Matrix2x2 */ null, 
+    /* Vector4 */ null, 
+    /* Vector3 */ null, 
+    /* Vector2 */ null, 
+    /* number */ function (b) { return subtractMatrix4x4Number(a, b); }); }, 
+    /* Matrix3x3 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ null, 
+    /* Matrix3x3 */ null, 
+    /* Matrix2x2 */ null, 
+    /* Vector4 */ null, 
+    /* Vector3 */ null, 
+    /* Vector2 */ null, 
+    /* number */ function (b) { return subtractMatrix3x3Number(a, b); }); }, 
+    /* Matrix2x2 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ null, 
+    /* Matrix3x3 */ null, 
+    /* Matrix2x2 */ null, 
+    /* Vector4 */ null, 
+    /* Vector3 */ null, 
+    /* Vector2 */ null, 
+    /* number */ function (b) { return subtractMatrix2x2Number(a, b); }); }, 
+    /* Vector4 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ null, 
+    /* Matrix3x3 */ null, 
+    /* Matrix2x2 */ null, 
+    /* Vector4 */ function (b) { return subtractVector4Vector4(a, b); }, 
+    /* Vector3 */ function (b) { return subtractVector3Vector3(vec3(a.x, a.y, a.z), b); }, // @todo: subtract conversion via vec
+    /* Vector2 */ function (// @todo: subtract conversion via vec
+    b) { return subtractVector2Vector2(vec2(a.x, a.y), b); }, // @todo: subtract conversion via vec
+    /* number */ function (// @todo: subtract conversion via vec
+    b) { return subtractVector4Number(a, b); }); }, 
+    /* Vector3 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ null, 
+    /* Matrix3x3 */ null, 
+    /* Matrix2x2 */ null, 
+    /* Vector4 */ function (b) { return subtractVector3Vector3(a, vec3(b.x, b.y, b.z)); }, // @todo: subtract conversion
+    /* Vector3 */ function (// @todo: subtract conversion
+    b) { return subtractVector3Vector3(a, b); }, 
+    /* Vector2 */ function (b) { return subtractVector2Vector2(vec2(a.x, a.y), b); }, // @todo: subtract conversion
+    /* number */ function (// @todo: subtract conversion
+    b) { return subtractVector3Number(a, b); }); }, 
+    /* Vector2 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ null, 
+    /* Matrix3x3 */ null, 
+    /* Matrix2x2 */ null, 
+    /* Vector4 */ function (b) { return subtractVector2Vector2(a, vec2(b.x, b.y)); }, // @todo: subtract conversion
+    /* Vector3 */ function (// @todo: subtract conversion
+    b) { return subtractVector2Vector2(a, vec2(b.x, b.y)); }, // @todo: subtract conversion
+    /* Vector2 */ function (// @todo: subtract conversion
+    b) { return subtractVector2Vector2(a, b); }, 
+    /* number */ function (b) { return subtractVector2Number(a, b); }); }, 
+    /* number */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ function (b) { return subtractNumberMatrix4x4(a, b); }, 
+    /* Matrix3x3 */ function (b) { return subtractNumberMatrix3x3(a, b); }, 
+    /* Matrix2x2 */ function (b) { return subtractNumberMatrix2x2(a, b); }, 
+    /* Vector4 */ function (b) { return subtractNumberVector4(a, b); }, 
+    /* Vector3 */ function (b) { return subtractNumberVector3(a, b); }, 
+    /* Vector2 */ function (b) { return subtractNumberVector2(a, b); }, 
+    /* number */ function (b) { return a - b; }); });
 }
 
 function multiplyVector2Vector2(a, b) {
@@ -1446,6 +1091,18 @@ function multiplyVector3Number(a, b) {
 
 function multiplyVector4Number(a, b) {
     return multiplyVector4Vector4(a, vec4(b));
+}
+
+function multiplyNumberMatrix4x4(a, b) {
+    return mat4(a * b[0][0], a * b[0][1], a * b[0][2], a * b[0][3], a * b[1][0], a * b[1][1], a * b[1][2], a * b[1][3], a * b[2][0], a * b[2][1], a * b[2][2], a * b[2][3], a * b[3][0], a * b[3][1], a * b[3][2], a * b[3][3]);
+}
+
+function multiplyNumberMatrix3x3(a, b) {
+    return mat3(a * b[0][0], a * b[0][1], a * b[0][2], a * b[1][0], a * b[1][1], a * b[1][2], a * b[2][0], a * b[2][1], a * b[2][2]);
+}
+
+function multiplyNumberMatrix2x2(a, b) {
+    return mat2(a * b[0][0], a * b[0][1], a * b[1][0], a * b[1][1]);
 }
 
 function multiplyMatrix4x4Number(a, b) {
@@ -1497,63 +1154,79 @@ function multiplyMatrix2x2Matrix2x2(a, b) {
 }
 
 function multiply(a, b) {
-    if (typeof a === 'number') {
-        if (typeof b === 'number')
-            return a * b;
-        if ('3' in b) {
-            if (typeof b[3] === 'number')
-                return multiplyNumberVector4(a, b);
-            return multiplyNumberMatrix4x4(a, b);
-        }
-        if ('2' in b) {
-            if (typeof b[2] === 'number')
-                return multiplyNumberVector3(a, b);
-            return multiplyNumberMatrix3x3(a, b);
-        }
-        if (typeof b[1] === 'number')
-            return multiplyNumberVector2(a, b);
-        return multiplyNumberMatrix2x2(a, b);
-    }
-    if ('3' in a) {
-        if (typeof a[3] === 'number') {
-            if (typeof b === 'number')
-                return multiplyVector4Number(a, b);
-            if ('3' in b)
-                return multiplyVector4Vector4(a, b);
-            if ('2' in b)
-                return multiplyVector3Vector3(a, b);
-            return multiplyVector2Vector2(a, b);
-        }
-        if (typeof b === 'number')
-            return multiplyMatrix4x4Number(a, b);
-        if (typeof b[3] === 'number')
-            return multiplyMatrix4x4Vector4(a, b);
-        return multiplyMatrix4x4Matrix4x4(a, b);
-    }
-    if ('2' in a) {
-        if (typeof a[2] === 'number') {
-            if (typeof b === 'number')
-                return multiplyVector3Number(a, b);
-            if ('2' in b)
-                return multiplyVector3Vector3(a, b);
-            return multiplyVector2Vector2(a, b);
-        }
-        if (typeof b === 'number')
-            return multiplyMatrix3x3Number(a, b);
-        if (typeof b[2] === 'number')
-            return multiplyMatrix3x3Vector3(a, b);
-        return multiplyMatrix3x3Matrix3x3(a, b);
-    }
-    if (typeof a[1] === 'number') {
-        if (typeof b === 'number')
-            return multiplyVector2Number(a, b);
-        return multiplyVector2Vector2(a, b);
-    }
-    if (typeof b === 'number')
-        return multiplyMatrix2x2Number(a, b);
-    if (typeof b[1] === 'number')
-        return multiplyMatrix2x2Vector2(a, b);
-    return multiplyMatrix2x2Matrix2x2(a, b);
+    return deduce(a, 
+    /* Matrix4x4 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ function (b) { return multiplyMatrix4x4Matrix4x4(a, b); }, 
+    /* Matrix3x3 */ function (b) { return multiplyMatrix3x3Matrix3x3(mat3(a), b); }, 
+    /* Matrix2x2 */ function (b) { return multiplyMatrix2x2Matrix2x2(mat2(a), b); }, 
+    /* Vector4 */ function (b) { return multiplyMatrix4x4Vector4(a, b); }, 
+    /* Vector3 */ function (b) { return multiplyMatrix3x3Vector3(mat3(a), b); }, 
+    /* Vector2 */ function (b) { return multiplyMatrix2x2Vector2(mat2(a), b); }, 
+    /* number */ function (b) { return multiplyMatrix4x4Number(a, b); }); }, 
+    /* Matrix3x3 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ function (b) { return multiplyMatrix3x3Matrix3x3(a, mat3(b)); }, 
+    /* Matrix3x3 */ function (b) { return multiplyMatrix3x3Matrix3x3(a, b); }, 
+    /* Matrix2x2 */ function (b) { return multiplyMatrix2x2Matrix2x2(mat2(a), b); }, 
+    /* Vector4 */ function (b) { return multiplyMatrix3x3Vector3(a, vec3(b.x, b.y, b.z)); }, // @todo: conversion via vec
+    /* Vector3 */ function (// @todo: conversion via vec
+    b) { return multiplyMatrix3x3Vector3(a, b); }, 
+    /* Vector2 */ function (b) { return multiplyMatrix2x2Vector2(mat2(a), b); }, 
+    /* number */ function (b) { return multiplyMatrix3x3Number(a, b); }); }, 
+    /* Matrix2x2 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ function (b) { return multiplyMatrix2x2Matrix2x2(a, mat2(b)); }, 
+    /* Matrix3x3 */ function (b) { return multiplyMatrix2x2Matrix2x2(a, mat2(b)); }, 
+    /* Matrix2x2 */ function (b) { return multiplyMatrix2x2Matrix2x2(a, b); }, 
+    /* Vector4 */ function (b) { return multiplyMatrix2x2Vector2(a, vec2(b.x, b.y)); }, // @todo: multiply conversion
+    /* Vector3 */ function (// @todo: multiply conversion
+    b) { return multiplyMatrix2x2Vector2(a, vec2(b.x, b.y)); }, // @todo: multiply conversion
+    /* Vector2 */ function (// @todo: multiply conversion
+    b) { return multiplyMatrix2x2Vector2(a, b); }, 
+    /* number */ function (b) { return multiplyMatrix2x2Number(a, b); }); }, 
+    /* Vector4 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ null, 
+    /* Matrix3x3 */ null, 
+    /* Matrix2x2 */ null, 
+    /* Vector4 */ function (b) { return multiplyVector4Vector4(a, b); }, 
+    /* Vector3 */ function (b) { return multiplyVector3Vector3(vec3(a.x, a.y, a.z), b); }, // @todo: conversion via vec
+    /* Vector2 */ function (// @todo: conversion via vec
+    b) { return multiplyVector2Vector2(vec2(a.x, a.y), b); }, // @todo: conversion via vec
+    /* number */ function (// @todo: conversion via vec
+    b) { return multiplyVector4Number(a, b); }); }, 
+    /* Vector3 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ null, 
+    /* Matrix3x3 */ null, 
+    /* Matrix2x2 */ null, 
+    /* Vector4 */ function (b) { return multiplyVector3Vector3(a, vec3(b.x, b.y, b.z)); }, // @todo: conversion via vec
+    /* Vector3 */ function (// @todo: conversion via vec
+    b) { return multiplyVector3Vector3(a, b); }, 
+    /* Vector2 */ function (b) { return multiplyVector2Vector2(vec2(a.x, a.y), b); }, // @todo: conversion via vec
+    /* number */ function (// @todo: conversion via vec
+    b) { return multiplyVector3Number(a, b); }); }, 
+    /* Vector2 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ null, 
+    /* Matrix3x3 */ null, 
+    /* Matrix2x2 */ null, 
+    /* Vector4 */ function (b) { return multiplyVector2Vector2(a, vec2(b.x, b.y)); }, // @todo: multiply conversion
+    /* Vector3 */ function (// @todo: multiply conversion
+    b) { return multiplyVector2Vector2(a, vec2(b.x, b.y)); }, // @todo: multiply conversion
+    /* Vector2 */ function (// @todo: multiply conversion
+    b) { return multiplyVector2Vector2(a, b); }, 
+    /* number */ function (b) { return multiplyVector2Number(a, b); }); }, 
+    /* number */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ function (b) { return multiplyNumberMatrix4x4(a, b); }, 
+    /* Matrix3x3 */ function (b) { return multiplyNumberMatrix3x3(a, b); }, 
+    /* Matrix2x2 */ function (b) { return multiplyNumberMatrix2x2(a, b); }, 
+    /* Vector4 */ function (b) { return multiplyNumberVector4(a, b); }, 
+    /* Vector3 */ function (b) { return multiplyNumberVector3(a, b); }, 
+    /* Vector2 */ function (b) { return multiplyNumberVector2(a, b); }, 
+    /* number */ function (b) { return a * b; }); });
 }
 
 function divideVector2Vector2(a, b) {
@@ -1617,59 +1290,76 @@ function divideMatrix2x2Number(a, b) {
 }
 
 function divide(a, b) {
-    if (typeof a === 'number') {
-        if (typeof b === 'number')
-            return a / b;
-        if ('3' in b) {
-            if (typeof b[3] === 'number')
-                return divideNumberVector4(a, b);
-            return divideNumberMatrix4x4(a, b);
-        }
-        if ('2' in b) {
-            if (typeof b[2] === 'number')
-                return divideNumberVector3(a, b);
-            return divideNumberMatrix3x3(a, b);
-        }
-        if (typeof b[1] === 'number')
-            return divideNumberVector2(a, b);
-        return divideNumberMatrix2x2(a, b);
-    }
-    if ('3' in a) {
-        if (typeof a[3] === 'number') {
-            if (typeof b === 'number')
-                return divideVector4Number(a, b);
-            if ('3' in b)
-                return divideVector4Vector4(a, b);
-            if ('2' in b)
-                return divideVector3Vector3(a, b);
-            return divideVector2Vector2(a, b);
-        }
-        return divideMatrix4x4Number(a, b);
-    }
-    if ('2' in a) {
-        if (typeof a[2] === 'number') {
-            if (typeof b === 'number')
-                return divideVector3Number(a, b);
-            if ('2' in b)
-                return divideVector3Vector3(a, b);
-            return divideVector2Vector2(a, b);
-        }
-        return divideMatrix3x3Number(a, b);
-    }
-    if (typeof a[1] === 'number') {
-        if (typeof b === 'number')
-            return divideVector2Number(a, b);
-        return divideVector2Vector2(a, b);
-    }
-    return divideMatrix2x2Number(a, b);
-}
-
-function dot(a, b) {
-    if ('w' in a)
-        return dotVector4Vector4(a, b);
-    if ('z' in a)
-        return dotVector3Vector3(a, b);
-    return dotVector2Vector2(a, b);
+    return deduce(a, 
+    /* Matrix4x4 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ null, 
+    /* Matrix3x3 */ null, 
+    /* Matrix2x2 */ null, 
+    /* Vector4 */ null, 
+    /* Vector3 */ null, 
+    /* Vector2 */ null, 
+    /* number */ function (b) { return divideMatrix4x4Number(a, b); }); }, 
+    /* Matrix3x3 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ null, 
+    /* Matrix3x3 */ null, 
+    /* Matrix2x2 */ null, 
+    /* Vector4 */ null, 
+    /* Vector3 */ null, 
+    /* Vector2 */ null, 
+    /* number */ function (b) { return divideMatrix3x3Number(a, b); }); }, 
+    /* Matrix2x2 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ null, 
+    /* Matrix3x3 */ null, 
+    /* Matrix2x2 */ null, 
+    /* Vector4 */ null, 
+    /* Vector3 */ null, 
+    /* Vector2 */ null, 
+    /* number */ function (b) { return divideMatrix2x2Number(a, b); }); }, 
+    /* Vector4 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ null, 
+    /* Matrix3x3 */ null, 
+    /* Matrix2x2 */ null, 
+    /* Vector4 */ function (b) { return divideVector4Vector4(a, b); }, 
+    /* Vector3 */ function (b) { return divideVector3Vector3(vec3(a.x, a.y, a.z), b); }, // @todo: divide conversion via vec
+    /* Vector2 */ function (// @todo: divide conversion via vec
+    b) { return divideVector2Vector2(vec2(a.x, a.y), b); }, // @todo: divide conversion via vec
+    /* number */ function (// @todo: divide conversion via vec
+    b) { return divideVector4Number(a, b); }); }, 
+    /* Vector3 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ null, 
+    /* Matrix3x3 */ null, 
+    /* Matrix2x2 */ null, 
+    /* Vector4 */ function (b) { return divideVector3Vector3(a, vec3(b.x, b.y, b.z)); }, // @todo: divide conversion
+    /* Vector3 */ function (// @todo: divide conversion
+    b) { return divideVector3Vector3(a, b); }, 
+    /* Vector2 */ function (b) { return divideVector2Vector2(vec2(a.x, a.y), b); }, // @todo: divide conversion
+    /* number */ function (// @todo: divide conversion
+    b) { return divideVector3Number(a, b); }); }, 
+    /* Vector2 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ null, 
+    /* Matrix3x3 */ null, 
+    /* Matrix2x2 */ null, 
+    /* Vector4 */ function (b) { return divideVector2Vector2(a, vec2(b.x, b.y)); }, // @todo: divide conversion
+    /* Vector3 */ function (// @todo: divide conversion
+    b) { return divideVector2Vector2(a, vec2(b.x, b.y)); }, // @todo: divide conversion
+    /* Vector2 */ function (// @todo: divide conversion
+    b) { return divideVector2Vector2(a, b); }, 
+    /* number */ function (b) { return divideVector2Number(a, b); }); }, 
+    /* number */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ function (b) { return divideNumberMatrix4x4(a, b); }, 
+    /* Matrix3x3 */ function (b) { return divideNumberMatrix3x3(a, b); }, 
+    /* Matrix2x2 */ function (b) { return divideNumberMatrix2x2(a, b); }, 
+    /* Vector4 */ function (b) { return divideNumberVector4(a, b); }, 
+    /* Vector3 */ function (b) { return divideNumberVector3(a, b); }, 
+    /* Vector2 */ function (b) { return divideNumberVector2(a, b); }, 
+    /* number */ function (b) { return a / b; }); });
 }
 
 function lengthVector4(v) {
@@ -1690,6 +1380,784 @@ function length(v) {
     if ('z' in v)
         return lengthVector3(v);
     return lengthVector2(v);
+}
+
+function squareVector2(a) {
+    return dotVector2Vector2(a, a);
+}
+
+function squareVector3(a) {
+    return dotVector3Vector3(a, a);
+}
+
+function squareVector4(a) {
+    return dotVector4Vector4(a, a);
+}
+
+function square(v) {
+    return deduce(v, null, null, null, function (v) { return squareVector4(v); }, function (v) { return squareVector3(v); }, function (v) { return squareVector2(v); }, function (v) { return Math.pow(v, 2); });
+}
+
+var Vector4 = /** @class */ (function () {
+    function Vector4() {
+    }
+    Object.defineProperty(Vector4.prototype, 0, {
+        get: function () {
+            return this.x;
+        },
+        set: function (x) {
+            this.x = x;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector4.prototype, 1, {
+        get: function () {
+            return this.y;
+        },
+        set: function (y) {
+            this.y = y;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector4.prototype, 2, {
+        get: function () {
+            return this.z;
+        },
+        set: function (z) {
+            this.z = z;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector4.prototype, 3, {
+        get: function () {
+            return this.w;
+        },
+        set: function (w) {
+            this.w = w;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector4.prototype, "length", {
+        get: function () {
+            return length(this);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector4.prototype, "len", {
+        get: function () {
+            return length(this);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector4.prototype, "magnitude", {
+        get: function () {
+            return length(this);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector4.prototype, "mag", {
+        get: function () {
+            return length(this);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector4.prototype, "norm", {
+        get: function () {
+            return length(this);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector4.prototype, "square", {
+        get: function () {
+            return square(this);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector4.prototype, "sqr", {
+        get: function () {
+            return this.square;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector4.prototype, "negate", {
+        get: function () {
+            return negate(this);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector4.prototype, "neg", {
+        get: function () {
+            return this.negate;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Vector4.prototype.set = function (x, y, z, w) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.w = w;
+    };
+    Vector4.prototype.clone = function () {
+        var _a = this, x = _a.x, y = _a.y, z = _a.z, w = _a.w;
+        return vec4(x, y, z, w);
+    };
+    Vector4.prototype.add = function (other) {
+        // casting to number is a hack to overcome overloading ambiguity
+        return add(this, other);
+    };
+    Vector4.prototype.subtract = function (other) {
+        // casting to number is a hack to overcome overloading ambiguity
+        return subtract(this, other);
+    };
+    Vector4.prototype.sub = function (other) {
+        return this.subtract(other);
+    };
+    Vector4.prototype.multiply = function (other) {
+        // casting to number is a hack to overcome overloading ambiguity
+        return multiply(this, other);
+    };
+    Vector4.prototype.mul = function (other) {
+        return this.multiply(other);
+    };
+    Vector4.prototype.divide = function (other) {
+        // casting to number is a hack to overcome overloading ambiguity
+        return divide(this, other);
+    };
+    Vector4.prototype.div = function (other) {
+        return this.divide(other);
+    };
+    Vector4.prototype.toArray = function () {
+        var _a = this, x = _a.x, y = _a.y, z = _a.z, w = _a.w;
+        return [x, y, z, w];
+    };
+    Vector4.prototype.toString = function () {
+        var _a = this, x = _a.x, y = _a.y, z = _a.z, w = _a.w;
+        return "Vector4 { x : " + x + ", y : " + y + ", z : " + z + ", w : " + w + " }";
+    };
+    Vector4.default = { x: 0, y: 0, z: 0, w: 1 };
+    return Vector4;
+}());
+
+var NumberVector4 = /** @class */ (function (_super) {
+    __extends(NumberVector4, _super);
+    function NumberVector4(_a) {
+        var _b = _a === void 0 ? {} : _a, _c = _b.x, x = _c === void 0 ? Vector4.default.x : _c, _d = _b.y, y = _d === void 0 ? Vector4.default.y : _d, _e = _b.z, z = _e === void 0 ? Vector4.default.z : _e, _f = _b.w, w = _f === void 0 ? Vector4.default.w : _f;
+        var _this = _super.call(this) || this;
+        _this._x = x;
+        _this._y = y;
+        _this._z = z;
+        _this._w = w;
+        return _this;
+    }
+    Object.defineProperty(NumberVector4.prototype, "x", {
+        get: function () {
+            return this._x;
+        },
+        set: function (x) {
+            this._x = x;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(NumberVector4.prototype, "y", {
+        get: function () {
+            return this._y;
+        },
+        set: function (y) {
+            this._y = y;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(NumberVector4.prototype, "z", {
+        get: function () {
+            return this._z;
+        },
+        set: function (z) {
+            this._z = z;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(NumberVector4.prototype, "w", {
+        get: function () {
+            return this._w;
+        },
+        set: function (w) {
+            this._w = w;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return NumberVector4;
+}(Vector4));
+
+function vec4(x, y, z, w) {
+    if (x === undefined)
+        return new NumberVector4;
+    if (y === undefined)
+        return new NumberVector4({ x: x, y: x, z: x, w: x });
+    return new NumberVector4({ x: x, y: y, z: z, w: w });
+}
+vec4.default = Vector4.default;
+
+function addVector4Vector4(a, b) {
+    return vec4(a.x + b.x, a.y + b.y, a.z + b.z, a.w + b.w);
+}
+
+function addNumberVector4(a, b) {
+    return addVector4Vector4(vec4(a), b);
+}
+
+function addVector2Number(a, b) {
+    return addVector2Vector2(a, vec2(b));
+}
+
+function addVector3Number(a, b) {
+    return addVector3Vector3(a, vec3(b));
+}
+
+function addVector4Number(a, b) {
+    return addVector4Vector4(a, vec4(b));
+}
+
+function addNumberMatrix4x4(a, b) {
+    return mat4(a + b[0][0], a + b[0][1], a + b[0][2], a + b[0][3], a + b[1][0], a + b[1][1], a + b[1][2], a + b[1][3], a + b[2][0], a + b[2][1], a + b[2][2], a + b[2][3], a + b[3][0], a + b[3][1], a + b[3][2], a + b[3][3]);
+}
+
+function addNumberMatrix3x3(a, b) {
+    return mat3(a + b[0][0], a + b[0][1], a + b[0][2], a + b[1][0], a + b[1][1], a + b[1][2], a + b[2][0], a + b[2][1], a + b[2][2]);
+}
+
+function addNumberMatrix2x2(a, b) {
+    return mat2(a + b[0][0], a + b[0][1], a + b[1][0], a + b[1][1]);
+}
+
+function addMatrix4x4Number(a, b) {
+    return mat4(a[0][0] + b, a[0][1] + b, a[0][2] + b, a[0][3] + b, a[1][0] + b, a[1][1] + b, a[1][2] + b, a[1][3] + b, a[2][0] + b, a[2][1] + b, a[2][2] + b, a[2][3] + b, a[3][0] + b, a[3][1] + b, a[3][2] + b, a[3][3] + b);
+}
+
+function addMatrix3x3Number(a, b) {
+    return mat3(a[0][0] + b, a[0][1] + b, a[0][2] + b, a[1][0] + b, a[1][1] + b, a[1][2] + b, a[2][0] + b, a[2][1] + b, a[2][2] + b);
+}
+
+function addMatrix2x2Number(a, b) {
+    return mat2(a[0][0] + b, a[0][1] + b, a[1][0] + b, a[1][1] + b);
+}
+
+function add(a, b) {
+    return deduce(a, 
+    /* Matrix4x4 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ null, 
+    /* Matrix3x3 */ null, 
+    /* Matrix2x2 */ null, 
+    /* Vector4 */ null, 
+    /* Vector3 */ null, 
+    /* Vector2 */ null, 
+    /* number */ function (b) { return addMatrix4x4Number(a, b); }); }, 
+    /* Matrix3x3 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ null, 
+    /* Matrix3x3 */ null, 
+    /* Matrix2x2 */ null, 
+    /* Vector4 */ null, 
+    /* Vector3 */ null, 
+    /* Vector2 */ null, 
+    /* number */ function (b) { return addMatrix3x3Number(a, b); }); }, 
+    /* Matrix2x2 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ null, 
+    /* Matrix3x3 */ null, 
+    /* Matrix2x2 */ null, 
+    /* Vector4 */ null, 
+    /* Vector3 */ null, 
+    /* Vector2 */ null, 
+    /* number */ function (b) { return addMatrix2x2Number(a, b); }); }, 
+    /* Vector4 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ null, 
+    /* Matrix3x3 */ null, 
+    /* Matrix2x2 */ null, 
+    /* Vector4 */ function (b) { return addVector4Vector4(a, b); }, 
+    /* Vector3 */ function (b) { return addVector3Vector3(vec3(a.x, a.y, a.z), b); }, // @todo: add conversion via vec
+    /* Vector2 */ function (// @todo: add conversion via vec
+    b) { return addVector2Vector2(vec2(a.x, a.y), b); }, // @todo: add conversion via vec
+    /* number */ function (// @todo: add conversion via vec
+    b) { return addVector4Number(a, b); }); }, 
+    /* Vector3 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ null, 
+    /* Matrix3x3 */ null, 
+    /* Matrix2x2 */ null, 
+    /* Vector4 */ function (b) { return addVector3Vector3(a, vec3(b.x, b.y, b.z)); }, // @todo: add conversion
+    /* Vector3 */ function (// @todo: add conversion
+    b) { return addVector3Vector3(a, b); }, 
+    /* Vector2 */ function (b) { return addVector2Vector2(vec2(a.x, a.y), b); }, // @todo: add conversion
+    /* number */ function (// @todo: add conversion
+    b) { return addVector3Number(a, b); }); }, 
+    /* Vector2 */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ null, 
+    /* Matrix3x3 */ null, 
+    /* Matrix2x2 */ null, 
+    /* Vector4 */ function (b) { return addVector2Vector2(a, vec2(b.x, b.y)); }, // @todo: add conversion
+    /* Vector3 */ function (// @todo: add conversion
+    b) { return addVector2Vector2(a, vec2(b.x, b.y)); }, // @todo: add conversion
+    /* Vector2 */ function (// @todo: add conversion
+    b) { return addVector2Vector2(a, b); }, 
+    /* number */ function (b) { return addVector2Number(a, b); }); }, 
+    /* number */
+    function (a) { return deduce(b, 
+    /* Matrix4x4 */ function (b) { return addNumberMatrix4x4(a, b); }, 
+    /* Matrix3x3 */ function (b) { return addNumberMatrix3x3(a, b); }, 
+    /* Matrix2x2 */ function (b) { return addNumberMatrix2x2(a, b); }, 
+    /* Vector4 */ function (b) { return addNumberVector4(a, b); }, 
+    /* Vector3 */ function (b) { return addNumberVector3(a, b); }, 
+    /* Vector2 */ function (b) { return addNumberVector2(a, b); }, 
+    /* number */ function (b) { return a + b; }); });
+}
+
+var Vector3 = /** @class */ (function () {
+    function Vector3() {
+    }
+    Object.defineProperty(Vector3.prototype, 0, {
+        get: function () {
+            return this.x;
+        },
+        set: function (x) {
+            this.x = x;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector3.prototype, 1, {
+        get: function () {
+            return this.y;
+        },
+        set: function (y) {
+            this.y = y;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector3.prototype, 2, {
+        get: function () {
+            return this.z;
+        },
+        set: function (z) {
+            this.z = z;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector3.prototype, "length", {
+        get: function () {
+            return length(this);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector3.prototype, "len", {
+        get: function () {
+            return length(this);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector3.prototype, "magnitude", {
+        get: function () {
+            return length(this);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector3.prototype, "mag", {
+        get: function () {
+            return length(this);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector3.prototype, "norm", {
+        get: function () {
+            return length(this);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector3.prototype, "square", {
+        get: function () {
+            return square(this);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector3.prototype, "sqr", {
+        get: function () {
+            return this.square;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector3.prototype, "negate", {
+        get: function () {
+            return negate(this);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector3.prototype, "neg", {
+        get: function () {
+            return this.negate;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Vector3.prototype.set = function (x, y, z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    };
+    Vector3.prototype.clone = function () {
+        var _a = this, x = _a.x, y = _a.y, z = _a.z;
+        return vec3(x, y, z);
+    };
+    Vector3.prototype.add = function (other) {
+        // casting to number is a hack to overcome overloading ambiguity
+        return add(this, other);
+    };
+    Vector3.prototype.subtract = function (other) {
+        // casting to number is a hack to overcome overloading ambiguity
+        return subtract(this, other);
+    };
+    Vector3.prototype.sub = function (other) {
+        return this.subtract(other);
+    };
+    Vector3.prototype.multiply = function (other) {
+        // casting to number is a hack to overcome overloading ambiguity
+        return multiply(this, other);
+    };
+    Vector3.prototype.mul = function (other) {
+        return this.multiply(other);
+    };
+    Vector3.prototype.divide = function (other) {
+        // casting to number is a hack to overcome overloading ambiguity
+        return divide(this, other);
+    };
+    Vector3.prototype.div = function (other) {
+        return this.divide(other);
+    };
+    Vector3.prototype.toArray = function () {
+        var _a = this, x = _a.x, y = _a.y, z = _a.z;
+        return [x, y, z];
+    };
+    Vector3.prototype.toString = function () {
+        var _a = this, x = _a.x, y = _a.y, z = _a.z;
+        return "Vector3 { x : " + x + ", y : " + y + ", z : " + z + " }";
+    };
+    Vector3.default = { x: 0, y: 0, z: 0 };
+    return Vector3;
+}());
+
+var NumberVector3 = /** @class */ (function (_super) {
+    __extends(NumberVector3, _super);
+    function NumberVector3(_a) {
+        var _b = _a === void 0 ? {} : _a, _c = _b.x, x = _c === void 0 ? Vector3.default.x : _c, _d = _b.y, y = _d === void 0 ? Vector3.default.y : _d, _e = _b.z, z = _e === void 0 ? Vector3.default.z : _e;
+        var _this = _super.call(this) || this;
+        _this._x = x;
+        _this._y = y;
+        _this._z = z;
+        return _this;
+    }
+    Object.defineProperty(NumberVector3.prototype, "x", {
+        get: function () {
+            return this._x;
+        },
+        set: function (x) {
+            this._x = x;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(NumberVector3.prototype, "y", {
+        get: function () {
+            return this._y;
+        },
+        set: function (y) {
+            this._y = y;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(NumberVector3.prototype, "z", {
+        get: function () {
+            return this._z;
+        },
+        set: function (z) {
+            this._z = z;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return NumberVector3;
+}(Vector3));
+
+function vec3(x, y, z) {
+    if (x === undefined)
+        return new NumberVector3;
+    if (y === undefined)
+        return new NumberVector3({ x: x, y: x, z: x });
+    return new NumberVector3({ x: x, y: y, z: z });
+}
+vec3.default = Vector3.default;
+
+function negateVector3(a) {
+    return subtractVector3Vector3(vec3(0), a);
+}
+
+function negateVector4(a) {
+    return subtractVector4Vector4(vec4(0), a);
+}
+
+function negate(v) {
+    return deduce(v, null, null, null, function (v) { return negateVector4(v); }, function (v) { return negateVector3(v); }, function (v) { return negateVector2(v); }, function (n) { return -n; });
+}
+
+var Vector2 = /** @class */ (function () {
+    function Vector2() {
+    }
+    Object.defineProperty(Vector2.prototype, 0, {
+        get: function () {
+            return this.x;
+        },
+        set: function (x) {
+            this.x = x;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector2.prototype, 1, {
+        get: function () {
+            return this.y;
+        },
+        set: function (y) {
+            this.y = y;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector2.prototype, "length", {
+        get: function () {
+            return length(this);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector2.prototype, "len", {
+        get: function () {
+            return length(this);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector2.prototype, "magnitude", {
+        get: function () {
+            return length(this);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector2.prototype, "mag", {
+        get: function () {
+            return length(this);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector2.prototype, "norm", {
+        get: function () {
+            return length(this);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector2.prototype, "square", {
+        get: function () {
+            return square(this);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector2.prototype, "sqr", {
+        get: function () {
+            return this.square;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector2.prototype, "negate", {
+        get: function () {
+            return negate(this);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Vector2.prototype, "neg", {
+        get: function () {
+            return this.negate;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Vector2.prototype.set = function (x, y) {
+        this.x = x;
+        this.y = y;
+    };
+    Vector2.prototype.clone = function () {
+        var _a = this, x = _a.x, y = _a.y;
+        return vec2(x, y);
+    };
+    Vector2.prototype.add = function (other) {
+        // casting to number is a hack to overcome overloading ambiguity
+        return add(this, other);
+    };
+    Vector2.prototype.subtract = function (other) {
+        // casting to number is a hack to overcome overloading ambiguity
+        return subtract(this, other);
+    };
+    Vector2.prototype.sub = function (other) {
+        return this.subtract(other);
+    };
+    Vector2.prototype.multiply = function (other) {
+        // casting to number is a hack to overcome overloading ambiguity
+        return multiply(this, other);
+    };
+    Vector2.prototype.mul = function (other) {
+        return this.multiply(other);
+    };
+    Vector2.prototype.divide = function (other) {
+        // casting to number is a hack to overcome overloading ambiguity
+        return divide(this, other);
+    };
+    Vector2.prototype.div = function (other) {
+        return this.divide(other);
+    };
+    Vector2.prototype.toArray = function () {
+        var _a = this, x = _a.x, y = _a.y;
+        return [x, y];
+    };
+    Vector2.prototype.toString = function () {
+        var _a = this, x = _a.x, y = _a.y;
+        return "Vector2 { x : " + x + ", y : " + y + " }";
+    };
+    Vector2.default = { x: 0, y: 0 };
+    return Vector2;
+}());
+
+function inverseMatrix2x2(m) {
+    var d = m[0][0] * m[1][1] - m[0][1] * m[1][0];
+    return multiplyNumberMatrix2x2(1 / d, mat2(+m[1][1], -m[0][1], -m[1][0], +m[0][0]));
+}
+
+function inverseMatrix3x3(m) {
+    var a = m[0][0];
+    var b = m[1][0];
+    var c = m[2][0];
+    var d = m[0][1];
+    var e = m[1][1];
+    var f = m[2][1];
+    var g = m[0][2];
+    var h = m[1][2];
+    var i = m[2][2];
+    var A = e * i - f * h;
+    var B = f * g - d * i;
+    var C = d * h - e * g;
+    var D = c * h - b * i;
+    var E = a * i - c * g;
+    var F = b * g - a * h;
+    var G = b * f - c * e;
+    var H = c * d - a * f;
+    var I = a * e - b * d;
+    var det = a * A + b * B + c * C;
+    return multiplyNumberMatrix3x3(1 / det, mat3(A, B, C, D, E, F, G, H, I));
+}
+
+function inverseMatrix4x4(m) {
+    var a11 = m[0][0];
+    var a12 = m[1][0];
+    var a13 = m[2][0];
+    var a14 = m[3][0];
+    var a21 = m[0][1];
+    var a22 = m[1][1];
+    var a23 = m[2][1];
+    var a24 = m[3][1];
+    var a31 = m[0][2];
+    var a32 = m[1][2];
+    var a33 = m[2][2];
+    var a34 = m[3][2];
+    var a41 = m[0][3];
+    var a42 = m[1][3];
+    var a43 = m[2][3];
+    var a44 = m[3][3];
+    var det = +a11 * (a22 * a33 * a44 + a23 * a34 * a42 + a24 * a32 * a43 - a24 * a33 * a42 - a23 * a32 * a44 - a22 * a34 * a43)
+        - a21 * (a12 * a33 * a44 + a13 * a34 * a42 + a14 * a32 * a43 - a14 * a33 * a42 - a13 * a32 * a44 - a12 * a34 * a43)
+        + a31 * (a12 * a23 * a44 + a13 * a24 * a42 + a14 * a22 * a43 - a14 * a23 * a42 - a13 * a22 * a44 - a12 * a24 * a43)
+        - a41 * (a12 * a23 * a34 + a13 * a24 * a32 + a14 * a22 * a33 - a14 * a23 * a32 - a13 * a22 * a34 - a12 * a24 * a33);
+    var M11 = a22 * a33 * a44 + a23 * a34 * a42 + a24 * a32 * a43 - a24 * a33 * a42 - a23 * a32 * a44 - a22 * a34 * a43;
+    var M21 = a12 * a33 * a44 + a13 * a34 * a42 + a14 * a32 * a43 - a14 * a33 * a42 - a13 * a32 * a44 - a12 * a34 * a43;
+    var M31 = a12 * a23 * a44 + a13 * a24 * a42 + a14 * a22 * a43 - a14 * a23 * a42 - a13 * a22 * a44 - a12 * a24 * a43;
+    var M41 = a12 * a23 * a34 + a13 * a24 * a32 + a14 * a22 * a33 - a14 * a23 * a32 - a13 * a22 * a34 - a12 * a24 * a33;
+    var M12 = a21 * a33 * a44 + a23 * a34 * a41 + a24 * a31 * a43 - a24 * a33 * a41 - a23 * a31 * a44 - a21 * a34 * a43;
+    var M22 = a11 * a33 * a44 + a13 * a34 * a41 + a14 * a31 * a43 - a14 * a33 * a41 - a13 * a31 * a44 - a11 * a34 * a43;
+    var M32 = a11 * a23 * a44 + a13 * a24 * a41 + a14 * a21 * a43 - a14 * a23 * a41 - a13 * a21 * a44 - a11 * a24 * a43;
+    var M42 = a11 * a23 * a34 + a13 * a24 * a31 + a14 * a21 * a33 - a14 * a23 * a31 - a13 * a21 * a34 - a11 * a24 * a33;
+    var M13 = a21 * a32 * a44 + a22 * a34 * a41 + a24 * a31 * a42 - a24 * a32 * a41 - a22 * a31 * a44 - a21 * a34 * a42;
+    var M23 = a11 * a32 * a44 + a12 * a34 * a41 + a14 * a31 * a42 - a14 * a32 * a41 - a12 * a31 * a44 - a11 * a34 * a42;
+    var M33 = a11 * a22 * a44 + a12 * a24 * a41 + a14 * a21 * a42 - a14 * a22 * a41 - a12 * a21 * a44 - a11 * a24 * a42;
+    var M43 = a11 * a22 * a34 + a12 * a24 * a31 + a14 * a21 * a32 - a14 * a22 * a31 - a12 * a21 * a34 - a11 * a24 * a32;
+    var M14 = a21 * a32 * a43 + a22 * a33 * a41 + a23 * a31 * a42 - a23 * a32 * a41 - a22 * a31 * a43 - a21 * a33 * a42;
+    var M24 = a11 * a32 * a43 + a12 * a33 * a41 + a13 * a31 * a42 - a13 * a32 * a41 - a12 * a31 * a43 - a11 * a33 * a42;
+    var M34 = a11 * a22 * a43 + a12 * a23 * a41 + a13 * a21 * a42 - a13 * a22 * a41 - a12 * a21 * a43 - a11 * a23 * a42;
+    var M44 = a11 * a22 * a33 + a12 * a23 * a31 + a13 * a21 * a32 - a13 * a22 * a31 - a12 * a21 * a33 - a11 * a23 * a32;
+    var A11 = Math.pow((-1), (1 + 1)) * M11;
+    var A21 = Math.pow((-1), (2 + 1)) * M12;
+    var A31 = Math.pow((-1), (3 + 1)) * M13;
+    var A41 = Math.pow((-1), (4 + 1)) * M14;
+    var A12 = Math.pow((-1), (1 + 2)) * M21;
+    var A22 = Math.pow((-1), (2 + 2)) * M22;
+    var A32 = Math.pow((-1), (3 + 2)) * M23;
+    var A42 = Math.pow((-1), (4 + 2)) * M24;
+    var A13 = Math.pow((-1), (1 + 3)) * M31;
+    var A23 = Math.pow((-1), (2 + 3)) * M32;
+    var A33 = Math.pow((-1), (3 + 3)) * M33;
+    var A43 = Math.pow((-1), (4 + 3)) * M34;
+    var A14 = Math.pow((-1), (1 + 4)) * M41;
+    var A24 = Math.pow((-1), (2 + 4)) * M42;
+    var A34 = Math.pow((-1), (3 + 4)) * M43;
+    var A44 = Math.pow((-1), (4 + 4)) * M44;
+    return multiplyNumberMatrix4x4(1 / det, mat4(A11, A21, A31, A41, A12, A22, A32, A42, A13, A23, A33, A43, A14, A24, A34, A44));
+}
+
+function dot(a, b) {
+    if ('w' in a)
+        return dotVector4Vector4(a, b);
+    if ('z' in a)
+        return dotVector3Vector3(a, b);
+    return dotVector2Vector2(a, b);
 }
 
 function inverse(m) {
@@ -1778,6 +2246,8 @@ exports.length = length;
 exports.lengthVector2 = lengthVector2;
 exports.lengthVector3 = lengthVector3;
 exports.lengthVector4 = lengthVector4;
+exports.mag = length;
+exports.magnitude = length;
 exports.mat2 = mat2;
 exports.mat3 = mat3;
 exports.mat4 = mat4;
@@ -1810,6 +2280,17 @@ exports.multiplyVector3Number = multiplyVector3Number;
 exports.multiplyVector3Vector3 = multiplyVector3Vector3;
 exports.multiplyVector4Number = multiplyVector4Number;
 exports.multiplyVector4Vector4 = multiplyVector4Vector4;
+exports.neg = negate;
+exports.negate = negate;
+exports.negateVector2 = negateVector2;
+exports.negateVector3 = negateVector3;
+exports.negateVector4 = negateVector4;
+exports.norm = length;
+exports.sqr = square;
+exports.square = square;
+exports.squareVector2 = squareVector2;
+exports.squareVector3 = squareVector3;
+exports.squareVector4 = squareVector4;
 exports.sub = subtract;
 exports.subtract = subtract;
 exports.subtractMatrix2x2Number = subtractMatrix2x2Number;
