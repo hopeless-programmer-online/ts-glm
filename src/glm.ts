@@ -93,6 +93,10 @@ export { default as norm } from './length'
 export { default as inverse } from './inverse'
 export { default as inv } from './inverse'
 
+export { default as negateVector2 } from './negate-vector2'
+export { default as negateVector3 } from './negate-vector3'
+export { default as negateVector4 } from './negate-vector4'
+
 export { default as addNumberVector2 } from './add-number-vector2'
 export { default as addNumberVector3 } from './add-number-vector3'
 export { default as addNumberVector4 } from './add-number-vector4'
