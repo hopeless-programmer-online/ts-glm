@@ -6,7 +6,7 @@ export default function dot(a : Vector4 | Vector3 | Vector2, b : Vector4 | Vecto
     if ('w' in a) return dotVector4Vector4(a, b as Vector4)
     if ('z' in a) return dotVector3Vector3(a, b as Vector3)
 
-    return dotVector2Vector2(a, b)
+    return dotVector2Vector2(a, b as Vector2)
 }
 
 import Vector2 from './vector2'

@@ -2,7 +2,7 @@ export default function inverse(m : Matrix2x2) : Matrix2x2;
 export default function inverse(m : Matrix3x3) : Matrix3x3;
 export default function inverse(m : Matrix4x4) : Matrix4x4;
 
-export default function inverse(m : Matrix2x2) {
+export default function inverse(m : Matrix4x4 | Matrix3x3 | Matrix2x2) {
     if ('3' in m) return inverseMatrix4x4(m)
     if ('2' in m) return inverseMatrix3x3(m)
 
