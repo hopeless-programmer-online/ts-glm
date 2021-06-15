@@ -75,6 +75,8 @@ export { default as inverseMatrix2x2 } from './inverse-matrix2x2'
 export { default as inverseMatrix3x3 } from './inverse-matrix3x3'
 export { default as inverseMatrix4x4 } from './inverse-matrix4x4'
 
+export { default as negate } from './negate'
+export { default as neg } from './negate'
 export { default as add } from './add'
 export { default as subtract } from './subtract'
 export { default as sub } from './subtract'
