@@ -1,13 +1,13 @@
-const path = require('path');
+const path = require(`path`);
 
 module.exports = {
-    mode: "production",
-    entry: "./.ts/glm.js",
+    mode: `production`,
+    entry: `./.ts/glm.js`,
     output: {
-        path:path.resolve(__dirname, "dist"), // string (default)
-        filename: "glm.js",
+        path: path.join(__dirname, `dist`),
+        filename: `glm.js`,
         library: {
-            type: "commonjs",
+            type: `commonjs`,
         }
     },
     optimization: {
