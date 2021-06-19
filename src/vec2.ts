@@ -20,7 +20,7 @@ export default function vec2(x? : Vector2Source | number, y? : number) : Vector2
         if (`x` in v) {
             const vx = v.x
 
-            if (typeof v.x === `number`) x = vx
+            if (typeof vx === `number`) x = vx
         }
         else if (0 in v) {
             const v0 = v[0]
@@ -33,7 +33,7 @@ export default function vec2(x? : Vector2Source | number, y? : number) : Vector2
         if (`y` in v) {
             const vy = v.y
 
-            if (typeof v.y === `number`) y = vy
+            if (typeof vy === `number`) y = vy
         }
         else if (1 in v) {
             const v1 = v[1]
