@@ -80,6 +80,9 @@ export default abstract class Vector2 {
     public div(other : Like | number) {
         return this.divide(other)
     }
+    public dot(other : Like) {
+        return dot(this, other)
+    }
     public toArray() : Array {
         const { x, y } = this
 
@@ -102,3 +105,4 @@ import mul from './multiply'
 import div from './divide'
 import len from './length'
 import sqr from './square'
+import dot from './dot'

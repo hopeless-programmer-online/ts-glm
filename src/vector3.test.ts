@@ -102,6 +102,9 @@ it('should implement div()', () => {
         z : 3 / 6,
     })
 })
+it('should implement dot()', () => {
+    expect(vec3(1, 2, 3).dot([ 4, 5, 6 ])).toBe(1 * 4 + 2 * 5 + 3 * 6)
+})
 it('should implement toArray()', () => {
     expect(vec3(1, 2, 3).toArray()).toMatchObject([ 1, 2, 3 ])
 })

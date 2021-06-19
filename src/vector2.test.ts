@@ -92,6 +92,9 @@ it('should implement div()', () => {
         y : 2 / 4,
     })
 })
+it('should implement dot()', () => {
+    expect(vec2(1, 2).dot([ 3, 4 ])).toBe(1 * 3 + 2 * 4)
+})
 it('should implement toArray()', () => {
     expect(vec2(1, 2).toArray()).toMatchObject([ 1, 2 ])
 })
