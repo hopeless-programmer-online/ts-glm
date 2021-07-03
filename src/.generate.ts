@@ -3,7 +3,12 @@ import { outputFileSync } from 'fs-extra'
 
 const [ v2, v3, v4 ] = [ 2, 3, 4 ].map(n => ({
     components : [ `x`, `y`, `z`, `w` ].slice(0, n),
+    defaults : { x : 0, y : 0, z : 0, w : 1 },
     values : [ 1, 2, 3, 4 ].slice(0, n),
+    lengthValues :
+        n === 2 ? [ 3, 4 ]       :
+        n === 3 ? [ 2, 3, 6 ]    :
+                  [ 5, 5, 5, 5 ],
     type : {
         name : `Vector${n}`,
         file : `vector${n}`,
@@ -14,13 +19,23 @@ const [ v2, v3, v4 ] = [ 2, 3, 4 ].map(n => ({
     },
 }));
 
-const x = [ v2, v3, v4 ].map(({ components : c, values : v, type : { name : n, file : f }, shortcut : { name : s, file : sf } }) => {
+const x = [ v2, v3, v4 ].map(({
+    components : c,
+    values : v,
+    defaults,
+    lengthValues : lv,
+    type : { name : n, file : f },
+    shortcut : { name : s, file : sf },
+}) => {
     const list = c.map(x => `${x}`).join(`, `)
+    const vList = v.map(x => `${x}`).join(`, `)
+    const iVList = v.map(x => `${x + v.length}`).join(`, `)
+    const len = lv.reduce((a, x) => a + x**2, 0)**(1/2)
 
     return [
         { file : `${f}.ts`, content : `` +
             `export default abstract class ${n} {\n` +
-            `    public static default = { ${c.map((x, i) => `${x} : ${i < 3 ? 0 : 1}`).join(`, `)} }\n` +
+            `    public static default = { ${c.map(x => `${x} : ${defaults[x]}`).join(`, `)} }\n` +
             `\n` +
             c.map(x =>
             `    public abstract get ${x}() : number\n` +
@@ -127,6 +142,122 @@ const x = [ v2, v3, v4 ].map(({ components : c, values : v, type : { name : n, f
             `import dot from './dot'\n` +
             ``
         },
+        { file : `${f}.test.ts`, content : `` +
+            `import { ${s}, ${n} } from './glm'\n` +
+            `\n` +
+            `it('should export default values', () => {\n` +
+            `    expect(${n}.default).toMatchObject({\n` +
+            c.map(x =>
+            `        ${x} : ${defaults[x]},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n` +
+            `it('should implement index accessors', () => {\n` +
+            `    const v = ${s}(${vList})\n` +
+            `\n` +
+            `    expect(v).toMatchObject({ ${v.map((x, i) => `${i} : ${x}`).join(`, `)} })\n` +
+            `\n` +
+            v.map((x, i) =>
+            `    v[${i}] = ${x + v.length}\n`
+            ).join(``) +
+            `\n` +
+            `    expect(v).toMatchObject({ ${v.map((x, i) => `${i} : ${x + v.length}`).join(`, `)} })\n` +
+            `})\n` +
+            `it('should implement length accessor', () => {\n` +
+            `    expect(${s}(${lv.map(x => `${x}`).join(`, `)})).toMatchObject({\n` +
+            `        length : ${len},\n` +
+            `        len : ${len},\n` +
+            `        magnitude : ${len},\n` +
+            `        mag : ${len},\n` +
+            `        norm : ${len},\n` +
+            `    })\n` +
+            `})\n` +
+            `it('should implement square accessor', () => {\n` +
+            `    expect(${s}(${vList})).toMatchObject({\n` +
+            `        square : ${v.map(x => `${x}**2`).join(` + `)},\n` +
+            `        sqr    : ${v.map(x => `${x}**2`).join(` + `)},\n` +
+            `    })\n` +
+            `})\n` +
+            `it('should implement neg accessor', () => {\n` +
+            `    expect(${s}(${vList})).toMatchObject({\n` +
+            `        negate : { ${c.map((x, i) => `${x} : -${v[i]}`).join(`, `)} },\n` +
+            `        neg    : { ${c.map((x, i) => `${x} : -${v[i]}`).join(`, `)} },\n` +
+            `    })\n` +
+            `})\n` +
+            `it('should implement set()', () => {\n` +
+            `    const v = ${s}(${vList})\n` +
+            `\n` +
+            `    v.set(${iVList})\n` +
+            `\n` +
+            `    expect(v).toMatchObject({ ${c.map((x, i) => `${x} : ${v[i] + v.length}`).join(`, `)} })\n` +
+            `})\n` +
+            `it('should implement clone()', () => {\n` +
+            `    expect(${s}(${vList}).clone()).toMatchObject({\n` +
+            c.map((x, i) =>
+            `        ${x} : ${v[i]},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n` +
+            `it('should implement add()', () => {\n` +
+            `    expect(${s}(${vList}).add([ ${iVList} ])).toMatchObject({\n` +
+            c.map((x, i) =>
+            `        ${x} : ${v[i]} + ${v[i] + v.length},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n` +
+            `it('should implement subtract()', () => {\n` +
+            `    expect(${s}(${vList}).subtract([ ${iVList} ])).toMatchObject({\n` +
+            c.map((x, i) =>
+            `        ${x} : ${v[i]} - ${v[i] + v.length},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n` +
+            `it('should implement sub()', () => {\n` +
+            `    expect(${s}(${vList}).sub([ ${iVList} ])).toMatchObject({\n` +
+            c.map((x, i) =>
+            `        ${x} : ${v[i]} - ${v[i] + v.length},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n` +
+            `it('should implement multiply()', () => {\n` +
+            `    expect(${s}(${vList}).multiply([ ${iVList} ])).toMatchObject({\n` +
+            c.map((x, i) =>
+            `        ${x} : ${v[i]} * ${v[i] + v.length},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n` +
+            `it('should implement mul()', () => {\n` +
+            `    expect(${s}(${vList}).mul([ ${iVList} ])).toMatchObject({\n` +
+            c.map((x, i) =>
+            `        ${x} : ${v[i]} * ${v[i] + v.length},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n` +
+            `it('should implement divide()', () => {\n` +
+            `    expect(${s}(${vList}).divide([ ${iVList} ])).toMatchObject({\n` +
+            c.map((x, i) =>
+            `        ${x} : ${v[i]} / ${v[i] + v.length},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n` +
+            `it('should implement div()', () => {\n` +
+            `    expect(${s}(${vList}).div([ ${iVList} ])).toMatchObject({\n` +
+            c.map((x, i) =>
+            `        ${x} : ${v[i]} / ${v[i] + v.length},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n` +
+            `it('should implement dot()', () => {\n` +
+            `    expect(${s}(${vList}).dot([ ${iVList} ])).toBe(${v.map(x => `${x} * ${x + v.length}`).join(` + `)})\n` +
+            `})\n` +
+            `it('should implement toArray()', () => {\n` +
+            `    expect(${s}(${vList}).toArray()).toMatchObject([ ${vList} ])\n` +
+            `})\n` +
+            `it('should implement toString()', () => {\n` +
+            `    expect(${s}(${vList}).toString()).toBe(\`${n} { ${c.map((x, i) => `${x} : ${v[i]}`).join(`, `)} }\`)\n` +
+            `})\n` +
+            ``
+        }
     ]
 }).flat()
 
