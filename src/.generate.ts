@@ -33,6 +33,17 @@ const x = [ v2, v3, v4 ].map(({
     const len = lv.reduce((a, x) => a + x**2, 0)**(1/2)
 
     return [
+        { file : `${f}-source.ts`, content : `` +
+            `type ${n}Source =\n` +
+            `    | {}\n` +
+            c.map((x, i) =>
+            `    | ({ ${x} : number } | { ${i} : number })\n`
+            ).join(``) +
+            `    | (${c.map((_, l) => `[ ${c.slice(0, l + 1).map(() => `number`).join(`, `)} ]`).join(` | `)} | number[])\n` +
+            `\n` +
+            `export default ${n}Source\n` +
+            ``
+        },
         { file : `${f}-array.ts`, content : `` +
             `type ${n}Array = [ ${c.map(() => `number`).join(`, `)} ]\n` +
             `\n` +
