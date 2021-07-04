@@ -33,6 +33,44 @@ const x = [ v2, v3, v4 ].map(({
     const len = lv.reduce((a, x) => a + x**2, 0)**(1/2)
 
     return [
+        { file : `${s}.ts`, content : `` +
+            `export default function ${s}() : ${n};\n` +
+            `export default function ${s}(source : ${n}Source) : ${n};\n` +
+            `export default function ${s}(scalar : number) : ${n};\n` +
+            `export default function ${s}(${c.map(x => `${x} : number`).join(`, `)}) : ${n};\n` +
+            `\n` +
+            `export default function ${s}(x? : ${n}Source | number, ${c.slice(1).map(x => `${x}? : number`).join(`, `)}) : ${n} {\n` +
+            `    if (x === undefined) return new Number${n}\n` +
+            `    if (y !== undefined) return new Number${n}({ x : x as number, ${c.slice(1).join(`, `)} })\n` +
+            `    if (typeof x === 'number') return new Number${n}({ x, ${c.slice(1).map(x => `${x} : x`).join(`, `)} })\n` +
+            `\n` +
+            `    return ((v : ${n}Source) => {\n` +
+            c.map((x, i) =>
+            `        let ${x} = ${n}.default.${x}\n` +
+            `\n` +
+            `        if (\`${x}\` in v) {\n` +
+            `            const v${x} = v.${x}\n` +
+            `\n` +
+            `            if (typeof v${x} === \`number\`) ${x} = v${x}\n` +
+            `        }\n` +
+            `        else if (${i} in v) {\n` +
+            `            const v${i} = v[${i}]\n` +
+            `\n` +
+            `            if (typeof v${i} === \`number\`) ${x} = v${i}\n` +
+            `        }\n` +
+            `\n`
+            ).join(``) +
+            `        return new Number${n}({ ${c.join(`, `)} })\n` +
+            `    })(x)\n` +
+            `}\n` +
+            `\n` +
+            `import ${n}Source from './${f}-source'\n` +
+            `import Number${n} from './number-${f}'\n` +
+            `import ${n} from './${f}'\n` +
+            `\n` +
+            `${s}.default = ${n}.default\n` +
+            ``
+        },
         { file : `${f}-source.ts`, content : `` +
             `type ${n}Source =\n` +
             `    | {}\n` +
