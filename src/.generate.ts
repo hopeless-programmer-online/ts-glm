@@ -122,6 +122,63 @@ const x = [ v2, v3, v4 ].map(({
                 ``
             },
         ]).flat(),
+        { file : `array-${f}.ts`, content : `` +
+            `import ${n} from './${f}'\n` +
+            `\n` +
+            `type Values = number[]\n` +
+            `type Offset = number\n` +
+            `type Stride = number\n` +
+            `type Index  = ${c.map((_, i) => i).join(` | `)}\n` +
+            `\n` +
+            `export default class Array${n} extends ${n} {\n` +
+            `    public static default = {\n` +
+            `        ...${n}.default,\n` +
+            `        values : [ ${c.map(x => `${n}.default.${x}`).join(`, `)} ],\n` +
+            `        offset : 0,\n` +
+            `        stride : 1,\n` +
+            `    }\n` +
+            `    public static index = {\n` +
+            c.map((x, i) =>
+            `        ${x} : ${i} as Index,\n`
+            ).join(``) +
+            `    }\n` +
+            `\n` +
+            `    private readonly values : Values\n` +
+            `    private readonly offset : Offset\n` +
+            `    private readonly stride : Stride\n` +
+            `\n` +
+            `    public constructor({ values, offset = Array${n}.default.offset, stride = Array${n}.default.stride } : { values? : Values, offset? : Offset, stride? : Stride } = {}) {\n` +
+            `        if (!values) values = Array${n}.default.values.slice()\n` +
+            `\n` +
+            `        super()\n` +
+            `\n` +
+            `        this.values = values\n` +
+            `        this.offset = offset\n` +
+            `        this.stride = stride\n` +
+            `    }\n` +
+            `\n` +
+            c.map(x =>
+            `    public get ${x}() {\n` +
+            `        return this.getByIndex(Array${n}.index.${x})\n` +
+            `    }\n` +
+            `    public set ${x}(${x} : number) {\n` +
+            `        this.setByIndex(Array${n}.index.${x}, ${x})\n` +
+            `    }\n`
+            ).join(``) +
+            `\n` +
+            `    private getByIndex(index : Index) {\n` +
+            `        const { values, offset, stride } = this\n` +
+            `\n` +
+            `        return values[offset + stride * index]\n` +
+            `    }\n` +
+            `    private setByIndex(index : Index, value : number) {\n` +
+            `        const { values, offset, stride } = this\n` +
+            `\n` +
+            `        values[offset + stride * index] = value\n` +
+            `    }\n` +
+            `}\n` +
+            ``
+        },
         { file : `${s}.test.ts`, content : `` +
             `import { ${s}, ${n} } from './glm'\n` +
             `\n` +
