@@ -1,6 +1,15 @@
 /add-vector2-vector2.ts
 /add-vector3-vector3.ts
 /add-vector4-vector4.ts
+/divide-vector2-vector2.ts
+/divide-vector3-vector3.ts
+/divide-vector4-vector4.ts
+/multiply-vector2-vector2.ts
+/multiply-vector3-vector3.ts
+/multiply-vector4-vector4.ts
+/subtract-vector2-vector2.ts
+/subtract-vector3-vector3.ts
+/subtract-vector4-vector4.ts
 /vec2.test.ts
 /vec2.ts
 /vec3.test.ts
