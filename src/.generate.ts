@@ -38,7 +38,7 @@ const x = [ v2, v3, v4 ].map(({
             { operation : `subtract`, sign : `-` },
             { operation : `multiply`, sign : `*` },
             { operation : `divide`,   sign : `/` },
-        ].map(({ operation : op, sign }) => (
+        ].map(({ operation : op, sign }) => [
             { file : `${op}-${f}-${f}.ts`, content : `` +
                 `export default function ${op}${n}${n}(a : ${n}, b : ${n}) : ${n} {\n` +
                 `    return ${s}(\n` +
@@ -51,8 +51,34 @@ const x = [ v2, v3, v4 ].map(({
                 `import ${n} from './${f}'\n` +
                 `import ${s} from './${s}'\n` +
                 ``
-            }
-        )),
+            },
+            { file : `${op}-${f}-number.ts`, content : `` +
+                `export default function ${op}${n}Number(a : ${n}, b : number) : ${n} {\n` +
+                `    return ${op}(\n` +
+                `        a,\n` +
+                `        ${s}(b),\n` +
+                `    )\n` +
+                `}\n` +
+                `\n` +
+                `import ${n} from './${f}'\n` +
+                `import ${s} from './${s}'\n` +
+                `import ${op} from './${op}-${f}-${f}'\n` +
+                ``
+            },
+            { file : `${op}-number-${f}.ts`, content : `` +
+                `export default function ${op}Number${n}(a : number, b : ${n}) : ${n} {\n` +
+                `    return ${op}(\n` +
+                `        ${s}(a),\n` +
+                `        b,\n` +
+                `    )\n` +
+                `}\n` +
+                `\n` +
+                `import ${n} from './${f}'\n` +
+                `import ${s} from './${s}'\n` +
+                `import ${op} from './${op}-${f}-${f}'\n` +
+                ``
+            },
+        ]).flat(),
         { file : `${s}.test.ts`, content : `` +
             `import { ${s}, ${n} } from './glm'\n` +
             `\n` +
