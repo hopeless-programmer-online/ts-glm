@@ -33,6 +33,90 @@ const x = [ v2, v3, v4 ].map(({
     const len = lv.reduce((a, x) => a + x**2, 0)**(1/2)
 
     return [
+        { file : `${s}.test.ts`, content : `` +
+            `import { ${s}, ${n} } from './glm'\n` +
+            `\n` +
+            `it('should export default', () => {\n` +
+            `    expect(${s}.default).toMatchObject(${n}.default)\n` +
+            `})\n` +
+            `it('should accept nothing', () => {\n` +
+            `    expect(${s}()).toMatchObject({\n` +
+            c.map(x =>
+            `        ${x} : ${n}.default.${x},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n` +
+            `it('should accept single scalar', () => {\n` +
+            `    expect(${s}(5)).toMatchObject({\n` +
+            c.map(x =>
+            `        ${x} : 5,\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n` +
+            `it('should accept ${list}', () => {\n` +
+            `    expect(${s}(${vList})).toMatchObject({\n` +
+            c.map((x, i) =>
+            `        ${x} : ${v[i]},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n` +
+            c.map((x, i) =>
+            `it('should accept { ${x} }', () => {\n` +
+            `    expect(${s}({ ${x} : ${v[i]} })).toMatchObject({\n` +
+            c.map(y => x === y ?
+            `        ${x} : ${v[i]},\n` :
+            `        ${y} : ${s}.default.${y},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n`
+            ).join(``) +
+            `it('should accept { ${list} }', () => {\n` +
+            `    expect(${s}({ ${c.map((x, i) => `${x} : ${v[i]}`).join(`, `)} })).toMatchObject({\n` +
+            c.map((x, i) =>
+            `        ${x} : ${v[i]},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n` +
+            `it('should accept {}', () => {\n` +
+            `    expect(${s}({})).toMatchObject({\n` +
+            c.map(x =>
+            `        ${x} : ${s}.default.${x},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n` +
+            c.map((x, i) =>
+            `it('should accept { ${i} }', () => {\n` +
+            `    expect(${s}({ ${i} : ${v[i]} })).toMatchObject({\n` +
+            c.map((y, j) => x === y ?
+            `        ${x} : ${v[i]},\n` :
+            `        ${y} : ${s}.default.${y},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n`
+            ).join(``) +
+            `it('should accept { ${c.map((_, i) => `${i}`).join(`, `)} }', () => {\n` +
+            `    expect(${s}({ ${c.map((_, i) => `${i} : ${v[i]}`).join(`, `)} })).toMatchObject({\n` +
+            c.map((x, i) =>
+            `        ${x} : ${v[i]},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n` +
+            `it('should accept [ ${c.map(() => `number`).join(`, `)} ]', () => {\n` +
+            `    expect(${s}([ ${vList} ])).toMatchObject({\n` +
+            c.map((x, i) =>
+            `        ${x} : ${v[i]},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n` +
+            `it('should accept []', () => {\n` +
+            `    expect(${s}([])).toMatchObject({\n` +
+            c.map(x =>
+            `        ${x} : ${s}.default.${x},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n` +
+            ``
+        },
         { file : `${s}.ts`, content : `` +
             `export default function ${s}() : ${n};\n` +
             `export default function ${s}(source : ${n}Source) : ${n};\n` +
