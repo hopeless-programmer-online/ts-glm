@@ -29,16 +29,17 @@ const x = [ v2, v3, v4 ].map(({
 }) => {
     const list = c.map(x => `${x}`).join(`, `)
     const vList = v.map(x => `${x}`).join(`, `)
+    const vnList = v.map(x => `${x + v.length}`).join(`, `)
     const iVList = v.map(x => `${x + v.length}`).join(`, `)
     const len = lv.reduce((a, x) => a + x**2, 0)**(1/2)
 
     return [
         ...[
-            { operation : `add`,      sign : `+` },
-            { operation : `subtract`, sign : `-` },
-            { operation : `multiply`, sign : `*` },
-            { operation : `divide`,   sign : `/` },
-        ].map(({ operation : op, sign }) => [
+            { operation : `add`,      shortcut : `add`, sign : `+` },
+            { operation : `subtract`, shortcut : `sub`, sign : `-` },
+            { operation : `multiply`, shortcut : `mul`, sign : `*` },
+            { operation : `divide`,   shortcut : `div`, sign : `/` },
+        ].map(({ operation : op, shortcut : ops, sign }) => [
             { file : `${op}-${f}-${f}.ts`, content : `` +
                 `export default function ${op}${n}${n}(a : ${n}, b : ${n}) : ${n} {\n` +
                 `    return ${s}(\n` +
@@ -50,6 +51,18 @@ const x = [ v2, v3, v4 ].map(({
                 `\n` +
                 `import ${n} from './${f}'\n` +
                 `import ${s} from './${s}'\n` +
+                ``
+            },
+            { file : `${op}-${f}-${f}.test.ts`, content : `` +
+                `import { ${op}${n}${n} as ${ops}, ${s} } from './glm'\n` +
+                `\n` +
+                `it('should ${op} ${n} and ${n}', () => {\n` +
+                `    expect(${ops}( ${s}(${vList}), ${s}(${vnList}) )).toMatchObject({\n` +
+                c.map((x, i) =>
+                `        ${x} : ${v[i]} ${sign} ${v[i] + v.length},\n`
+                ).join(``) +
+                `    })\n` +
+                `})\n` +
                 ``
             },
             { file : `${op}-${f}-number.ts`, content : `` +
@@ -65,6 +78,21 @@ const x = [ v2, v3, v4 ].map(({
                 `import ${op} from './${op}-${f}-${f}'\n` +
                 ``
             },
+            { file : `${op}-${f}-number.test.ts`, content : `` +
+                `import { ${op}${n}Number as ${ops}, ${s} } from './glm'\n` +
+                `\n` +
+                `it('should ${op} ${n} and number', () => {\n` +
+                `    expect(${ops}(\n` +
+                `        ${s}(${vList}),\n` +
+                `        ${v.length + 1},\n` +
+                `    )).toMatchObject({\n` +
+                c.map((x, i) =>
+                `        ${x} : ${v[i]} ${sign} ${v.length + 1},\n`
+                ).join(``) +
+                `    })\n` +
+                `})\n` +
+                ``
+            },
             { file : `${op}-number-${f}.ts`, content : `` +
                 `export default function ${op}Number${n}(a : number, b : ${n}) : ${n} {\n` +
                 `    return ${op}(\n` +
@@ -76,6 +104,21 @@ const x = [ v2, v3, v4 ].map(({
                 `import ${n} from './${f}'\n` +
                 `import ${s} from './${s}'\n` +
                 `import ${op} from './${op}-${f}-${f}'\n` +
+                ``
+            },
+            { file : `${op}-number-${f}.test.ts`, content : `` +
+                `import { ${op}Number${n} as ${ops}, ${s} } from './glm'\n` +
+                `\n` +
+                `it('should ${op} number and ${n}', () => {\n` +
+                `    expect(${ops}(\n` +
+                `        ${v.length + 1},\n` +
+                `        ${s}(${vList}),\n` +
+                `    )).toMatchObject({\n` +
+                c.map((x, i) =>
+                `        ${x} : ${v.length + 1} ${sign} ${v[i]},\n`
+                ).join(``) +
+                `    })\n` +
+                `})\n` +
                 ``
             },
         ]).flat(),
