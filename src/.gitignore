@@ -18,24 +18,24 @@
 /divide-vector4-number.ts
 /divide-vector4-vector4.ts
 
-/divide-number-vector2.ts
-/divide-number-vector3.ts
-/divide-number-vector4.ts
-/divide-vector2-number.ts
+/multiply-number-vector2.ts
+/multiply-number-vector3.ts
+/multiply-number-vector4.ts
+/multiply-vector2-number.ts
 /multiply-vector2-vector2.ts
-/divide-vector3-number.ts
+/multiply-vector3-number.ts
 /multiply-vector3-vector3.ts
-/divide-vector4-number.ts
+/multiply-vector4-number.ts
 /multiply-vector4-vector4.ts
 
-/divide-number-vector2.ts
-/divide-number-vector3.ts
-/divide-number-vector4.ts
-/divide-vector2-number.ts
+/subtract-number-vector2.ts
+/subtract-number-vector3.ts
+/subtract-number-vector4.ts
+/subtract-vector2-number.ts
 /subtract-vector2-vector2.ts
-/divide-vector3-number.ts
+/subtract-vector3-number.ts
 /subtract-vector3-vector3.ts
-/divide-vector4-number.ts
+/subtract-vector4-number.ts
 /subtract-vector4-vector4.ts
 
 /vec2.test.ts
