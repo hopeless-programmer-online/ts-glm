@@ -33,6 +33,19 @@ const x = [ v2, v3, v4 ].map(({
     const len = lv.reduce((a, x) => a + x**2, 0)**(1/2)
 
     return [
+        { file : `add-${f}-${f}.ts`, content : `` +
+            `export default function add${n}${n}(a : ${n}, b : ${n}) : ${n} {\n` +
+            `    return ${s}(\n` +
+            c.map(x =>
+            `        a.${x} + b.${x},\n`
+            ).join(``) +
+            `    )\n` +
+            `}\n` +
+            `\n` +
+            `import ${n} from './${f}'\n` +
+            `import ${s} from './${s}'\n` +
+            ``
+        },
         { file : `${s}.test.ts`, content : `` +
             `import { ${s}, ${n} } from './glm'\n` +
             `\n` +
