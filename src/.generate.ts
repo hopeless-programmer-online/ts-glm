@@ -33,6 +33,18 @@ const x = [ v2, v3, v4 ].map(({
     const len = lv.reduce((a, x) => a + x**2, 0)**(1/2)
 
     return [
+        { file : `${f}-like.ts`, content : `` +
+            `type ${n}Like =\n` +
+            `    | (\n` +
+            c.map((x, i) =>
+            `        & ({ ${x} : number } | { ${i} : number })\n`
+            ).join(``) +
+            `    )\n` +
+            `    | [ ${c.map(() => `number`).join(`, `)} ]\n` +
+            `\n` +
+            `export default ${n}Like\n` +
+            ``
+        },
         { file : `${f}.ts`, content : `` +
             `export default abstract class ${n} {\n` +
             `    public static default = { ${c.map(x => `${x} : ${defaults[x]}`).join(`, `)} }\n` +
@@ -257,7 +269,7 @@ const x = [ v2, v3, v4 ].map(({
             `    expect(${s}(${vList}).toString()).toBe(\`${n} { ${c.map((x, i) => `${x} : ${v[i]}`).join(`, `)} }\`)\n` +
             `})\n` +
             ``
-        }
+        },
     ]
 }).flat()
 
