@@ -32,6 +32,7 @@ const x = [ v2, v3, v4 ].map(({
     const vnList = v.map(x => `${x + v.length}`).join(`, `)
     const iVList = v.map(x => `${x + v.length}`).join(`, `)
     const len = lv.reduce((a, x) => a + x**2, 0)**(1/2)
+    const l = v.length + 1
 
     return [
         ...[
@@ -177,6 +178,85 @@ const x = [ v2, v3, v4 ].map(({
             `        values[offset + stride * index] = value\n` +
             `    }\n` +
             `}\n` +
+            ``
+        },{ file : `array-${f}.test.ts`, content : `` +
+            `import { Array${n}, ${n} } from './glm'\n` +
+            `\n` +
+            `it('should export default values', () => {\n` +
+            `    expect(Array${n}.default).toMatchObject({\n` +
+            `        values : [ ${c.map(x => `${n}.default.${x}`).join(`, `)} ],\n` +
+            `        offset : 0,\n` +
+            `        stride : 1,\n` +
+            `    })\n` +
+            `})\n` +
+            `it('should has constructor()', () => {\n` +
+            `    const v = new Array${n}\n` +
+            `\n` +
+            c.map(x =>
+            `    expect(v.${x}).toBe(${n}.default.${x})\n`
+            ).join(``) +
+            `})\n` +
+            `it('should has constructor({})', () => {\n` +
+            `    const v = new Array${n}({})\n` +
+            `\n` +
+            c.map(x =>
+            `    expect(v.${x}).toBe(${n}.default.${x})\n`
+            ).join(``) +
+            `})\n` +
+            `it('should has constructor({ values })', () => {\n` +
+            `    const values = [ ${vList} ]\n` +
+            `    const v = new Array${n}({ values })\n` +
+            `\n` +
+            c.map((x, i) =>
+            `    expect(v.${x}).toBe(${v[i]})\n`
+            ).join(``) +
+            `})\n` +
+            `it('should has constructor({ values, offset })', () => {\n` +
+            `    const values = [ ${vList} ]\n` +
+            `    const v = new Array${n}({ values, offset : 0 })\n` +
+            `\n` +
+            c.map((x, i) =>
+            `    expect(v.${x}).toBe(${v[i]})\n`
+            ).join(``) +
+            `})\n` +
+            `it('should has constructor({ values, stride })', () => {\n` +
+            `    const values = [ ${vList} ]\n` +
+            `    const v = new Array${n}({ values, stride : 1 })\n` +
+            `\n` +
+            c.map((x, i) =>
+            `    expect(v.${x}).toBe(${v[i]})\n`
+            ).join(``) +
+            `})\n` +
+            `it('should has constructor({ values, offset, stride })', () => {\n` +
+            `    const values = [ ${vList} ]\n` +
+            `    const v = new Array${n}({ values, offset : 0, stride : 1 })\n` +
+            `\n` +
+            c.map((x, i) =>
+            `    expect(v.${x}).toBe(${v[i]})\n`
+            ).join(``) +
+            `})\n` +
+            c.map((x, i) =>
+            `it('should has ${x} setter', () => {\n` +
+            `    const values = [ ${vList} ]\n` +
+            `    const v = new Array${n}({ values, offset : 0, stride : 1 })\n` +
+            `\n` +
+            `    v.${x} = ${l}\n` +
+            `\n` +
+            `    expect(v.${x}).toBe(${l})\n` +
+            `    expect(values).toMatchObject([ ${v.map((x, j) => i === j ? l : x).join(`, `)} ])\n` +
+            `})\n`
+            ).join(``) +
+            `it('vectors created with default constructor should refer to different values', () => {\n` +
+            `    const a = new Array${n}\n` +
+            `    const b = new Array${n}\n` +
+            `\n` +
+            c.map((x, i) =>
+            `    a.${x} = ${defaults[x] + i + 1}\n`
+            ).join(``) +
+            `\n` +
+            `    expect(a).toMatchObject({ ${c.map((x, i) => `${x} : ${defaults[x] + i + 1}`).join(`, `)} })\n` +
+            `    expect(b).toMatchObject({ ${c.map(x => `${x} : ${defaults[x]}`).join(`, `)} })\n` +
+            `})\n` +
             ``
         },
         { file : `${s}.test.ts`, content : `` +
