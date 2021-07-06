@@ -17,8 +17,11 @@
 /add-vector4-number.test.ts
 /add-vector4-number.ts
 
+/array-vector2.test.ts
 /array-vector2.ts
+/array-vector3.test.ts
 /array-vector3.ts
+/array-vector4.test.ts
 /array-vector4.ts
 
 /divide-number-vector2.test.ts
