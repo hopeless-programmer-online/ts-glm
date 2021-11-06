@@ -692,6 +692,83 @@ const x = [ v2, v3, v4 ].map(({
             `})\n` +
             ``
         },
+        { file : `number-${f}.test.ts`, content : `` +
+            `import { Number${n}, ${n} } from './glm'\n` +
+            `\n` +
+            `it('should has constructor()', () => {\n` +
+            `    expect(new Number${n}).toMatchObject({\n` +
+            c.map(x =>
+            `        ${x} : ${n}.default.${x},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n` +
+            `it('should has constructor({})', () => {\n` +
+            `    expect(new Number${n}({})).toMatchObject({\n` +
+            c.map(x =>
+            `        ${x} : ${n}.default.${x},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n` +
+            c.map((x, i) =>
+            `it('should has constructor({ ${x} })', () => {\n` +
+            `    expect(new Number${n}({ ${x} : ${v[i]} })).toMatchObject({\n` +
+            c.map(y => x === y ?
+            `        ${x} : ${v[i]},\n` :
+            `        ${y} : ${n}.default.${y},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n`
+            ).join(``) +
+            `it('should has constructor({ ${list} })', () => {\n` +
+            `    expect(new Number${n}({ ${c.map((x, i) => `${x} : ${v[i]}`).join(`, `)} })).toMatchObject({\n` +
+            c.map((x, i) =>
+            `        ${x} : ${v[i]},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n` +
+            c.map(x =>
+            `it('should has ${x} setter', () => {\n` +
+            `    const v = new Number${n}\n` +
+            `\n` +
+            `    v.${x} = 5\n` +
+            `\n` +
+            `    expect(v).toMatchObject({\n` +
+            c.map(y => x === y ?
+            `        ${x} : 5,\n` :
+            `        ${y} : ${n}.default.${y},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n`
+            ).join(``) +
+            ``
+        },
+        { file : `number-${f}.ts`, content : `` +
+            `import ${n} from './${f}'\n` +
+            `\n` +
+            `export default class Number${n} extends ${n} {\n` +
+            c.map(x =>
+            `    private _${x} : number\n`
+            ).join(``) +
+            `\n` +
+            `    public constructor({ ${c.map(x => `${x} = ${n}.default.${x}`).join(`, `)} } : { ${c.map(x => `${x}? : number`).join(`, `)} } = {}) {\n` +
+            `        super()\n` +
+            `\n` +
+            c.map(x =>
+            `        this._${x} = ${x}\n`
+            ).join(``) +
+            `    }\n` +
+            `\n` +
+            c.map(x =>
+            `    public get ${x}() {\n` +
+            `        return this._${x}\n` +
+            `    }\n` +
+            `    public set ${x}(${x} : number) {\n` +
+            `        this._${x} = ${x}\n` +
+            `    }\n`
+            ).join(``) +
+            `}\n` +
+            ``
+        },
     ]
 }).flat()
 
