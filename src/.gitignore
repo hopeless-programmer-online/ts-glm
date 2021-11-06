@@ -43,12 +43,12 @@
 /divide-vector4-vector4.test.ts
 /divide-vector4-vector4.ts
 
-/dot-vector2-vector2.ts
 /dot-vector2-vector2.test.ts
-/dot-vector3-vector3.ts
+/dot-vector2-vector2.ts
 /dot-vector3-vector3.test.ts
-/dot-vector4-vector4.ts
+/dot-vector3-vector3.ts
 /dot-vector4-vector4.test.ts
+/dot-vector4-vector4.ts
 
 /multiply-number-vector2.test.ts
 /multiply-number-vector2.ts
@@ -69,12 +69,12 @@
 /multiply-vector4-vector4.test.ts
 /multiply-vector4-vector4.ts
 
-/negate-vector2.ts
 /negate-vector2.test.ts
-/negate-vector3.ts
+/negate-vector2.ts
 /negate-vector3.test.ts
-/negate-vector4.ts
+/negate-vector3.ts
 /negate-vector4.test.ts
+/negate-vector4.ts
 
 /number-vector2.test.ts
 /number-vector2.ts
@@ -83,12 +83,12 @@
 /number-vector4.test.ts
 /number-vector4.ts
 
-/square-vector2.ts
 /square-vector2.test.ts
-/square-vector3.ts
+/square-vector2.ts
 /square-vector3.test.ts
-/square-vector4.ts
+/square-vector3.ts
 /square-vector4.test.ts
+/square-vector4.ts
 
 /subtract-number-vector2.test.ts
 /subtract-number-vector2.ts

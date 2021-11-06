@@ -124,16 +124,6 @@ const x = [ v2, v3, v4 ].map(({
                 ``
             },
         ]).flat(),
-        { file : `negate-${f}.ts`, content : `` +
-            `export default function negate${n}(a : ${n}) {\n` +
-            `    return sub(vec(0), a)\n` +
-            `}\n` +
-            `\n` +
-            `import ${n} from './${f}'\n` +
-            `import vec from './${s}'\n` +
-            `import sub from './subtract-${f}-${f}'\n` +
-            ``
-        },
         { file : `negate-${f}.test.ts`, content : `` +
             `import { negate${n} as neg, ${s} } from './glm'\n` +
             `\n` +
@@ -146,12 +136,14 @@ const x = [ v2, v3, v4 ].map(({
             `})\n` +
             ``
         },
-        { file : `dot-${f}-${f}.ts`, content : `` +
-            `export default function dot${n}${n}(a : ${n}, b : ${n}) : number {\n` +
-            `    return ${c.map(x => `a.${x} * b.${x}`).join(` + `)}\n` +
+        { file : `negate-${f}.ts`, content : `` +
+            `export default function negate${n}(a : ${n}) {\n` +
+            `    return sub(vec(0), a)\n` +
             `}\n` +
             `\n` +
             `import ${n} from './${f}'\n` +
+            `import vec from './${s}'\n` +
+            `import sub from './subtract-${f}-${f}'\n` +
             ``
         },
         { file : `dot-${f}-${f}.test.ts`, content : `` +
@@ -162,13 +154,12 @@ const x = [ v2, v3, v4 ].map(({
             `})\n` +
             ``
         },
-        { file : `square-${f}.ts`, content : `` +
-            `export default function square${n}(a : ${n}) {\n` +
-            `    return dot(a, a)\n` +
+        { file : `dot-${f}-${f}.ts`, content : `` +
+            `export default function dot${n}${n}(a : ${n}, b : ${n}) : number {\n` +
+            `    return ${c.map(x => `a.${x} * b.${x}`).join(` + `)}\n` +
             `}\n` +
             `\n` +
             `import ${n} from './${f}'\n` +
-            `import dot from './dot-${f}-${f}'\n` +
             ``
         },
         { file : `square-${f}.test.ts`, content : `` +
@@ -179,61 +170,13 @@ const x = [ v2, v3, v4 ].map(({
             `})\n` +
             ``
         },
-        { file : `array-${f}.ts`, content : `` +
-            `import ${n} from './${f}'\n` +
-            `\n` +
-            `type Values = number[]\n` +
-            `type Offset = number\n` +
-            `type Stride = number\n` +
-            `type Index  = ${c.map((_, i) => i).join(` | `)}\n` +
-            `\n` +
-            `export default class Array${n} extends ${n} {\n` +
-            `    public static default = {\n` +
-            `        ...${n}.default,\n` +
-            `        values : [ ${c.map(x => `${n}.default.${x}`).join(`, `)} ],\n` +
-            `        offset : 0,\n` +
-            `        stride : 1,\n` +
-            `    }\n` +
-            `    public static index = {\n` +
-            c.map((x, i) =>
-            `        ${x} : ${i} as Index,\n`
-            ).join(``) +
-            `    }\n` +
-            `\n` +
-            `    private readonly values : Values\n` +
-            `    private readonly offset : Offset\n` +
-            `    private readonly stride : Stride\n` +
-            `\n` +
-            `    public constructor({ values, offset = Array${n}.default.offset, stride = Array${n}.default.stride } : { values? : Values, offset? : Offset, stride? : Stride } = {}) {\n` +
-            `        if (!values) values = Array${n}.default.values.slice()\n` +
-            `\n` +
-            `        super()\n` +
-            `\n` +
-            `        this.values = values\n` +
-            `        this.offset = offset\n` +
-            `        this.stride = stride\n` +
-            `    }\n` +
-            `\n` +
-            c.map(x =>
-            `    public get ${x}() {\n` +
-            `        return this.getByIndex(Array${n}.index.${x})\n` +
-            `    }\n` +
-            `    public set ${x}(${x} : number) {\n` +
-            `        this.setByIndex(Array${n}.index.${x}, ${x})\n` +
-            `    }\n`
-            ).join(``) +
-            `\n` +
-            `    private getByIndex(index : Index) {\n` +
-            `        const { values, offset, stride } = this\n` +
-            `\n` +
-            `        return values[offset + stride * index]\n` +
-            `    }\n` +
-            `    private setByIndex(index : Index, value : number) {\n` +
-            `        const { values, offset, stride } = this\n` +
-            `\n` +
-            `        values[offset + stride * index] = value\n` +
-            `    }\n` +
+        { file : `square-${f}.ts`, content : `` +
+            `export default function square${n}(a : ${n}) {\n` +
+            `    return dot(a, a)\n` +
             `}\n` +
+            `\n` +
+            `import ${n} from './${f}'\n` +
+            `import dot from './dot-${f}-${f}'\n` +
             ``
         },
         { file : `array-${f}.test.ts`, content : `` +
@@ -314,6 +257,63 @@ const x = [ v2, v3, v4 ].map(({
             `    expect(a).toMatchObject({ ${c.map((x, i) => `${x} : ${defaults[x] + i + 1}`).join(`, `)} })\n` +
             `    expect(b).toMatchObject({ ${c.map(x => `${x} : ${defaults[x]}`).join(`, `)} })\n` +
             `})\n` +
+            ``
+        },
+        { file : `array-${f}.ts`, content : `` +
+            `import ${n} from './${f}'\n` +
+            `\n` +
+            `type Values = number[]\n` +
+            `type Offset = number\n` +
+            `type Stride = number\n` +
+            `type Index  = ${c.map((_, i) => i).join(` | `)}\n` +
+            `\n` +
+            `export default class Array${n} extends ${n} {\n` +
+            `    public static default = {\n` +
+            `        ...${n}.default,\n` +
+            `        values : [ ${c.map(x => `${n}.default.${x}`).join(`, `)} ],\n` +
+            `        offset : 0,\n` +
+            `        stride : 1,\n` +
+            `    }\n` +
+            `    public static index = {\n` +
+            c.map((x, i) =>
+            `        ${x} : ${i} as Index,\n`
+            ).join(``) +
+            `    }\n` +
+            `\n` +
+            `    private readonly values : Values\n` +
+            `    private readonly offset : Offset\n` +
+            `    private readonly stride : Stride\n` +
+            `\n` +
+            `    public constructor({ values, offset = Array${n}.default.offset, stride = Array${n}.default.stride } : { values? : Values, offset? : Offset, stride? : Stride } = {}) {\n` +
+            `        if (!values) values = Array${n}.default.values.slice()\n` +
+            `\n` +
+            `        super()\n` +
+            `\n` +
+            `        this.values = values\n` +
+            `        this.offset = offset\n` +
+            `        this.stride = stride\n` +
+            `    }\n` +
+            `\n` +
+            c.map(x =>
+            `    public get ${x}() {\n` +
+            `        return this.getByIndex(Array${n}.index.${x})\n` +
+            `    }\n` +
+            `    public set ${x}(${x} : number) {\n` +
+            `        this.setByIndex(Array${n}.index.${x}, ${x})\n` +
+            `    }\n`
+            ).join(``) +
+            `\n` +
+            `    private getByIndex(index : Index) {\n` +
+            `        const { values, offset, stride } = this\n` +
+            `\n` +
+            `        return values[offset + stride * index]\n` +
+            `    }\n` +
+            `    private setByIndex(index : Index, value : number) {\n` +
+            `        const { values, offset, stride } = this\n` +
+            `\n` +
+            `        values[offset + stride * index] = value\n` +
+            `    }\n` +
+            `}\n` +
             ``
         },
         { file : `${s}.test.ts`, content : `` +
