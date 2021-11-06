@@ -83,6 +83,13 @@
 /number-vector4.test.ts
 /number-vector4.ts
 
+/length-vector2.ts
+/length-vector2.test.ts
+/length-vector3.ts
+/length-vector3.test.ts
+/length-vector4.ts
+/length-vector4.test.ts
+
 /square-vector2.test.ts
 /square-vector2.ts
 /square-vector3.test.ts
