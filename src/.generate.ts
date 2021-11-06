@@ -162,6 +162,23 @@ const x = [ v2, v3, v4 ].map(({
             `})\n` +
             ``
         },
+        { file : `square-${f}.ts`, content : `` +
+            `export default function square${n}(a : ${n}) {\n` +
+            `    return dot(a, a)\n` +
+            `}\n` +
+            `\n` +
+            `import ${n} from './${f}'\n` +
+            `import dot from './dot-${f}-${f}'\n` +
+            ``
+        },
+        { file : `square-${f}.test.ts`, content : `` +
+            `import { square${n} as sqr, ${s} } from './glm'\n` +
+            `\n` +
+            `it('should square ${s}', () => {\n` +
+            `    expect(sqr(${s}(${vList}))).toBe(${v.map(x => `${x}**2`).join(` + `)})\n` +
+            `})\n` +
+            ``
+        },
         { file : `array-${f}.ts`, content : `` +
             `import ${n} from './${f}'\n` +
             `\n` +
