@@ -76,6 +76,13 @@
 /negate-vector4.ts
 /negate-vector4.test.ts
 
+/number-vector2.test.ts
+/number-vector2.ts
+/number-vector3.test.ts
+/number-vector3.ts
+/number-vector4.test.ts
+/number-vector4.ts
+
 /square-vector2.ts
 /square-vector2.test.ts
 /square-vector3.ts
