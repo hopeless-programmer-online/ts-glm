@@ -43,6 +43,13 @@
 /divide-vector4-vector4.test.ts
 /divide-vector4-vector4.ts
 
+/dot-vector2-vector2.ts
+/dot-vector2-vector2.test.ts
+/dot-vector3-vector3.ts
+/dot-vector3-vector3.test.ts
+/dot-vector4-vector4.ts
+/dot-vector4-vector4.test.ts
+
 /multiply-number-vector2.test.ts
 /multiply-number-vector2.ts
 /multiply-number-vector3.test.ts
