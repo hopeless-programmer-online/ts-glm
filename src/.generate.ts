@@ -29,7 +29,8 @@ const x = [ v2, v3, v4 ].map(({
 }) => {
     const list = c.map(x => `${x}`).join(`, `)
     const vList = v.map(x => `${x}`).join(`, `)
-    const vnList = v.map(x => `${x + v.length}`).join(`, `)
+    const vn = v.map(x => x + v.length)
+    const vnList = vn.map(x => `${x}`).join(`, `)
     const iVList = v.map(x => `${x + v.length}`).join(`, `)
     const len = lv.reduce((a, x) => a + x**2, 0)**(1/2)
     const l = v.length + 1
@@ -142,6 +143,22 @@ const x = [ v2, v3, v4 ].map(({
             `        ${x} : -${v[i]},\n`
             ).join(``) +
             `    })\n` +
+            `})\n` +
+            ``
+        },
+        { file : `dot-${f}-${f}.ts`, content : `` +
+            `export default function dot${n}${n}(a : ${n}, b : ${n}) : number {\n` +
+            `    return ${c.map(x => `a.${x} * b.${x}`).join(` + `)}\n` +
+            `}\n` +
+            `\n` +
+            `import ${n} from './${f}'\n` +
+            ``
+        },
+        { file : `dot-${f}-${f}.test.ts`, content : `` +
+            `import { dot${n}${n} as dot, ${s} } from './glm'\n` +
+            `\n` +
+            `it('should dot ${n} and ${n}', () => {\n` +
+            `    expect(dot( ${s}(${vList}), ${s}(${vnList}) )).toBe(${v.map((x, i) => `${x} * ${vn[i]}`).join(` + `)})\n` +
             `})\n` +
             ``
         },
