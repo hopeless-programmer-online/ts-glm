@@ -123,6 +123,28 @@ const x = [ v2, v3, v4 ].map(({
                 ``
             },
         ]).flat(),
+        { file : `negate-${f}.ts`, content : `` +
+            `export default function negate${n}(a : ${n}) {\n` +
+            `    return sub(vec(0), a)\n` +
+            `}\n` +
+            `\n` +
+            `import ${n} from './${f}'\n` +
+            `import vec from './${s}'\n` +
+            `import sub from './subtract-${f}-${f}'\n` +
+            ``
+        },
+        { file : `negate-${f}.test.ts`, content : `` +
+            `import { negate${n} as neg, ${s} } from './glm'\n` +
+            `\n` +
+            `it('should negate ${n}', () => {\n` +
+            `    expect(neg(${s}(${vList}))).toMatchObject({\n` +
+            c.map((x, i) =>
+            `        ${x} : -${v[i]},\n`
+            ).join(``) +
+            `    })\n` +
+            `})\n` +
+            ``
+        },
         { file : `array-${f}.ts`, content : `` +
             `import ${n} from './${f}'\n` +
             `\n` +
@@ -179,7 +201,8 @@ const x = [ v2, v3, v4 ].map(({
             `    }\n` +
             `}\n` +
             ``
-        },{ file : `array-${f}.test.ts`, content : `` +
+        },
+        { file : `array-${f}.test.ts`, content : `` +
             `import { Array${n}, ${n} } from './glm'\n` +
             `\n` +
             `it('should export default values', () => {\n` +
