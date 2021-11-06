@@ -179,6 +179,23 @@ const x = [ v2, v3, v4 ].map(({
             `import dot from './dot-${f}-${f}'\n` +
             ``
         },
+        { file : `length-${f}.test.ts`, content : `` +
+            `import { length${n} as len, ${s} } from './glm'\n` +
+            `\n` +
+            `it('should accept ${n}', () => {\n` +
+            `    expect( len(${s}(${lv.join(`, `)})) ).toBe( (${lv.map(x => `${x}**2`).join(` + `)})**(1/2) )\n` +
+            `})\n` +
+            ``
+        },
+        { file : `length-${f}.ts`, content : `` +
+            `export default function length${n}(v : ${n}) {\n` +
+            `    return sqr(v)**(1/2)\n` +
+            `}\n` +
+            `\n` +
+            `import sqr from './square-${f}'\n` +
+            `import ${n} from './${f}'\n` +
+            ``
+        },
         { file : `array-${f}.test.ts`, content : `` +
             `import { Array${n}, ${n} } from './glm'\n` +
             `\n` +
