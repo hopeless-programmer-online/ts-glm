@@ -62,6 +62,13 @@
 /multiply-vector4-vector4.test.ts
 /multiply-vector4-vector4.ts
 
+/negate-vector2.ts
+/negate-vector2.test.ts
+/negate-vector3.ts
+/negate-vector3.test.ts
+/negate-vector4.ts
+/negate-vector4.test.ts
+
 /subtract-number-vector2.test.ts
 /subtract-number-vector2.ts
 /subtract-number-vector3.test.ts
