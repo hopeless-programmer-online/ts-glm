@@ -28,9 +28,9 @@ declare abstract class Vector2 {
     get magnitude(): number;
     get mag(): number;
     get norm(): number;
-    get square(): number;
+    get square(): Vector2;
     get sqr(): any;
-    get negate(): number;
+    get negate(): Vector2;
     get neg(): any;
     set(x: number, y: number): void;
     clone(): Vector2;
@@ -41,9 +41,24 @@ declare abstract class Vector2 {
     mul(other: Vector2Like | number): Vector2;
     divide(other: Vector2Like | number): Vector2;
     div(other: Vector2Like | number): Vector2;
+    dot(other: Vector2Like): number;
     toArray(): Vector2Array;
     toString(): string;
 }
+
+declare type Vector3Like = (({
+    x: number;
+} | {
+    0: number;
+}) & ({
+    y: number;
+} | {
+    1: number;
+}) & ({
+    z: number;
+} | {
+    2: number;
+})) | [number, number, number];
 
 declare type Vector3Array = [number, number, number];
 
@@ -70,22 +85,41 @@ declare abstract class Vector3 {
     get magnitude(): number;
     get mag(): number;
     get norm(): number;
-    get square(): number;
+    get square(): Vector3;
     get sqr(): any;
-    get negate(): number;
+    get negate(): Vector3;
     get neg(): any;
     set(x: number, y: number, z: number): void;
     clone(): Vector3;
-    add(other: Vector2Like | number): Vector3;
-    subtract(other: Vector2Like | number): Vector3;
-    sub(other: Vector2Like | number): Vector3;
-    multiply(other: Vector2Like | number): Vector3;
-    mul(other: Vector2Like | number): Vector3;
-    divide(other: Vector2Like | number): Vector3;
-    div(other: Vector2Like | number): Vector3;
+    add(other: Vector3Like | number): Vector3;
+    subtract(other: Vector3Like | number): Vector3;
+    sub(other: Vector3Like | number): Vector3;
+    multiply(other: Vector3Like | number): Vector3;
+    mul(other: Vector3Like | number): Vector3;
+    divide(other: Vector3Like | number): Vector3;
+    div(other: Vector3Like | number): Vector3;
+    dot(other: Vector3Like): number;
     toArray(): Vector3Array;
     toString(): string;
 }
+
+declare type Vector4Like = (({
+    x: number;
+} | {
+    0: number;
+}) & ({
+    y: number;
+} | {
+    1: number;
+}) & ({
+    z: number;
+} | {
+    2: number;
+}) & ({
+    w: number;
+} | {
+    3: number;
+})) | [number, number, number, number];
 
 declare type Vector4Array = [number, number, number, number];
 
@@ -117,54 +151,23 @@ declare abstract class Vector4 {
     get magnitude(): number;
     get mag(): number;
     get norm(): number;
-    get square(): number;
-    get sqr(): number;
-    get negate(): number;
-    get neg(): number;
+    get square(): Vector4;
+    get sqr(): Vector4;
+    get negate(): Vector4;
+    get neg(): Vector4;
     set(x: number, y: number, z: number, w: number): void;
     clone(): Vector4;
-    add(other: Vector2Like | number): Vector4;
-    subtract(other: Vector2Like | number): Vector4;
-    sub(other: Vector2Like | number): Vector4;
-    multiply(other: Vector2Like | number): Vector4;
-    mul(other: Vector2Like | number): Vector4;
-    divide(other: Vector2Like | number): Vector4;
-    div(other: Vector2Like | number): Vector4;
+    add(other: Vector4Like | number): Vector4;
+    subtract(other: Vector4Like | number): Vector4;
+    sub(other: Vector4Like | number): Vector4;
+    multiply(other: Vector4Like | number): Vector4;
+    mul(other: Vector4Like | number): Vector4;
+    divide(other: Vector4Like | number): Vector4;
+    div(other: Vector4Like | number): Vector4;
+    dot(other: Vector4Like): number;
     toArray(): Vector4Array;
     toString(): string;
 }
-
-declare type Vector3Like = (({
-    x: number;
-} | {
-    0: number;
-}) & ({
-    y: number;
-} | {
-    1: number;
-}) & ({
-    z: number;
-} | {
-    2: number;
-})) | [number, number, number];
-
-declare type Vector4Like = (({
-    x: number;
-} | {
-    0: number;
-}) & ({
-    y: number;
-} | {
-    1: number;
-}) & ({
-    z: number;
-} | {
-    2: number;
-}) & ({
-    w: number;
-} | {
-    3: number;
-})) | [number, number, number, number];
 
 declare type Matrix2x2Array = [
     number,
@@ -606,6 +609,16 @@ declare class ArrayMatrix4x4 extends Matrix4x4 {
     get rows(): ArrayMatrix4x4Rows;
 }
 
+declare type Vector2Source = {} | ({
+    x: number;
+} | {
+    0: number;
+}) | ({
+    y: number;
+} | {
+    1: number;
+}) | ([number] | [number, number] | number[]);
+
 declare function vec2(): Vector2;
 declare namespace vec2 {
     var _a: {
@@ -614,7 +627,15 @@ declare namespace vec2 {
     };
     export { _a as default };
 }
-declare function vec2(scalar: any): Vector2;
+declare function vec2(source: Vector2Source): Vector2;
+declare namespace vec2 {
+    var _a: {
+        x: number;
+        y: number;
+    };
+    export { _a as default };
+}
+declare function vec2(scalar: number): Vector2;
 declare namespace vec2 {
     var _a: {
         x: number;
@@ -631,7 +652,30 @@ declare namespace vec2 {
     export { _a as default };
 }
 
+declare type Vector3Source = {} | ({
+    x: number;
+} | {
+    0: number;
+}) | ({
+    y: number;
+} | {
+    1: number;
+}) | ({
+    z: number;
+} | {
+    2: number;
+}) | ([number] | [number, number] | [number, number, number] | number[]);
+
 declare function vec3(): Vector3;
+declare namespace vec3 {
+    var _a: {
+        x: number;
+        y: number;
+        z: number;
+    };
+    export { _a as default };
+}
+declare function vec3(source: Vector3Source): Vector3;
 declare namespace vec3 {
     var _a: {
         x: number;
@@ -659,7 +703,35 @@ declare namespace vec3 {
     export { _a as default };
 }
 
+declare type Vector4Source = {} | ({
+    x: number;
+} | {
+    0: number;
+}) | ({
+    y: number;
+} | {
+    1: number;
+}) | ({
+    z: number;
+} | {
+    2: number;
+}) | ({
+    w: number;
+} | {
+    3: number;
+}) | ([number] | [number, number] | [number, number, number] | [number, number, number, number] | number[]);
+
 declare function vec4(): Vector4;
+declare namespace vec4 {
+    var _a: {
+        x: number;
+        y: number;
+        z: number;
+        w: number;
+    };
+    export { _a as default };
+}
+declare function vec4(source: Vector4Source): Vector4;
 declare namespace vec4 {
     var _a: {
         x: number;
@@ -777,9 +849,9 @@ declare function inverseMatrix3x3(m: Matrix3x3): Matrix3x3;
 
 declare function inverseMatrix4x4(m: Matrix4x4): Matrix4x4;
 
-declare function negate(v: Vector4Like): number;
-declare function negate(v: Vector3Like): number;
-declare function negate(v: Vector2Like): number;
+declare function negate(v: Vector4Like): Vector4;
+declare function negate(v: Vector3Like): Vector3;
+declare function negate(v: Vector2Like): Vector2;
 declare function negate(v: number): number;
 
 declare function add(a: Matrix4x4Like, b: number): Matrix4x4;
@@ -856,22 +928,22 @@ declare function divide(a: number, b: Vector3Like): Vector3;
 declare function divide(a: number, b: Vector2Like): Vector2;
 declare function divide(a: number, b: number): number;
 
-declare function dot(a: Vector2, b: Vector2): number;
-declare function dot(a: Vector3, b: Vector3): number;
-declare function dot(a: Vector4, b: Vector4): number;
+declare function dot(a: Vector2Like, b: Vector2Like): number;
+declare function dot(a: Vector3Like, b: Vector3Like): number;
+declare function dot(a: Vector4Like, b: Vector4Like): number;
 
-declare function square(v: Vector4Like): number;
-declare function square(v: Vector3Like): number;
-declare function square(v: Vector2Like): number;
+declare function square(v: Vector4Like): Vector4;
+declare function square(v: Vector3Like): Vector3;
+declare function square(v: Vector2Like): Vector2;
 declare function square(v: number): number;
 
-declare function length(v: Vector2): number;
-declare function length(v: Vector3): number;
-declare function length(v: Vector4): number;
+declare function length(v: Vector2Like): number;
+declare function length(v: Vector3Like): number;
+declare function length(v: Vector4Like): number;
 
-declare function inverse(m: Matrix2x2): Matrix2x2;
-declare function inverse(m: Matrix3x3): Matrix3x3;
-declare function inverse(m: Matrix4x4): Matrix4x4;
+declare function inverse(m: Matrix2x2Like): Matrix2x2;
+declare function inverse(m: Matrix3x3Like): Matrix3x3;
+declare function inverse(m: Matrix4x4Like): Matrix4x4;
 
 declare function negateVector2(a: Vector2): Vector2;
 

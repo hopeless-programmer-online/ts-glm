@@ -1789,16 +1789,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 function dot(a, b) {
-    if ('w' in a)
-        return dot_vector4_vector4_1.default(a, b);
-    if ('z' in a)
-        return dot_vector3_vector3_1.default(a, b);
-    return dot_vector2_vector2_1.default(a, b);
+    return deduce_1.default(a, null, null, null, function (a) { return deduce_1.default(b, null, null, null, function (b) { return dot_vector4_vector4_1.default(a, b); }, function (b) { return dot_vector3_vector3_1.default(vec3_1.default(a.x, a.y, a.z), b); }, function (b) { return dot_vector2_vector2_1.default(vec2_1.default(a.x, a.y), b); }, null); }, function (a) { return deduce_1.default(b, null, null, null, function (b) { return dot_vector3_vector3_1.default(a, vec3_1.default(b.x, b.y, b.z)); }, function (b) { return dot_vector3_vector3_1.default(a, b); }, function (b) { return dot_vector2_vector2_1.default(vec2_1.default(a.x, a.y), b); }, null); }, function (a) { return deduce_1.default(b, null, null, null, function (b) { return dot_vector2_vector2_1.default(a, vec2_1.default(b.x, b.y)); }, function (b) { return dot_vector2_vector2_1.default(a, vec2_1.default(b.x, b.y)); }, function (b) { return dot_vector2_vector2_1.default(a, b); }, null); }, null);
 }
 exports.default = dot;
+var deduce_1 = __importDefault(__webpack_require__(1122));
 var dot_vector2_vector2_1 = __importDefault(__webpack_require__(2965));
 var dot_vector3_vector3_1 = __importDefault(__webpack_require__(7635));
 var dot_vector4_vector4_1 = __importDefault(__webpack_require__(6869));
+var vec2_1 = __importDefault(__webpack_require__(2185));
+var vec3_1 = __importDefault(__webpack_require__(2860));
 
 
 /***/ }),
@@ -2239,16 +2238,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 function inverse(m) {
-    if ('3' in m)
-        return inverse_matrix4x4_1.default(m);
-    if ('2' in m)
-        return inverse_matrix3x3_1.default(m);
-    return inverse_matrix2x2_1.default(m);
+    return deduce_1.default(m, function (m) { return inverse_matrix4x4_1.default(m); }, function (m) { return inverse_matrix3x3_1.default(m); }, function (m) { return inverse_matrix2x2_1.default(m); }, null, null, null, null);
 }
 exports.default = inverse;
 var inverse_matrix2x2_1 = __importDefault(__webpack_require__(2573));
 var inverse_matrix3x3_1 = __importDefault(__webpack_require__(1869));
 var inverse_matrix4x4_1 = __importDefault(__webpack_require__(3923));
+var deduce_1 = __importDefault(__webpack_require__(1122));
 
 
 /***/ }),
@@ -2262,10 +2258,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 function lengthVector2(v) {
-    return Math.pow(dot_vector2_vector2_1.default(v, v), (1 / 2));
+    return Math.pow(square_vector2_1.default(v), (1 / 2));
 }
 exports.default = lengthVector2;
-var dot_vector2_vector2_1 = __importDefault(__webpack_require__(2965));
+var square_vector2_1 = __importDefault(__webpack_require__(5435));
 
 
 /***/ }),
@@ -2279,10 +2275,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 function lengthVector3(v) {
-    return Math.pow(dot_vector3_vector3_1.default(v, v), (1 / 2));
+    return Math.pow(square_vector3_1.default(v), (1 / 2));
 }
 exports.default = lengthVector3;
-var dot_vector3_vector3_1 = __importDefault(__webpack_require__(7635));
+var square_vector3_1 = __importDefault(__webpack_require__(614));
 
 
 /***/ }),
@@ -2296,10 +2292,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 function lengthVector4(v) {
-    return Math.pow(dot_vector4_vector4_1.default(v, v), (1 / 2));
+    return Math.pow(square_vector4_1.default(v), (1 / 2));
 }
 exports.default = lengthVector4;
-var dot_vector4_vector4_1 = __importDefault(__webpack_require__(6869));
+var square_vector4_1 = __importDefault(__webpack_require__(5554));
 
 
 /***/ }),
@@ -2313,16 +2309,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 function length(v) {
-    if ('w' in v)
-        return length_vector4_1.default(v);
-    if ('z' in v)
-        return length_vector3_1.default(v);
-    return length_vector2_1.default(v);
+    return deduce_1.default(v, null, null, null, function (v) { return length_vector4_1.default(v); }, function (v) { return length_vector3_1.default(v); }, function (v) { return length_vector2_1.default(v); }, null);
 }
 exports.default = length;
 var length_vector4_1 = __importDefault(__webpack_require__(6905));
 var length_vector3_1 = __importDefault(__webpack_require__(7785));
 var length_vector2_1 = __importDefault(__webpack_require__(7370));
+var deduce_1 = __importDefault(__webpack_require__(1122));
 
 
 /***/ }),
@@ -4128,9 +4121,35 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 function vec2(x, y) {
     if (x === undefined)
         return new number_vector2_1.default;
-    if (y === undefined)
+    if (y !== undefined)
+        return new number_vector2_1.default({ x: x, y: y });
+    if (typeof x === 'number')
         return new number_vector2_1.default({ x: x, y: x });
-    return new number_vector2_1.default({ x: x, y: y });
+    return (function (v) {
+        var x = vector2_1.default.default.x;
+        if ("x" in v) {
+            var vx = v.x;
+            if (typeof vx === "number")
+                x = vx;
+        }
+        else if (0 in v) {
+            var v0 = v[0];
+            if (typeof v0 === "number")
+                x = v0;
+        }
+        var y = vector2_1.default.default.y;
+        if ("y" in v) {
+            var vy = v.y;
+            if (typeof vy === "number")
+                y = vy;
+        }
+        else if (1 in v) {
+            var v1 = v[1];
+            if (typeof v1 === "number")
+                y = v1;
+        }
+        return new number_vector2_1.default({ x: x, y: y });
+    })(x);
 }
 exports.default = vec2;
 var number_vector2_1 = __importDefault(__webpack_require__(2630));
@@ -4151,9 +4170,46 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 function vec3(x, y, z) {
     if (x === undefined)
         return new number_vector3_1.default;
-    if (y === undefined)
+    if (y !== undefined)
+        return new number_vector3_1.default({ x: x, y: y, z: z });
+    if (typeof x === 'number')
         return new number_vector3_1.default({ x: x, y: x, z: x });
-    return new number_vector3_1.default({ x: x, y: y, z: z });
+    return (function (v) {
+        var x = vector3_1.default.default.x;
+        if ("x" in v) {
+            var vx = v.x;
+            if (typeof vx === "number")
+                x = vx;
+        }
+        else if (0 in v) {
+            var v0 = v[0];
+            if (typeof v0 === "number")
+                x = v0;
+        }
+        var y = vector3_1.default.default.y;
+        if ("y" in v) {
+            var vy = v.y;
+            if (typeof vy === "number")
+                y = vy;
+        }
+        else if (1 in v) {
+            var v1 = v[1];
+            if (typeof v1 === "number")
+                y = v1;
+        }
+        var z = vector3_1.default.default.z;
+        if ("z" in v) {
+            var vz = v.z;
+            if (typeof vz === "number")
+                z = vz;
+        }
+        else if (2 in v) {
+            var v2 = v[2];
+            if (typeof v2 === "number")
+                z = v2;
+        }
+        return new number_vector3_1.default({ x: x, y: y, z: z });
+    })(x);
 }
 exports.default = vec3;
 var number_vector3_1 = __importDefault(__webpack_require__(1615));
@@ -4174,9 +4230,57 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 function vec4(x, y, z, w) {
     if (x === undefined)
         return new number_vector4_1.default;
-    if (y === undefined)
+    if (y !== undefined)
+        return new number_vector4_1.default({ x: x, y: y, z: z, w: w });
+    if (typeof x === 'number')
         return new number_vector4_1.default({ x: x, y: x, z: x, w: x });
-    return new number_vector4_1.default({ x: x, y: y, z: z, w: w });
+    return (function (v) {
+        var x = vector4_1.default.default.x;
+        if ("x" in v) {
+            var vx = v.x;
+            if (typeof vx === "number")
+                x = vx;
+        }
+        else if (0 in v) {
+            var v0 = v[0];
+            if (typeof v0 === "number")
+                x = v0;
+        }
+        var y = vector4_1.default.default.y;
+        if ("y" in v) {
+            var vy = v.y;
+            if (typeof vy === "number")
+                y = vy;
+        }
+        else if (1 in v) {
+            var v1 = v[1];
+            if (typeof v1 === "number")
+                y = v1;
+        }
+        var z = vector4_1.default.default.z;
+        if ("z" in v) {
+            var vz = v.z;
+            if (typeof vz === "number")
+                z = vz;
+        }
+        else if (2 in v) {
+            var v2 = v[2];
+            if (typeof v2 === "number")
+                z = v2;
+        }
+        var w = vector4_1.default.default.w;
+        if ("w" in v) {
+            var vw = v.w;
+            if (typeof vw === "number")
+                w = vw;
+        }
+        else if (3 in v) {
+            var v3 = v[3];
+            if (typeof v3 === "number")
+                w = v3;
+        }
+        return new number_vector4_1.default({ x: x, y: y, z: z, w: w });
+    })(x);
 }
 exports.default = vec4;
 var number_vector4_1 = __importDefault(__webpack_require__(4634));
@@ -4313,6 +4417,9 @@ var Vector2 = /** @class */ (function () {
     Vector2.prototype.div = function (other) {
         return this.divide(other);
     };
+    Vector2.prototype.dot = function (other) {
+        return dot_1.default(this, other);
+    };
     Vector2.prototype.toArray = function () {
         var _a = this, x = _a.x, y = _a.y;
         return [x, y];
@@ -4333,6 +4440,7 @@ var multiply_1 = __importDefault(__webpack_require__(7554));
 var divide_1 = __importDefault(__webpack_require__(8981));
 var length_1 = __importDefault(__webpack_require__(7327));
 var square_1 = __importDefault(__webpack_require__(2034));
+var dot_1 = __importDefault(__webpack_require__(5111));
 
 
 /***/ }),
@@ -4475,6 +4583,9 @@ var Vector3 = /** @class */ (function () {
     Vector3.prototype.div = function (other) {
         return this.divide(other);
     };
+    Vector3.prototype.dot = function (other) {
+        return dot_1.default(this, other);
+    };
     Vector3.prototype.toArray = function () {
         var _a = this, x = _a.x, y = _a.y, z = _a.z;
         return [x, y, z];
@@ -4495,6 +4606,7 @@ var multiply_1 = __importDefault(__webpack_require__(7554));
 var divide_1 = __importDefault(__webpack_require__(8981));
 var length_1 = __importDefault(__webpack_require__(7327));
 var square_1 = __importDefault(__webpack_require__(2034));
+var dot_1 = __importDefault(__webpack_require__(5111));
 
 
 /***/ }),
@@ -4648,6 +4760,9 @@ var Vector4 = /** @class */ (function () {
     Vector4.prototype.div = function (other) {
         return this.divide(other);
     };
+    Vector4.prototype.dot = function (other) {
+        return dot_1.default(this, other);
+    };
     Vector4.prototype.toArray = function () {
         var _a = this, x = _a.x, y = _a.y, z = _a.z, w = _a.w;
         return [x, y, z, w];
@@ -4668,6 +4783,7 @@ var multiply_1 = __importDefault(__webpack_require__(7554));
 var divide_1 = __importDefault(__webpack_require__(8981));
 var length_1 = __importDefault(__webpack_require__(7327));
 var square_1 = __importDefault(__webpack_require__(2034));
+var dot_1 = __importDefault(__webpack_require__(5111));
 
 
 /***/ })
